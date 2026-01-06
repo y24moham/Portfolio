@@ -60,7 +60,7 @@ const Header = () => {
               <p className="text-sm text-muted-foreground">
                 <TypingEffect 
                   texts={["Mechatronics Engineer", "Embedded Systems Developer", "Robotics Enthusiast", "Future Innovator", "Hands-On Engineer"]}
-                  speed={80}
+                  speed={100}
                   deleteSpeed={40}
                   pauseTime={1500}
                 />

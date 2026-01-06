@@ -5,8 +5,15 @@ import TypingEffect from "./TypingEffect";
 const HeroSection = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
-    element?.scrollIntoView({ behavior: "smooth" });
+    if (!element) return;
+
+    const yOffset = -50; // adjust this (px). Use your header height + a bit extra.
+    const y =
+      element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+    window.scrollTo({ top: y, behavior: "smooth" });
   };
+
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-muted/50">
@@ -19,8 +26,8 @@ const HeroSection = () => {
             <TypingEffect 
               texts={["Mechatronics Engineer", "Embedded Systems Developer", "Robotics Enthusiast", "Future Innovator", "Hands-On Engineer"]}
               speed={100}
-              deleteSpeed={50}
-              pauseTime={2000}
+              deleteSpeed={40}
+              pauseTime={1500}
             />
           </p>
           <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
