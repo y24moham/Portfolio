@@ -1,108 +1,138 @@
-import { useState, useEffect } from 'react';
-import { Menu, X, Moon, Sun } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import TypingEffect from "./TypingEffect";
 
-interface HeaderProps {
-  darkMode: boolean;
-  toggleDarkMode: () => void;
-}
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-const Header = ({ darkMode, toggleDarkMode }: HeaderProps) => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const scrollToSectionHome = (sectionId: string) => {
+    const el = document.getElementById(sectionId);
+    if (!el) return;
 
-  const navItems = [
-    { name: 'About', href: '#about' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Education', href: '#education' },
-    { name: 'Contact', href: '#contact' }
-  ];
+    // Measure the actual header height (since it can vary by breakpoint)
+    const header = document.querySelector("header");
+    const headerHeight = header ? (header as HTMLElement).offsetHeight : 0;
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+    // Extra breathing room so the section title isn't glued to the header
+    const extraOffset = 0; // px (adjust if you want)
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    const y =
+      el.getBoundingClientRect().top + window.scrollY - headerHeight - extraOffset;
 
-  const headerClasses = `
-    fixed w-full z-50 transition-all duration-300 
-    ${isScrolled 
-      ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-sm py-3' 
-      : 'bg-transparent py-5'
-    }
-  `;
+    window.scrollTo({ top: y, behavior: "smooth" });
+
+    setIsMenuOpen(false);
+  };
+  
+  const scrollToSection = (sectionId: string) => {
+    const el = document.getElementById(sectionId);
+    if (!el) return;
+
+    // Measure the actual header height (since it can vary by breakpoint)
+    const header = document.querySelector("header");
+    const headerHeight = header ? (header as HTMLElement).offsetHeight : 0;
+
+    // Extra breathing room so the section title isn't glued to the header
+    const extraOffset = -50; // px (adjust if you want)
+
+    const y =
+      el.getBoundingClientRect().top + window.scrollY - headerHeight - extraOffset;
+
+    window.scrollTo({ top: y, behavior: "smooth" });
+
+    setIsMenuOpen(false);
+  };
+
 
   return (
-    <header className={headerClasses}>
-      <div className="container mx-auto px-4 flex justify-between items-center">
-        <a href="#" className="text-xl font-bold text-gray-900 dark:text-white">
-          YM<span className="text-blue-500">.</span>
-        </a>
+    <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
+      <div className="container mx-auto px-4 py-4">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <img
+              src="/logo.png"
+              alt="Logo"
+              className="h-16 w-16 object-contain rounded-md"
+            />
+            <div>
+              <h1 className="text-2xl font-bold text-foreground">Yaseen Mohamed</h1>
+              <p className="text-sm text-muted-foreground">
+                <TypingEffect 
+                  texts={["Mechatronics Engineer", "Embedded Systems Developer", "Robotics Enthusiast", "Future Innovator", "Hands-On Engineer"]}
+                  speed={80}
+                  deleteSpeed={40}
+                  pauseTime={1500}
+                />
+              </p>
+            </div>
+          </div>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
-          {navItems.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
-            >
-              {item.name}
-            </a>
-          ))}
-          <button 
-            onClick={toggleDarkMode}
-            className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 p-2 rounded-full"
-          >
-            {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
-        </nav>
-
-        {/* Mobile Navigation Toggle */}
-        <div className="md:hidden flex items-center space-x-4">
-          <button 
-            onClick={toggleDarkMode}
-            className="text-gray-700 dark:text-gray-300 p-1 rounded-full"
-          >
-            {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="text-gray-700 dark:text-gray-300 p-1"
-          >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.2 }}
-          className="md:hidden bg-white dark:bg-gray-900 shadow-lg"
-        >
-          <nav className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-gray-700 dark:text-gray-300 py-2"
-              >
-                {item.name}
-              </a>
-            ))}
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex space-x-4">
+            <Button variant="ghost" onClick={() => scrollToSectionHome("home")}>
+              Home
+            </Button>
+            <Button variant="ghost" onClick={() => scrollToSection("projects")}>
+              Projects
+            </Button>
+            <Button variant="ghost" onClick={() => scrollToSection("experience")}>
+              Experience
+            </Button>
+            <Button variant="ghost" onClick={() => scrollToSection("skills")}>
+              Skills
+            </Button>
+            <Button variant="ghost" onClick={() => scrollToSection("education")}>
+              Education
+            </Button>
+            <Button variant="ghost" onClick={() => scrollToSection("resume")}>
+              Resume
+            </Button>
+            <Button variant="ghost" onClick={() => scrollToSection("contact")}>
+              Contact
+            </Button>
           </nav>
-        </motion.div>
-      )}
+
+          {/* Mobile Menu Button */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </Button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <nav className="md:hidden mt-4 pb-4 border-t border-border pt-4">
+            <div className="flex flex-col space-y-2">
+              <Button variant="ghost" onClick={() => scrollToSectionHome("home")} className="justify-start">
+                Home
+              </Button>
+              <Button variant="ghost" onClick={() => scrollToSection("projects")} className="justify-start">
+                Projects
+              </Button>
+              <Button variant="ghost" onClick={() => scrollToSection("experience")} className="justify-start">
+                Experience
+              </Button>
+              <Button variant="ghost" onClick={() => scrollToSection("skills")} className="justify-start">
+                Skills
+              </Button>
+              <Button variant="ghost" onClick={() => scrollToSection("education")} className="justify-start">
+                Education
+              </Button>
+              <Button variant="ghost" onClick={() => scrollToSection("resume")} className="justify-start">
+                Resume
+              </Button>
+              <Button variant="ghost" onClick={() => scrollToSection("contact")} className="justify-start">
+                Contact
+              </Button>
+            </div>
+          </nav>
+        )}
+      </div>
     </header>
   );
 };
