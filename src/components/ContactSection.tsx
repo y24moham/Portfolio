@@ -29,7 +29,7 @@ const ContactSection = () => {
               {/* Social Links */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild variant="outline">
-                  <a href="https://www.linkedin.com/in/yasin-samir/" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.linkedin.com/in/yaseenmoham/" target="_blank" rel="noopener noreferrer">
                     <Linkedin className="h-4 w-4 mr-2" />
                     LinkedIn
                   </a>
