@@ -1,19 +1,13 @@
 import { ArrowDown, FileText, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { scrollToId } from "@/components/scrollToId";
 import TypingEffect from "./TypingEffect";
 
 const HeroSection = () => {
+
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (!element) return;
-
-    const yOffset = -50; // adjust this (px). Use your header height + a bit extra.
-    const y =
-      element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-    window.scrollTo({ top: y, behavior: "smooth" });
+    scrollToId(sectionId, 50);
   };
-
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-muted/50">

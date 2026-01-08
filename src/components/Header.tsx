@@ -1,47 +1,18 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { scrollToId } from "@/components/scrollToId";
 import TypingEffect from "./TypingEffect";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const scrollToSectionHome = (sectionId: string) => {
-    const el = document.getElementById(sectionId);
-    if (!el) return;
-
-    // Measure the actual header height (since it can vary by breakpoint)
-    const header = document.querySelector("header");
-    const headerHeight = header ? (header as HTMLElement).offsetHeight : 0;
-
-    // Extra breathing room so the section title isn't glued to the header
-    const extraOffset = 0; // px (adjust if you want)
-
-    const y =
-      el.getBoundingClientRect().top + window.scrollY - headerHeight - extraOffset;
-
-    window.scrollTo({ top: y, behavior: "smooth" });
-
-    setIsMenuOpen(false);
+    scrollToId(sectionId, 0);
   };
   
   const scrollToSection = (sectionId: string) => {
-    const el = document.getElementById(sectionId);
-    if (!el) return;
-
-    // Measure the actual header height (since it can vary by breakpoint)
-    const header = document.querySelector("header");
-    const headerHeight = header ? (header as HTMLElement).offsetHeight : 0;
-
-    // Extra breathing room so the section title isn't glued to the header
-    const extraOffset = -50; // px (adjust if you want)
-
-    const y =
-      el.getBoundingClientRect().top + window.scrollY - headerHeight - extraOffset;
-
-    window.scrollTo({ top: y, behavior: "smooth" });
-
-    setIsMenuOpen(false);
+    scrollToId(sectionId, 50);
   };
 
 
