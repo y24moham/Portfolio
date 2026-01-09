@@ -5,18 +5,18 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 const ProjectsSection = () => {
   const projects = [
     {
-      title: "Quadcopter Prototype",
-      description: "Built a ground-up quadcopter prototype by implementing closed-loop control algorithms in C++ on an Arduino with prototype circuit boards and external sensors, controlling propeller speed from gyrometer sensor output.",
-      image: "/placeholder.svg",
-      githubUrl: "https://github.com/y24moham/Quadcopter-Prototype/tree/main",
-      demoUrl: "https://drive.google.com/file/d/1RMSzE_in0KuofrDoc0nF74Z5vaZzTccr/view?usp=sharing",
-    },
-    {
       title: "EV3 Prosthetic Hand",
       description: "Designed and programmed a functional prosthetic hand using C, capable of controlled object handling to act as a replacement for human hand.",
       image: "/placeholder.svg",
       githubUrl: "https://github.com/y24moham/Prosthetic-Hand-EV3/blob/main/README.md",
       demoUrl: "https://drive.google.com/file/d/1u6iXG5a_sigPQkx7iz7OC_ltrGPNhpzM/view?usp=sharing",
+    },
+    {
+      title: "Quadcopter Prototype",
+      description: "Built a ground-up quadcopter prototype by implementing closed-loop control algorithms in C++ on an Arduino with prototype circuit boards and external sensors, controlling propeller speed from gyrometer sensor output.",
+      image: "/placeholder.svg",
+      githubUrl: "https://github.com/y24moham/Quadcopter-Prototype/tree/main",
+      demoUrl: "https://drive.google.com/file/d/1RMSzE_in0KuofrDoc0nF74Z5vaZzTccr/view?usp=sharing",
     },
     {
       title: "Robotic Arm Controller",
