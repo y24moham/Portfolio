@@ -6,14 +6,14 @@ const ProjectsSection = () => {
   const projects = [
     {
       title: "Quadcopter Prototype",
-      description: "Built a ground-up quadcopter prototype by implementing closed-loop control algorithms in C++ on an Arduino with prototype circuit boards, controlling propeller speed from gyrometer sensor output.",
+      description: "Built a ground-up quadcopter prototype by implementing closed-loop control algorithms in C++ on an Arduino with prototype circuit boards and external sensors, controlling propeller speed from gyrometer sensor output.",
       image: "/placeholder.svg",
       githubUrl: "https://github.com/y24moham/Quadcopter-Prototype/tree/main",
-      demoUrl: "https://drive.google.com/file/d/1NxJxWkp-EyR-reV-OZMwFn3o3bTLC3V4/view?usp=sharing",
+      demoUrl: "https://drive.google.com/file/d/1RMSzE_in0KuofrDoc0nF74Z5vaZzTccr/view?usp=sharing",
     },
     {
-      title: "Smart Home IoT System",
-      description: "Developed an automated home monitoring system with Arduino and sensors",
+      title: "EV3 Prosthetic Hand",
+      description: "Designed and programmed a functional prosthetic hand using C, capable of controlled object handling to act as a replacement for human hand.",
       image: "/placeholder.svg",
       githubUrl: "https://github.com/yourusername/smart-home",
       demoUrl: null,
