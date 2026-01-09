@@ -15,8 +15,8 @@ const ProjectsSection = () => {
       title: "EV3 Prosthetic Hand",
       description: "Designed and programmed a functional prosthetic hand using C, capable of controlled object handling to act as a replacement for human hand.",
       image: "/placeholder.svg",
-      githubUrl: "https://github.com/yourusername/smart-home",
-      demoUrl: null,
+      githubUrl: "https://github.com/y24moham/Prosthetic-Hand-EV3/blob/main/README.md",
+      demoUrl: "https://drive.google.com/file/d/1u6iXG5a_sigPQkx7iz7OC_ltrGPNhpzM/view?usp=sharing",
     },
     {
       title: "Robotic Arm Controller",
