@@ -31,8 +31,16 @@ const ResumeSection = () => {
             <CardContent className="text-center">
               {/* Resume Preview */}
               <div className="mb-6">
-                <div className="bg-background border-2 border-dashed border-border rounded-lg p-8 mx-auto max-w-md">
-                  {/* You can replace this with an actual PDF preview or thumbnail */}
+                <div
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => setIsPreviewOpen(true)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") setIsPreviewOpen(true);
+                  }}
+                  className="bg-background border-2 border-dashed border-border rounded-lg p-8 mx-auto max-w-md cursor-pointer transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                  aria-label="Open resume preview"
+                >
                   <div className="aspect-[8.5/11] overflow-hidden rounded shadow">
                     <img
                       src="/resume.jpg"

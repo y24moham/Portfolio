@@ -6,10 +6,10 @@ const ProjectsSection = () => {
   const projects = [
     {
       title: "Quadcopter Prototype",
-      description: "Built a stable flight quadcopter using PID control",
+      description: "Built a ground-up quadcopter prototype by implementing closed-loop control algorithms in C++ on an Arduino with prototype circuit boards, controlling propeller speed from gyrometer sensor output.",
       image: "/placeholder.svg",
-      githubUrl: "https://github.com/yourusername/quadcopter",
-      demoUrl: "https://youtube.com/watch?v=demo",
+      githubUrl: "https://github.com/y24moham/Quadcopter-Prototype/tree/main",
+      demoUrl: "https://drive.google.com/file/d/1NxJxWkp-EyR-reV-OZMwFn3o3bTLC3V4/view?usp=sharing",
     },
     {
       title: "Smart Home IoT System",
