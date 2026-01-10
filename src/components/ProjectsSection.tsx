@@ -6,24 +6,31 @@ const ProjectsSection = () => {
   const projects = [
     {
       title: "EV3 Prosthetic Hand",
-      description: "Designed and programmed a functional prosthetic hand using C, capable of controlled object handling to act as a replacement for human hand.",
+      description: "Designed and programmed a functional EV3-based prosthetic hand using C (RobotC), implementing motor-driven open/close grip control and basic sensor-driven behavior to enable controlled object handling as a prototype assistive replacement for key hand functions. (Oct-Dec 2023)",
       image: "Prosthetic-Hand-Image.jpg",
-      githubUrl: "https://github.com/y24moham/Prosthetic-Hand-EV3/tree/main",
+      githubUrl: "https://github.com/y24moham/Prosthetic-Hand-EV3/",
       demoUrl: "https://drive.google.com/file/d/1u6iXG5a_sigPQkx7iz7OC_ltrGPNhpzM/view?usp=sharing",
     },
     {
       title: "Quadcopter Prototype",
-      description: "Built a ground-up quadcopter prototype by implementing closed-loop control algorithms in C++ on an Arduino with prototype circuit boards and external sensors, controlling propeller speed from gyrometer sensor output.",
-      image: "/placeholder.svg",
-      githubUrl: "https://github.com/y24moham/Quadcopter-Prototype/tree/main",
+      description: "Built a ground-up quadcopter prototype by implementing closed-loop control algorithms in C++ on an Arduino with prototype circuit boards and external sensors, controlling propeller speed from gyrometer sensor output. (June-Aug 2020)",
+      image: "Quadcopter-Image.PNG",
+      githubUrl: "https://github.com/y24moham/Quadcopter-Prototype/",
       demoUrl: "https://drive.google.com/file/d/1RMSzE_in0KuofrDoc0nF74Z5vaZzTccr/view?usp=sharing",
     },
     {
-      title: "Robotic Arm Controller",
-      description: "Created precise motion control software for 6-DOF robotic arm",
-      image: "/placeholder.svg",
-      githubUrl: "https://github.com/yourusername/robotic-arm",
-      demoUrl: "https://youtube.com/watch?v=demo2",
+      title: "Obstacle-Aware Arduino Robot",
+      description: "Developed Arduino firmware for a two-motor robot featuring an LCD UI, ultrasonic distance measurement, and a single-button state machine that drives forward, displays live status and ultrasonic distance, and triggers automatic turn obstacle avoidance. (Apr 2024)",
+      image: "Hospital-SQL.png",
+      githubUrl: "https://github.com/y24moham/Hospital-SQL-Database-Design",
+      demoUrl: null,
+    },
+    {
+      title: "Hospital Test Database (SQL)",
+      description: "I built a basic hospital relational database in SQL modeling patients, doctors, rooms, and prescriptions/medications, then validated the schema using fictional test data and queries to confirm correct relationships and system behavior. (July 2022)",
+      image: "Hospital-SQL.png",
+      githubUrl: "https://github.com/y24moham/Hospital-SQL-Database-Design",
+      demoUrl: null,
     },
   ];
 
