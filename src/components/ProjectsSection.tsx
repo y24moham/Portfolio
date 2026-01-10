@@ -21,7 +21,7 @@ const ProjectsSection = () => {
     {
       title: "Obstacle-Aware Arduino Robot",
       description: "Developed Arduino firmware for a two-motor robot featuring an LCD UI, ultrasonic distance measurement, and a single-button state machine that drives forward, displays live status and ultrasonic distance, and triggers automatic turn obstacle avoidance. (Apr 2024)",
-      image: "Hospital-SQL.png",
+      image: "Arduino-Robot.png",
       githubUrl: "https://github.com/y24moham/Hospital-SQL-Database-Design",
       demoUrl: null,
     },
