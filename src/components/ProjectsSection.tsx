@@ -6,7 +6,7 @@ const ProjectsSection = () => {
   const projects = [
     {
       title: "EV3 Prosthetic Hand",
-      description: "Designed and programmed a functional EV3-based prosthetic hand using C (RobotC), implementing motor-driven open/close grip control and basic sensor-driven behavior to enable controlled object handling as a prototype assistive replacement for key hand functions. (Oct-Dec 2023)",
+      description: "Designed and programmed a functional EV3-based prosthetic hand using C, implementing motor-driven open/close grip control and basic sensor-driven behavior to enable controlled object handling as a prototype assistive replacement for key hand functions. (Oct-Dec 2023)",
       image: "Prosthetic-Hand-Image.jpg",
       githubUrl: "https://github.com/y24moham/Prosthetic-Hand-EV3/",
       demoUrl: "https://drive.google.com/file/d/1u6iXG5a_sigPQkx7iz7OC_ltrGPNhpzM/view?usp=sharing",
@@ -21,9 +21,9 @@ const ProjectsSection = () => {
     {
       title: "Obstacle-Aware Arduino Robot",
       description: "Developed Arduino firmware for a two-motor robot featuring an LCD UI, ultrasonic distance measurement, and a single-button state machine that drives forward, displays live status and ultrasonic distance, and triggers automatic turn obstacle avoidance. (Apr 2024)",
-      image: "Hospital-SQL.png",
+      image: "Arduino-Robot.png",
       githubUrl: "https://github.com/y24moham/Hospital-SQL-Database-Design",
-      demoUrl: null,
+      demoUrl: "https://drive.google.com/file/d/1gGviGKnixNbjjOhSUq4s3DY6O76Xo-3T/view?usp=sharing",
     },
     {
       title: "Hospital Test Database (SQL)",

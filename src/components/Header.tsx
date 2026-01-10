@@ -27,7 +27,7 @@ const Header = () => {
               className="h-16 w-16 object-contain rounded-md"
             />
             <div>
-              <h1 className="text-2xl font-bold text-foreground">Yaseen Mohamed</h1>
+              <h1 className="text-2xl font-bold text-foreground">YM</h1>
               <p className="text-sm text-muted-foreground">
                 <TypingEffect 
                   texts={["Mechatronics Engineer", "Embedded Systems Developer", "Robotics Enthusiast", "Future Innovator", "Hands-On Engineer"]}
