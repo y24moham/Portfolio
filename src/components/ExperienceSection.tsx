@@ -62,11 +62,9 @@ const ExperienceSection = () => {
       company: "State Windows Corporation",
       dates: "May 2024 - Aug 2024",
       tasks: [
-        "Scaled part generation by designing sheet-metal models in Autodesk Inventor and using parameter tables/spreadsheets to produce hundreds of dimension variants, reducing repetitive CAD work and speeding quoting/production prep.",
-        "Improved production readiness by selecting the appropriate CNC workflow, creating CAD drawings, and generating G-code, reducing setup errors and improving job turnaround.",
-        "Supported delivery of urgent orders by independently managing a high-priority schedule with runs requiring 700+ parts, helping maintain throughput under tight timelines.",
-        "Standardized shop processes by authoring SOP handbooks, improving training consistency and reducing operator-to-operator variation.",
-        "Reduced onboarding time by training new hires on the end-to-end process until they could run jobs independently, increasing team capacity and coverage."
+        "As a CNC Programmer, I prepared sheet-metal parts for production by building parametric models in Autodesk Inventor, generating drawings, and producing G-code \
+        for CNC workflows. I managed high-volume jobs on tight schedules, wrote SOP documentation to standardize key processes, and trained new hires so they could \
+        complete work independently. This role strengthened my manufacturing mindset, documentation habits, and ability to deliver accurate work under production timelines.",
       ]
     }
   ];
