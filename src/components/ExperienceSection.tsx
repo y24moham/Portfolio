@@ -52,9 +52,9 @@ const ExperienceSection = () => {
       company: "University of Waterloo RoboHub",
       dates: "Sept 2024 - Dec 2024",
       tasks: [
-        "Enabled accurate motion capture sessions by calibrating/configuring the Vicon camera array and placing markers using the Plug-in Gait protocol, improving tracking quality for biomechanical analysis.",
-        "Improved capture reliability by monitoring live trials at 200 Hz and tuning exposure/threshold settings, reducing occlusions and noise to minimize re-takes.",
-        "Delivered analysis-ready datasets by processing recordings in Vicon Nexus (labeling, spline-based gap filling, low-pass filtering) and exporting cleaned files, accelerating downstream biomechanics work."
+        "As a URA, I supported motion capture studies by setting up and running sessions with the Vicon system, including calibration, marker placement on participants \
+        using the Plug-in Gait protocol, and live monitoring during capture. I then processed trials in Vicon Nexus by cleaning and exporting datasets so they were \
+        ready for biomechanical analysis. The experience improved my attention to experimental setup quality and my ability to deliver consistent, analysis-ready data.",
       ]
     },
     {
