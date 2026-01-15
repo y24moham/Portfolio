@@ -31,6 +31,7 @@ const Header = () => {
               <p className="text-sm text-muted-foreground">
                 <TypingEffect 
                   texts={[
+                    "Mechatronics Engineering Student",
                     "Robotics & Controls Engineer",
                     "Embedded Firmware Developer",
                     "Hands-On Prototyper",
