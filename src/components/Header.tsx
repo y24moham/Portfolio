@@ -30,7 +30,21 @@ const Header = () => {
               <h1 className="text-2xl font-bold text-foreground">Yaseen's Portfolio</h1>
               <p className="text-sm text-muted-foreground">
                 <TypingEffect 
-                  texts={["Mechatronics Engineer", "Embedded Systems Developer", "Robotics Enthusiast", "Future Innovator", "Hands-On Engineer"]}
+                  texts={[
+                    "Robotics & Controls Engineer",
+                    "Embedded Firmware Developer",
+                    "Hands-On Prototyper",
+                    "Hardware-Software Integrator",
+                    "Validation & Test Builder",
+                    "Sensor-to-Software Integrator",
+                    "Debug & Telemetry Builder",
+                    "C/C++ Developer",
+                    "Python Automation Engineer",
+                    "Mechanical CAD Builder",
+                    "Design for Assembly & Manufacturing",
+                    "Lab-to-Product Builder",
+                    "AI/ML-Aware Mindset"
+                  ]}
                   speed={100}
                   deleteSpeed={40}
                   pauseTime={1500}

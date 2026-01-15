@@ -4,7 +4,7 @@ import { GraduationCap } from "lucide-react";
 
 const EducationSection = () => {
   const coursework = [
-    "Embedded Systems / Microprocessors",
+    "Embedded Systems/Microprocessors",
     "OS & RTOS",
     "Data Structures & Algorithms",
     "Signals & Systems",
@@ -15,7 +15,7 @@ const EducationSection = () => {
     "Linear Algebra",
     "Probability & Statistics",
     "FPGA (VHDL)",
-    "MATLAB (Simulink - basic)"
+    "MATLAB"
   ];
 
   return (

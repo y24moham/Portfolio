@@ -63,12 +63,12 @@ const SkillsSection = () => {
     {
       name: "PWM",
       category: "Embedded/Firmware",
-      learnedAt: "Robotics/control projects (actuation and motor control fundamentals) and embedded concepts.",
-      appliedAt: "Robotics projects and embedded workflows where actuator control and timing matters.",
+      learnedAt: "Coursework labs using Oscilloscope (MTE 220 Sensors & Instrumentation) and hands-on Arduino experiments with ultrasonic sensing and servo control.",
+      appliedAt: "Robotics prototypes needing precise timing for sensors/actuators, plus real-hardware debugging and tuning.",
       examples: [
-        "Motor/actuator control concepts used in robotics prototypes",
-        "Mapped PWM thinking to control loops and tuning work",
-        "Applied timing-based control patterns in microcontroller projects"
+        "Tested PWM-based servo control (position control and basic tuning).",
+        "Used pulse timing concepts heavily for ultrasonic sensor experiments (coursework + projects).",
+        "Applied PWM-style timing in real-time, sensor-driven behavior for an obstacle-avoidance robot."
       ]
     },
 
@@ -303,7 +303,7 @@ const SkillsSection = () => {
     // ---------- Mechanical / CAD / Prototyping ----------
     {
       name: "SolidWorks",
-      category: "Mechanical/Prototyping",
+      category: "CAD/Prototyping",
       learnedAt: "Engineering design work and hands-on prototyping cycles.",
       appliedAt: "UW research equipment upgrades and 3D-printed improvements.",
       examples: [
@@ -314,7 +314,7 @@ const SkillsSection = () => {
     },
     {
       name: "GD&T (working knowledge)",
-      category: "Mechanical/Prototyping",
+      category: "CAD/Prototyping",
       learnedAt: "Design-for-manufacturing mindset from CAD + manufacturing exposure.",
       appliedAt: "Used when producing parts that must fit/assemble reliably.",
       examples: [
@@ -325,7 +325,7 @@ const SkillsSection = () => {
     },
     {
       name: "3D Printing (FDM)",
-      category: "Mechanical/Prototyping",
+      category: "CAD/Prototyping",
       learnedAt: "Hands-on prototyping and iteration in real workflows.",
       appliedAt: "UW research upgrades + prototyping components.",
       examples: [
@@ -346,8 +346,8 @@ const SkillsSection = () => {
       ]
     },
     {
-      name: "PCB Design (Altium - exposure)",
-      category: "Mechanical/Prototyping",
+      name: "PCB Design (Altium)",
+      category: "CAD/Prototyping",
       learnedAt: "PCB design exposure through building systems that rely on custom boards.",
       appliedAt: "UW research system included custom PCB integration; familiarity with board-level considerations.",
       examples: [
@@ -358,7 +358,7 @@ const SkillsSection = () => {
     },
     {
       name: "Autodesk Inventor (parametric CAD)",
-      category: "Mechanical/Prototyping",
+      category: "CAD/Prototyping",
       learnedAt: "CNC programming role focused on sheet-metal modeling and production readiness.",
       appliedAt: "State Windows (high-volume parametric sheet-metal parts).",
       examples: [
@@ -369,7 +369,7 @@ const SkillsSection = () => {
     },
     {
       name: "Manufacturing Workflow (G-code, drawings)",
-      category: "Mechanical/Prototyping",
+      category: "CAD/Prototyping",
       learnedAt: "CNC programming role in a production environment.",
       appliedAt: "State Windows (CAD → drawings → G-code → production scheduling).",
       examples: [
@@ -424,13 +424,13 @@ const SkillsSection = () => {
     <section id="skills" className="py-16 bg-background">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-2 text-foreground">Skills</h2>
-          <p className="text-center text-med text-muted-foreground mb-10">
+          <p className="text-center text-lg text-muted-foreground mb-5">
             Click a skill to see details and examples.
           </p>
         <div className="max-w-6xl mx-auto">
           {categories.map((category) => (
-            <div key={category} className="mb-8">
-              <h3 className="text-xl font-semibold mb-4 text-foreground">{category}</h3>
+            <div key={category} className="mb-6">
+              <h3 className="text-xl font-semibold mb-3 text-foreground">{category}</h3>
               <div className="flex flex-wrap gap-3">
                 {skills
                   .filter(skill => skill.category === category)
@@ -461,9 +461,9 @@ const SkillsSection = () => {
                             <h4 className="font-semibold text-sm text-muted-foreground">Examples:</h4>
                             <ul className="text-sm space-y-1">
                               {skill.examples.map((example, index) => (
-                                <li key={index} className="flex items-center">
-                                  <span className="w-1 h-1 bg-primary rounded-full mr-2"></span>
-                                  {example}
+                                <li key={index} className="flex items-start">
+                                  <span className="mt-2 w-1 h-1 bg-primary rounded-full mr-2 flex-shrink-0" />
+                                  <span className="leading-relaxed">{example}</span>
                                 </li>
                               ))}
                             </ul>

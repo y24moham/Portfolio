@@ -18,16 +18,27 @@ const HeroSection = () => {
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8">
             <TypingEffect 
-              texts={["Mechatronics Engineer", "Embedded Systems Developer", "Robotics Enthusiast", "Future Innovator", "Hands-On Engineer"]}
+              texts={[
+                  "Mechatronics Engineering Student",
+                  "Robotics Systems Builder",
+                  "Embedded Firmware Developer",
+                  "Hardware-Software Integrator",
+                  "Real-Time Controls Builder",
+                  "System Bring-Up & Debugger",
+                  "Sensor Integration Builder",
+                  "Hands-On Prototyper",
+                  "Mechanical CAD Builder",
+                  "Automation & Test Developer",
+                  "AI/ML-Aware Builder",
+                  "Computer Vision Builder"
+              ]}
               speed={100}
               deleteSpeed={40}
               pauseTime={1500}
             />
           </p>
           <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Passionate about building innovative solutions that bridge the gap between 
-            hardware and software. I love creating robots, embedded systems, and 
-            applications that solve real-world problems.
+            3A Mechatronics Engineering @ University of Waterloo • Interested in embedded firmware, robotics, controls, and real-time systems • Prev @ Aversan
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
             <Button size="lg" onClick={() => scrollToSection("resume")}>
