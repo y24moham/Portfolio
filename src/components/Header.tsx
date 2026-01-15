@@ -48,7 +48,7 @@ const Header = () => {
               Projects
             </Button>
             <Button variant="ghost" onClick={() => scrollToSection("experience")}>
-              Experience
+              Career
             </Button>
             <Button variant="ghost" onClick={() => scrollToSection("skills")}>
               Skills
@@ -86,7 +86,7 @@ const Header = () => {
                 Projects
               </Button>
               <Button variant="ghost" onClick={() => scrollToSection("experience")} className="justify-start">
-                Experience
+                Career
               </Button>
               <Button variant="ghost" onClick={() => scrollToSection("skills")} className="justify-start">
                 Skills

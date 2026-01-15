@@ -38,7 +38,7 @@ const ResumeSection = () => {
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") setIsPreviewOpen(true);
                   }}
-                  className="bg-background border-2 border-dashed border-border rounded-lg p-8 mx-auto max-w-md cursor-pointer transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                  className="bg-background border-2 border-dashed border-border rounded-lg p-4 mx-auto max-w-3xl cursor-pointer transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
                   aria-label="Open resume preview"
                 >
                   <div className="aspect-[8.5/11] overflow-hidden rounded shadow">
