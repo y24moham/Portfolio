@@ -25,7 +25,7 @@ const ResumeSection = () => {
             <CardHeader className="text-center">
               <CardTitle className="text-2xl">My Resume</CardTitle>
               <CardDescription>
-                Download my latest resume to learn more about my experience and skills
+                Preview or download my resume to learn more about my experience and skills
               </CardDescription>
             </CardHeader>
             <CardContent className="text-center">

@@ -29,7 +29,6 @@ const HeroSection = () => {
                   "Hands-On Prototyper",
                   "Mechanical CAD Builder",
                   "Automation & Test Developer",
-                  "AI/ML-Aware Builder",
                   "Computer Vision Builder"
               ]}
               speed={100}

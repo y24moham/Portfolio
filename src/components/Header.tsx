@@ -44,7 +44,6 @@ const Header = () => {
                     "Mechanical CAD Builder",
                     "Design for Assembly & Manufacturing",
                     "Lab-to-Product Builder",
-                    "AI/ML-Aware Mindset"
                   ]}
                   speed={100}
                   deleteSpeed={40}
