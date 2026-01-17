@@ -4,19 +4,20 @@ import { GraduationCap } from "lucide-react";
 
 const EducationSection = () => {
   const coursework = [
-    "Embedded Systems/Microprocessors",
+    "Embedded Systems / Microprocessors",
     "OS & RTOS",
-    "Data Structures & Algorithms",
+    "Data Structures & Algorithms (C/C++)",
+    "Digital Logic (FSMs) + FPGA (VHDL)",
     "Signals & Systems",
-    "Sensors & Actuators",
-    "Circuits",
-    "Control Systems",
-    "Robotics",
-    "Linear Algebra",
+    "Circuits + Analog Filtering (Op-Amps, Twin-T)",
+    "Sensors & Instrumentation",
+    "Actuators & Power Electronics",
+    "Robotics (projects-based)",
     "Probability & Statistics",
-    "FPGA (VHDL)",
-    "MATLAB"
+    "MATLAB",
+    "System Modeling & Simulation (SimulationX)"
   ];
+
 
   return (
     <section id="education" className="py-16 bg-muted/50">
