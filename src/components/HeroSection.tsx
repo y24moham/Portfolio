@@ -1,4 +1,4 @@
-import { ArrowDown, FileText, Mail } from "lucide-react";
+import { ArrowDown, FileText, Mail, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { scrollToId } from "@/components/scrollToId";
 import TypingEffect from "./TypingEffect";
@@ -39,14 +39,20 @@ const HeroSection = () => {
           <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
             3A Mechatronics Engineering @ University of Waterloo • Interested in embedded firmware, robotics, controls, and real-time systems • Prev @ Aversan
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center mb-6">
             <Button size="lg" onClick={() => scrollToSection("resume")}>
               <FileText className="mr-2 h-4 w-4" />
               View Resume
             </Button>
+
             <Button variant="outline" size="lg" onClick={() => scrollToSection("projects")}>
               View My Projects
               <ArrowDown className="ml-2 h-4 w-4" />
+            </Button>
+
+            <Button variant="outline" size="lg" onClick={() => scrollToSection("skills")}>
+              <Wrench className="mr-2 h-4 w-4" />
+              Explore Skills
             </Button>
           </div>
           <div className="flex justify-center">

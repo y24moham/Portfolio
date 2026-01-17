@@ -31,7 +31,7 @@ const SkillsSection = () => {
       ]
     },
     {
-      name: "Embedded C/C++",
+      name: "Embedded C / C++",
       category: "Embedded & Bring-Up",
       level: 83,
       learnedAt: "Robotics projects (Arduino/C++) and embedded coursework, then reinforced through professional firmware work.",
@@ -651,7 +651,7 @@ const SkillsSection = () => {
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-2 text-foreground">Skills</h2>
           <p className="text-center text-lg text-muted-foreground mb-5">
-            Click a skill to see skill level, details and examples.
+            Click a skill to view details, examples, and my current level.
           </p>
         <div className="max-w-6xl mx-auto">
           {categories.map((category) => (

@@ -15,6 +15,16 @@ const Header = () => {
     scrollToId(sectionId, 50);
   };
 
+  const go = (id: string, extra = 0) => {
+    setIsMenuOpen(false);
+
+    // wait for layout to update after menu closes
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => scrollToId(id, extra));
+    });
+  };
+
+
 
   return (
     <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
@@ -54,15 +64,15 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-4">
+          <nav className="hidden lg:flex space-x-4">
             <Button variant="ghost" onClick={() => scrollToSectionHome("home")}>
               Home
             </Button>
-            <Button variant="ghost" onClick={() => scrollToSection("projects")}>
-              Projects
-            </Button>
             <Button variant="ghost" onClick={() => scrollToSection("experience")}>
               Career
+            </Button>
+            <Button variant="ghost" onClick={() => scrollToSection("projects")}>
+              Projects
             </Button>
             <Button variant="ghost" onClick={() => scrollToSection("skills")}>
               Skills
@@ -82,7 +92,7 @@ const Header = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className="lg:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -91,27 +101,27 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 border-t border-border pt-4">
+          <nav className="lg:hidden mt-4 pb-4 border-t border-border pt-4">
             <div className="flex flex-col space-y-2">
-              <Button variant="ghost" onClick={() => scrollToSectionHome("home")} className="justify-start">
+              <Button variant="ghost" onClick={() => go("home", 0)} className="justify-start">
                 Home
               </Button>
-              <Button variant="ghost" onClick={() => scrollToSection("projects")} className="justify-start">
-                Projects
-              </Button>
-              <Button variant="ghost" onClick={() => scrollToSection("experience")} className="justify-start">
+              <Button variant="ghost" onClick={() => go("experience", 50)} className="justify-start">
                 Career
               </Button>
-              <Button variant="ghost" onClick={() => scrollToSection("skills")} className="justify-start">
+              <Button variant="ghost" onClick={() => go("projects", 50)} className="justify-start">
+                Projects
+              </Button>
+              <Button variant="ghost" onClick={() => go("skills", 50)} className="justify-start">
                 Skills
               </Button>
-              <Button variant="ghost" onClick={() => scrollToSection("education")} className="justify-start">
+              <Button variant="ghost" onClick={() => go("education", 50)} className="justify-start">
                 Education
               </Button>
-              <Button variant="ghost" onClick={() => scrollToSection("resume")} className="justify-start">
+              <Button variant="ghost" onClick={() => go("resume", 50)} className="justify-start">
                 Resume
               </Button>
-              <Button variant="ghost" onClick={() => scrollToSection("contact")} className="justify-start">
+              <Button variant="ghost" onClick={() => go("contact", 50)} className="justify-start">
                 Contact
               </Button>
             </div>

@@ -3,7 +3,7 @@ export function scrollToId(sectionId: string, extraOffset = 0) {
   if (!el) return;
 
   const header = document.querySelector("header") as HTMLElement | null;
-  const headerHeight = header?.offsetHeight ?? 0;
+  const headerHeight = header ? header.getBoundingClientRect().height : 0;
 
   const y =
     el.getBoundingClientRect().top + window.scrollY - headerHeight + extraOffset;
