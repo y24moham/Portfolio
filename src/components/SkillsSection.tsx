@@ -563,7 +563,7 @@ const SkillsSection = () => {
   const levelLabel = (p: number) => {
     if (p >= 90) return "Expert";
     if (p >= 75) return "Proficient";
-    if (p >= 60) return "Intermediate";
+    if (p >= 60) return "Comfortable";
     if (p >= 40) return "Familiar";
     return "Beginner";
   };

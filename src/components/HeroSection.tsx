@@ -29,7 +29,6 @@ const HeroSection = () => {
                   "Hands-On Prototyper",
                   "Mechanical CAD Builder",
                   "Automation & Test Developer",
-                  "Computer Vision Builder"
               ]}
               speed={100}
               deleteSpeed={40}
@@ -37,7 +36,7 @@ const HeroSection = () => {
             />
           </p>
           <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
-            3A Mechatronics Engineering @ University of Waterloo • Interested in embedded firmware, robotics, controls, and real-time systems • Prev @ Aversan
+            University of Waterloo | 3A Mechatronics Engineering • Interested in embedded firmware, robotics, controls, and real-time systems • Prev @ Aversan
           </p>
           <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center mb-6">
             <Button size="lg" onClick={() => scrollToSection("resume")}>
@@ -46,8 +45,8 @@ const HeroSection = () => {
             </Button>
 
             <Button variant="outline" size="lg" onClick={() => scrollToSection("projects")}>
-              View My Projects
               <ArrowDown className="ml-2 h-4 w-4" />
+              View My Projects
             </Button>
 
             <Button variant="outline" size="lg" onClick={() => scrollToSection("skills")}>
