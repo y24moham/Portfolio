@@ -22,7 +22,7 @@ const SkillsSection = () => {
     {
       name: "STM32 (HAL/LL)",
       category: "Embedded & Bring-Up",
-      level: 78,
+      level: 72,
       learnedAt: "Embedded bring-up and STM32 development workflow through internship work and embedded labs.",
       appliedAt: "Aversan (STM32H7 firmware debug/extension and peripheral bring-up) + coursework labs.",
       examples: [
@@ -34,7 +34,7 @@ const SkillsSection = () => {
     {
       name: "Embedded C / C++",
       category: "Embedded & Bring-Up",
-      level: 83,
+      level: 80,
       learnedAt: "Robotics projects (Arduino/C++) and embedded coursework, then reinforced through professional firmware work.",
       appliedAt: "Aversan (STM32 firmware) + UW research (Arduino acquisition/processing code).",
       examples: [
@@ -74,7 +74,7 @@ const SkillsSection = () => {
     {
       name: "DMA",
       category: "Embedded & Bring-Up",
-      level: 55,
+      level: 65,
       learnedAt: "Hands-on exposure during STM32 firmware work, learning when DMA helps and what it changes in debugging.",
       appliedAt: "Aversan (DMA-aware peripheral/diagnostics workflows on STM32H7).",
       examples: [
@@ -140,7 +140,7 @@ const SkillsSection = () => {
     {
       name: "SPI",
       category: "Interfaces & Debug",
-      level: 60,
+      level: 65,
       learnedAt:
         "Embedded systems coursework and labs, plus hands-on setup in STM32CubeIDE/HAL when bringing up SPI peripherals.",
       appliedAt:
@@ -192,7 +192,7 @@ const SkillsSection = () => {
     {
       name: "Wi-Fi / Bluetooth",
       category: "Interfaces & Debug",
-      level: 52,
+      level: 60,
       learnedAt: "Hands-on prototyping with ESP32 and Arduino wireless modules while validating simple connectivity and data transfer.",
       appliedAt: "ESP32 experiments using Wi-Fi basics and Bluetooth basics; Arduino testing using the HC-05 Bluetooth module for simple wireless communication.",
       examples: [
@@ -206,7 +206,7 @@ const SkillsSection = () => {
     {
       name: "PID Control",
       category: "Controls & Automation",
-      level: 60,
+      level: 68,
       learnedAt: "Controls fundamentals + applied robotics prototypes.",
       appliedAt: "Quadcopter prototype stabilization + general control-loop work.",
       examples: [
@@ -218,7 +218,7 @@ const SkillsSection = () => {
     {
       name: "Finite-State Machines (FSM)",
       category: "Controls & Automation",
-      level: 72,
+      level: 76,
       learnedAt: "Robotics/embedded behavior design and digital logic coursework (state diagrams, state encoding, and valid transition rules).",
       appliedAt: "Obstacle-aware Arduino robot behaviors, plus implementing FSM specs in VHDL and PLC ladder logic labs.",
       examples: [
@@ -321,7 +321,7 @@ const SkillsSection = () => {
     {
       name: "Pandas",
       category: "Software & Data",
-      level: 68,
+      level: 70,
       learnedAt: "Hands-on use while building Python tooling around real CSV logs and sensor datasets (learning by cleaning, transforming, and exporting real data).",
       appliedAt: "UW Optometry research (foot-pressure preprocessing + CSV export pipeline) and Aversan (Python tooling for parsing/logging test data).",
       examples: [
@@ -345,7 +345,7 @@ const SkillsSection = () => {
     {
       name: "Matplotlib",
       category: "Software & Data",
-      level: 65,
+      level: 75,
       learnedAt: "Used during research work to visualize sensor layouts and validate data-collection logic.",
       appliedAt: "Engineering research assistant co-op: Python GUI that visualized stair geometry and pressure-sensor points on a grid to support foot-detection/segmentation checks.",
       examples: [
@@ -357,7 +357,7 @@ const SkillsSection = () => {
     {
       name: "Pytest",
       category: "Software & Data",
-      level: 60,
+      level: 65,
       learnedAt: "Picked up through building Python tooling and learning to validate behavior with simple, repeatable tests.",
       appliedAt: "Aversan: Python tools and ATE-related scripting where basic checks helped catch issues early and keep changes safe.",
       examples: [
@@ -381,7 +381,7 @@ const SkillsSection = () => {
     {
       name: "Data Structures & Algorithms",
       category: "Software & Data",
-      level: 70,
+      level: 75,
       learnedAt:
         "Coursework + labs implementing core data structures from scratch in C/C++.",
       appliedAt:
@@ -395,7 +395,7 @@ const SkillsSection = () => {
     {
       name: "Excel",
       category: "Software & Data",
-      level: 78,
+      level: 79,
       learnedAt:
         "Learned through repeated engineering coursework and project reporting, then reinforced by building reusable templates for analysis, charts, and parameter-driven part generation.",
       appliedAt:
@@ -414,7 +414,7 @@ const SkillsSection = () => {
     {
       name: "Robot Framework",
       category: "Verification & Automation",
-      level: 63,
+      level: 68,
       learnedAt: "Learned by building automated test suites during my embedded software internship, working in a Linux environment (Robot Framework via RIDE).", // :contentReference[oaicite:0]{index=0}
       appliedAt: "Used it to automate I/O verification (set/read checks) and produce test reports used for debugging and downstream certification/production workflows.", // :contentReference[oaicite:1]{index=1}
       examples: [
@@ -488,7 +488,7 @@ const SkillsSection = () => {
     {
       name: "PCB Design (Altium)",
       category: "Hardware, CAD & Prototyping",
-      level: 62,
+      level: 64,
       learnedAt: "Learned PCB design during my engineering research assistant co-op by designing a custom sensor interface board in Altium CircuitMaker.",
       appliedAt: "Designed a custom PCB that mounts on an Arduino, interfaces to 48 sensors using voltage-divider circuits, and connects to a separate camera system for synchronization.",
       examples: [
@@ -512,7 +512,7 @@ const SkillsSection = () => {
     {
       name: "VHDL (FPGA)",
       category: "FPGA/Digital",
-      level: 55,
+      level: 57,
       learnedAt: "Digital logic/FPGA coursework covering VHDL fundamentals.",
       appliedAt: "Course labs where I implemented simple FPGA logic to read inputs and drive display outputs.",
       examples: [
@@ -538,7 +538,7 @@ const SkillsSection = () => {
     {
       name: "SimulationX",
       category: "Modeling/Simulation",
-      level: 0,
+      level: 10,
       ongoing: true,
       status: "currently_learning",
       learnedAt: "MTE 351 (Systems Models 1) coursework covering system modeling and simulation tools.",
