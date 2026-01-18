@@ -393,7 +393,7 @@ const SkillsSection = () => {
       ]
     },
     {
-      name: "Excel (Analysis & Automation)",
+      name: "Excel",
       category: "Software & Data",
       level: 78,
       learnedAt:
