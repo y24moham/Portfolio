@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { useRef, useState, type MouseEvent } from "react";
+import { createPortal } from "react-dom";
 
 interface Skill {
   name: string;
@@ -265,6 +266,23 @@ const SkillsSection = () => {
 
     // ---------- Software / Data ----------
     {
+      name: "C/C++",
+      category: "Software & Data",
+      level: 75,
+      learnedAt:
+        "Coursework foundation in C++ software design and problem solving (MTE 121: fundamentals + OOP; MTE 140: data structures, recursion, complexity). Reinforced C fundamentals (pointers/structs, memory) in systems/RTOS coursework (MTE 241).",
+      appliedAt:
+        "Built standalone C++ programs and algorithmic solutions (calculations/decisions, console/file I/O), implemented core data structures in labs, and used C/C++ occasionally for small utilities or quick prototypes.",
+      examples: [
+        { text: "Implemented data structures in C++ (linked lists, stacks, queues, trees/BSTs) with edge-case handling" },
+        { text: "Used recursion for tree operations and recursive problem-solving patterns" },
+        { text: "Worked with pointers + heap allocation (new/delete, malloc/free) for node-based structures" },
+        { text: "Applied OOP (classes/objects/encapsulation) to organize programs" },
+        { text: "Built solutions using sorting/searching with basic efficiency reasoning" },
+        { text: "Learned hash tables and can implement a basic hash map in C++" }
+      ]
+    },
+    {
       name: "Python",
       category: "Software & Data",
       level: 85,
@@ -393,7 +411,7 @@ const SkillsSection = () => {
     {
       name: "SolidWorks",
       category: "Hardware, CAD & Prototyping",
-      level: 80,
+      level: 85,
       learnedAt: "Coursework-based CAD training, then reinforced through projects where I recreated real parts and built full assemblies.",
       appliedAt: "EV3 prosthetic hand project, multiple course design projects (including an energy-absorbing damper mechanism), developing mechanisms as an engineering research assistant, and personal mechanical concept builds.",
       examples: [
@@ -405,7 +423,7 @@ const SkillsSection = () => {
     {
       name: "AutoCAD",
       category: "Hardware, CAD & Prototyping",
-      level: 65,
+      level: 70,
       learnedAt: "Coursework and practical drafting work during manufacturing-focused tasks.",
       appliedAt: "CNC programming work (editing/repairing DXF files and technical drawings) and project workflows where I created/modified drawings for laser cutting and fabrication.",
       examples: [
@@ -417,7 +435,7 @@ const SkillsSection = () => {
     {
       name: "GD&T",
       category: "Hardware, CAD & Prototyping",
-      level: 58,
+      level: 80,
       learnedAt: "Coursework and practical use as a CNC programmer working from GD&T technical drawings.",
       appliedAt: "Created 3D CAD sheet-metal models from GD&T drawings in a production environment, and used tolerancing awareness while designing/iterating mechanisms as an engineering research assistant.",
       examples: [
@@ -563,7 +581,7 @@ const SkillsSection = () => {
   const levelLabel = (p: number) => {
     if (p >= 90) return "Expert";
     if (p >= 75) return "Proficient";
-    if (p >= 60) return "Comfortable";
+    if (p >= 60) return "Intermediate/Comfortable";
     if (p >= 40) return "Familiar";
     return "Beginner";
   };
@@ -582,16 +600,23 @@ const SkillsSection = () => {
     const color = levelColor(v);
 
     const barRef = useRef<HTMLDivElement | null>(null);
-    const [showTip, setShowTip] = useState(false);
-    const [tipX, setTipX] = useState(0);
+
+    const [tip, setTip] = useState({
+      show: false,
+      x: 0,
+      y: 0,
+    });
 
     const onMove = (e: MouseEvent<HTMLDivElement>) => {
       const el = barRef.current;
       if (!el) return;
 
-      const rect = el.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      setTipX(Math.max(0, Math.min(rect.width, x)));
+      // Keep tooltip near the mouse
+      const pad = 10;
+      const x = Math.min(window.innerWidth - pad, Math.max(pad, e.clientX));
+      const y = Math.min(window.innerHeight - pad, Math.max(pad, e.clientY));
+
+      setTip({ show: true, x, y });
     };
 
     return (
@@ -600,50 +625,41 @@ const SkillsSection = () => {
           <p className="text-xs font-medium text-muted-foreground">{label}</p>
         </div>
 
-        {/* Outer wrapper: tooltip can escape */}
         <div
-          className="relative w-full"
-          onMouseEnter={() => setShowTip(true)}
-          onMouseLeave={() => setShowTip(false)}
+          ref={barRef}
+          className="h-2 w-full overflow-hidden rounded-full bg-muted"
+          onMouseEnter={(e) => onMove(e)}
+          onMouseLeave={() => setTip((t) => ({ ...t, show: false }))}
           onMouseMove={onMove}
           aria-label={`${label} (${v}%)`}
         >
-          {/* Tooltip */}
-          {showTip && (
-            <div
-              className="pointer-events-none absolute -top-9 z-10"
-              style={{ left: tipX }}
-            >
-              <div
-                className="relative -translate-x-1/2 rounded-md bg-background px-2 py-1 text-[11px] text-foreground shadow-sm"
-                style={{ border: "0.5px solid hsl(var(--border))" }}
-              >
-                {v}%
-                <div
-                  className="absolute left-1/2 top-full h-2 w-2 -translate-x-1/2 -translate-y-1 rotate-45 bg-background"
-                  style={{
-                    borderRight: "0.5px solid hsl(var(--border))",
-                    borderBottom: "0.5px solid hsl(var(--border))",
-                  }}
-                />
-              </div>
-            </div>
-          )}
-
-          {/* The bar itself keeps overflow-hidden */}
           <div
-            ref={barRef}
-            className="h-2 w-full overflow-hidden rounded-full bg-muted"
-          >
-            <div
-              className="h-full rounded-full transition-all"
-              style={{ width: `${v}%`, backgroundColor: color }}
-            />
-          </div>
+            className="h-full rounded-full transition-all"
+            style={{ width: `${v}%`, backgroundColor: color }}
+          />
         </div>
+
+        {tip.show &&
+          createPortal(
+            <div
+              className="pointer-events-none fixed z-[9999]"
+              style={{
+                left: tip.x,
+                top: tip.y - 14,
+                transform: "translate(-50%, -100%)",
+              }}
+            >
+              <div className="relative rounded-md bg-background px-2 py-1 text-[11px] text-foreground shadow-md border border-border/60">
+                {v}%
+                <div className="absolute left-1/2 top-full h-2 w-2 -translate-x-1/2 -translate-y-1 rotate-45 bg-background border-r border-b border-border/60" />
+              </div>
+            </div>,
+            document.body
+          )}
       </div>
     );
   };
+
 
 
   return (
@@ -670,62 +686,69 @@ const SkillsSection = () => {
                           {skill.name}
                         </Badge>
                       </DialogTrigger>
-                      <DialogContent className="max-w-md">
-                        <DialogHeader>
-                          <DialogTitle className="flex items-center gap-2">
-                            <span>{skill.name}</span>
-                            {ongoingLabel(skill) && (
-                              <Badge variant="secondary" className="text-[15px] px-2 py-0.5">
-                                {ongoingLabel(skill)}
-                              </Badge>
+                      <DialogContent className="max-w-md p-0 overflow-hidden">
+                        {/* Top (non-scroll) */}
+                        <div className="p-6 border-b border-border">
+                          <DialogHeader>
+                            <DialogTitle className="flex items-center gap-2">
+                              <span>{skill.name}</span>
+                              {ongoingLabel(skill) && (
+                                <Badge variant="secondary" className="text-[15px] px-2 py-0.5">
+                                  {ongoingLabel(skill)}
+                                </Badge>
+                              )}
+                            </DialogTitle>
+
+                            {typeof skill.level === "number" && (
+                              <div className="pt-2">
+                                <SkillLevel level={skill.level} />
+                              </div>
                             )}
-                          </DialogTitle>
+                          </DialogHeader>
+                        </div>
 
-                          {typeof skill.level === "number" && (
-                            <div className="pt-2">
-                              <SkillLevel level={skill.level} />
+                        {/* Scrollable content */}
+                        <div className="max-h-[75vh] overflow-y-auto p-6 pt-4 pr-4">
+                          <div className="space-y-4">
+                            <div className="rounded-lg border bg-muted/30 p-3">
+                              <h4 className="text-xs font-semibold tracking-wide text-foreground/80 uppercase mb-1">
+                                Where I learned it
+                              </h4>
+                              <p className="text-sm text-foreground/90 leading-relaxed">
+                                {skill.learnedAt}
+                              </p>
                             </div>
-                          )}
-                        </DialogHeader>
-                        <div className="space-y-4">
-                          <div className="rounded-lg border bg-muted/30 p-3">
-                            <h4 className="text-xs font-semibold tracking-wide text-foreground/80 uppercase mb-1">
-                              Where I learned it
-                            </h4>
-                            <p className="text-sm text-foreground/90 leading-relaxed">
-                              {skill.learnedAt}
-                            </p>
-                          </div>
 
-                          <div className="rounded-lg border bg-muted/30 p-3">
-                            <h4 className="text-xs font-semibold tracking-wide text-foreground/80 uppercase mb-1">
-                              How I've applied it
-                            </h4>
-                            <p className="text-sm text-foreground/90 leading-relaxed">
-                              {skill.appliedAt}
-                            </p>
-                          </div>
+                            <div className="rounded-lg border bg-muted/30 p-3">
+                              <h4 className="text-xs font-semibold tracking-wide text-foreground/80 uppercase mb-1">
+                                How I've applied it
+                              </h4>
+                              <p className="text-sm text-foreground/90 leading-relaxed">
+                                {skill.appliedAt}
+                              </p>
+                            </div>
 
-                          <div className="rounded-lg border bg-muted/30 p-3">
-                            <h4 className="text-xs font-semibold tracking-wide text-foreground/80 uppercase mb-2">
-                              Examples
-                            </h4>
+                            <div className="rounded-lg border bg-muted/30 p-3">
+                              <h4 className="text-xs font-semibold tracking-wide text-foreground/80 uppercase mb-2">
+                                Examples
+                              </h4>
 
-                            <ul className="text-sm space-y-2">
-                              {skill.examples.map((ex, index) => (
-                                <li key={index} className="flex items-start gap-2">
-                                  <span className="mt-2 w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0" />
-                                  <div className="leading-relaxed text-foreground/90">
-                                    {ex.ongoing && (
-                                      <Badge variant="secondary" className="ml-2 align-middle text-[10px] px-2 py-0.5">
-                                        Ongoing
-                                      </Badge>
-                                    )}
-                                    {ex.text}
-                                  </div>
-                                </li>
-                              ))}
-                            </ul>
+                              <ul className="text-sm space-y-2">
+                                {skill.examples.map((ex, index) => (
+                                  <li key={index} className="flex items-start gap-2">
+                                    <span className="mt-2 w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0" />
+                                    <div className="leading-relaxed text-foreground/90">
+                                      {ex.ongoing && (
+                                        <Badge variant="secondary" className="ml-2 align-middle text-[10px] px-2 py-0.5">
+                                          Ongoing
+                                        </Badge>
+                                      )}
+                                      {ex.text}
+                                    </div>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
                           </div>
                         </div>
                       </DialogContent>
