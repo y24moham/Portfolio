@@ -392,6 +392,23 @@ const SkillsSection = () => {
         { text: "Implemented trees including binary search trees (search/insert/traversals)" }
       ]
     },
+    {
+      name: "Excel (Analysis & Automation)",
+      category: "Software & Data",
+      level: 78,
+      learnedAt:
+        "Learned through repeated engineering coursework and project reporting, then reinforced by building reusable templates for analysis, charts, and parameter-driven part generation.",
+      appliedAt:
+        "Coursework: analyzed datasets, built tables/charts, and documented results in a repeatable format. CNC programmer: used Excel-driven parameters to generate many Autodesk Inventor part variants and track manufacturing inputs/outputs. Tooling: worked with CSV/Excel data in Python (pandas) for cleaning, transformation, and export.",
+      examples: [
+        { text: "Built structured analysis sheets with formulas (lookup functions, conditional logic, aggregation) and clear summary tables for coursework results" },
+        { text: "Created charts/dashboards to communicate trends, comparisons, and results clearly (labels, units, consistent formatting)" },
+        { text: "Used Excel as a parameter source for Autodesk Inventor to generate multiple part variants efficiently (spreadsheet-driven dimensions/inputs)" },
+        { text: "Used Excel to organize production or measurement data and reduce manual entry errors with validation, templates, and consistent formats" },
+        { text: "Processed and validated Excel/CSV files in Python (pandas): cleaning columns/types, filtering, grouping, and exporting analysis-ready outputs" }
+      ]
+    },
+
 
     // ---------- Verification / Test Automation ----------
     {
