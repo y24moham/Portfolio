@@ -24,8 +24,8 @@ const ProjectsSection = () => {
       description: "Built a ground-up quadcopter prototype by implementing closed-loop control algorithms in C++ on an Arduino with prototype circuit boards and external sensors, controlling propeller speed from gyrometer sensor output. (June-Aug 2020)",
       image: "Quadcopter-GIF.gif",
       githubUrl: "https://github.com/y24moham/Quadcopter-Prototype/",
-      demoUrl: "https://drive.google.com/file/d/1DrKHoRXCtsPM3YHi0WtCFW_7Mb5viRnu/preview",
-      videoUrl: "https://drive.google.com/file/d/1DrKHoRXCtsPM3YHi0WtCFW_7Mb5viRnu/preview",
+      demoUrl: "https://drive.google.com/file/d/1FuZ4ya1sBBXkcI__rNSbRR-jGKATWSmJ/preview",
+      videoUrl: "https://drive.google.com/file/d/1FuZ4ya1sBBXkcI__rNSbRR-jGKATWSmJ/preview",
     },
     {
       title: "Obstacle-Aware Arduino Robot",
