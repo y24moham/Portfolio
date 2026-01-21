@@ -6,15 +6,15 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 
 const ResumeSection = () => {
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
-  const handleDownload = () => {
-    // Replace with your actual resume file path
-    const link = document.createElement('a');
-    link.href = '/resume.pdf';
-    link.download = 'Yaseen_Mohamed_Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+  // const handleDownload = () => {
+  //   // Replace with your actual resume file path
+  //   const link = document.createElement('a');
+  //   link.href = '/resume.pdf';
+  //   link.download = 'Yaseen_Mohamed_Resume.pdf';
+  //   document.body.appendChild(link);
+  //   link.click();
+  //   document.body.removeChild(link);
+  // };
 
   return (
     <section id="resume" className="py-16 bg-muted/50">
@@ -84,10 +84,16 @@ const ResumeSection = () => {
                   </DialogContent>
                 </Dialog>
                 
-                <Button onClick={handleDownload} size="lg" className="w-full sm:w-auto">
-                  <Download className="h-5 w-5 mr-2" />
-                  Download Resume
+                <Button asChild size="lg" className="w-full sm:w-auto">
+                  <a
+                    href="/resume.pdf"
+                    download="Yaseen_Mohamed_Resume.pdf"
+                  >
+                    <Download className="h-5 w-5 mr-2" />
+                    Download Resume
+                  </a>
                 </Button>
+
               </div>
             </CardContent>
           </Card>

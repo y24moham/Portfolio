@@ -18,6 +18,50 @@ const COLLAPSED_MAX_HEIGHT_CLASS = "max-h-[7.25rem]";
 const ExperienceSection = () => {
   const timelineRef = useRef<HTMLDivElement>(null);
   const [expanded, setExpanded] = useState<Record<number, boolean>>({});
+  const timelineLineRef = useRef<HTMLDivElement>(null);
+  const timelineProgressRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    let raf = 0;
+
+    const update = () => {
+      raf = 0;
+      const lineEl = timelineLineRef.current;
+      const progEl = timelineProgressRef.current;
+      if (!lineEl || !progEl) return;
+
+      const lineRect = lineEl.getBoundingClientRect();
+
+      // Where you want the fill "tip" to sit in the viewport (center-ish)
+      const targetY = window.innerHeight * 0.5; // tweak to 0.55 if you want slightly lower
+
+      // How much of the line should be filled, in pixels
+      const filledPx = Math.min(
+        Math.max(targetY - lineRect.top, 0),
+        lineRect.height
+      );
+
+      progEl.style.height = `${filledPx}px`;
+    };
+
+    const onScroll = () => {
+      if (raf) return;
+      raf = window.requestAnimationFrame(update);
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+
+    // initial paint
+    update();
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (raf) window.cancelAnimationFrame(raf);
+    };
+  }, []);
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -106,8 +150,19 @@ const ExperienceSection = () => {
 
         <div className="max-w-4xl mx-auto" ref={timelineRef}>
           <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-8 top-8 bottom-5 w-0.5 -translate-x-1/2 bg-border" />
+            {/* Timeline background line */}
+            <div
+              ref={timelineLineRef}
+              className="absolute left-8 top-8 bottom-5 w-0.5 -translate-x-1/2 bg-border pointer-events-none"
+            />
+
+            {/* Timeline progress line */}
+            <div
+              ref={timelineProgressRef}
+              className="absolute left-8 top-8 w-0.5 -translate-x-1/2 bg-primary origin-top pointer-events-none"
+              style={{ height: 0 }}
+            />
+
 
             {experiences.map((experience, index) => {
               const isExpanded = !!expanded[index];
@@ -157,7 +212,7 @@ const ExperienceSection = () => {
 
                       <CardContent>
                         {/* Skills bubbles (copyable/selectable) */}
-                        <div className="flex flex-wrap gap-2 mb-4">
+                        <div className="skills-row flex flex-wrap gap-2 mb-4">
                           {experience.skills.map((skill) => (
                             <Badge
                               key={skill}
@@ -168,6 +223,7 @@ const ExperienceSection = () => {
                             </Badge>
                           ))}
                         </div>
+
 
                         {/* Bullets w/ fade, but button NOT faded */}
                         <div className="relative">
