@@ -110,13 +110,12 @@ const ProjectsSection = () => {
 
       {/* 👇 VIDEO MODAL GOES HERE */}
       <Dialog open={!!activeVideo} onOpenChange={() => setActiveVideo(null)}>
-        <DialogContent
-          className="max-w-4xl p-0 overflow-visible [&_[data-dialog-close]]:hidden"
-        >
-          {/* CUSTOM CLOSE BUTTON ABOVE MODAL */}
+        <DialogContent className="max-w-4xl p-0 overflow-visible [&>button:not(.dialog-custom-close)]:hidden">
+          {/* custom outside close */}
           <button
+            type="button"
             onClick={() => setActiveVideo(null)}
-            className="absolute -top-12 right-0 z-50 rounded-md bg-background border px-3 py-1 text-sm font-medium shadow hover:bg-muted transition"
+            className="dialog-custom-close absolute -top-12 right-0 z-50 rounded-md bg-background border px-3 py-1 text-sm font-medium shadow hover:bg-muted transition"
           >
             ✕
           </button>
@@ -124,13 +123,14 @@ const ProjectsSection = () => {
           {activeVideo && (
             <iframe
               key={activeVideo}
-              src={`${activeVideo}`}
+              src={activeVideo}
               className="w-full aspect-video rounded-lg"
               allow="autoplay; encrypted-media"
               allowFullScreen
             />
           )}
         </DialogContent>
+
       </Dialog>
 
       
