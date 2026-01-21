@@ -266,7 +266,7 @@ const SkillsSection = () => {
 
     // ---------- Software / Data ----------
     {
-      name: "C/C++",
+      name: "C / C++",
       category: "Software & Data",
       level: 75,
       learnedAt:

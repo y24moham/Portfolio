@@ -70,14 +70,18 @@ const ExperienceSection = () => {
           if (entry.isIntersecting) entry.target.classList.add("animate-slide-in-right");
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1,
+        // negative bottom margin = trigger earlier (higher on the page)
+        rootMargin: "0px 0px -10% 0px",
+       }
     );
 
-    const timelineItems = timelineRef.current?.querySelectorAll(".timeline-item");
-    timelineItems?.forEach((item) => observer.observe(item));
+    const blocks = timelineRef.current?.querySelectorAll(".timeline-block");
+    blocks?.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
   }, []);
+
 
   const experiences: Career[] = useMemo(
     () => [
@@ -171,7 +175,8 @@ const ExperienceSection = () => {
               return (
                 <div
                   key={index}
-                  className="timeline-item relative mb-12 last:mb-0 opacity-0 translate-x-10 transition-all duration-700 ease-out"
+                  className="timeline-item relative mb-12 last:mb-0"
+
                 >
                   {/* Timeline dot w/ round image + white frame (bigger) */}
                   <div className="absolute left-8 top-8 -translate-x-1/2 z-10">
@@ -194,93 +199,95 @@ const ExperienceSection = () => {
 
                   {/* Content */}
                   <div className="ml-16">
-                    <Card>
-                      <CardHeader>
-                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                          <div>
-                            <CardTitle className="text-xl">{experience.role}</CardTitle>
-                            <CardDescription className="text-base font-normal text-foreground">
-                              {experience.company}
-                            </CardDescription>
+                    <div className="timeline-block opacity-0 translate-x-10 transition-all duration-700 ease-out">
+                      <Card>
+                        <CardHeader>
+                          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                            <div>
+                              <CardTitle className="text-xl">{experience.role}</CardTitle>
+                              <CardDescription className="text-base font-normal text-foreground">
+                                {experience.company}
+                              </CardDescription>
+                            </div>
+                            <div className="flex items-center text-sm text-muted-foreground">
+                              <CalendarDays className="h-4 w-4 mr-1" />
+                              {experience.dates}
+                            </div>
                           </div>
-                          <div className="flex items-center text-sm text-muted-foreground">
-                            <CalendarDays className="h-4 w-4 mr-1" />
-                            {experience.dates}
-                          </div>
-                        </div>
-                      </CardHeader>
+                        </CardHeader>
 
-                      <CardContent>
-                        {/* Skills bubbles (copyable/selectable) */}
-                        <div className="skills-row flex flex-wrap gap-2 mb-4">
-                          {experience.skills.map((skill) => (
-                            <Badge
-                              key={skill}
-                              variant="secondary"
-                              className="px-3 py-1 text-xs cursor-text select-text opacity-90"
+                        <CardContent>
+                          {/* Skills bubbles (copyable/selectable) */}
+                          <div className="skills-row flex flex-wrap gap-2 mb-4">
+                            {experience.skills.map((skill) => (
+                              <Badge
+                                key={skill}
+                                variant="secondary"
+                                className="px-3 py-1 text-xs cursor-text select-text opacity-90"
+                              >
+                                {skill}
+                              </Badge>
+                            ))}
+                          </div>
+
+
+                          {/* Bullets w/ fade, but button NOT faded */}
+                          <div className="relative">
+                            {/* MASKED CONTENT: only bullets fade */}
+                            <div
+                              className={[
+                                "relative",
+                                (!isExpanded && hasOverflow) ? `${COLLAPSED_MAX_HEIGHT_CLASS} overflow-hidden` : ""
+                              ].join(" ")}
+                              style={
+                                !isExpanded && hasOverflow
+                                  ? {
+                                      WebkitMaskImage:
+                                        "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 65%, rgba(0,0,0,0.15) 85%, rgba(0,0,0,0) 100%)",
+                                      maskImage:
+                                        "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 65%, rgba(0,0,0,0.15) 85%, rgba(0,0,0,0) 100%)",
+                                    }
+                                  : undefined
+                              }
                             >
-                              {skill}
-                            </Badge>
-                          ))}
-                        </div>
+                              <ul className="space-y-2 text-muted-foreground leading-relaxed list-disc pl-5">
+                                {experience.bullets.map((b, i) => (
+                                  <li key={i}>{b}</li>
+                                ))}
+                              </ul>
+                            </div>
 
+                            {/* NOT MASKED: button stays crisp */}
+                            {!isExpanded && hasOverflow && (
+                              <div className="absolute left-0 right-0 -bottom-2 flex justify-center pb-1">
+                                <button
+                                  type="button"
+                                  onClick={() => toggleExpanded(index)}
+                                  className="group inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors bg-background/70 backdrop-blur-sm px-3 py-1 rounded-full border border-border"
+                                >
+                                  <span className="opacity-80 group-hover:opacity-100">Show more</span>
+                                  <ChevronDown className="h-4 w-4 opacity-70 group-hover:opacity-100 transition-opacity" />
+                                </button>
+                              </div>
+                            )}
 
-                        {/* Bullets w/ fade, but button NOT faded */}
-                        <div className="relative">
-                          {/* MASKED CONTENT: only bullets fade */}
-                          <div
-                            className={[
-                              "relative",
-                              (!isExpanded && hasOverflow) ? `${COLLAPSED_MAX_HEIGHT_CLASS} overflow-hidden` : ""
-                            ].join(" ")}
-                            style={
-                              !isExpanded && hasOverflow
-                                ? {
-                                    WebkitMaskImage:
-                                      "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 65%, rgba(0,0,0,0.15) 85%, rgba(0,0,0,0) 100%)",
-                                    maskImage:
-                                      "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 65%, rgba(0,0,0,0.15) 85%, rgba(0,0,0,0) 100%)",
-                                  }
-                                : undefined
-                            }
-                          >
-                            <ul className="space-y-2 text-muted-foreground leading-relaxed list-disc pl-5">
-                              {experience.bullets.map((b, i) => (
-                                <li key={i}>{b}</li>
-                              ))}
-                            </ul>
+                            {/* Show less (below the full list) */}
+                            {isExpanded && hasOverflow && (
+                              <div className="mt-3 flex justify-center">
+                                <button
+                                  type="button"
+                                  onClick={() => toggleExpanded(index)}
+                                  className="group inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                                >
+                                  <span className="opacity-80 group-hover:opacity-100">Show less</span>
+                                  <ChevronUp className="h-4 w-4 opacity-70 group-hover:opacity-100 transition-opacity" />
+                                </button>
+                              </div>
+                            )}
                           </div>
-
-                          {/* NOT MASKED: button stays crisp */}
-                          {!isExpanded && hasOverflow && (
-                            <div className="absolute left-0 right-0 -bottom-2 flex justify-center pb-1">
-                              <button
-                                type="button"
-                                onClick={() => toggleExpanded(index)}
-                                className="group inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors bg-background/70 backdrop-blur-sm px-3 py-1 rounded-full border border-border"
-                              >
-                                <span className="opacity-80 group-hover:opacity-100">Show more</span>
-                                <ChevronDown className="h-4 w-4 opacity-70 group-hover:opacity-100 transition-opacity" />
-                              </button>
-                            </div>
-                          )}
-
-                          {/* Show less (below the full list) */}
-                          {isExpanded && hasOverflow && (
-                            <div className="mt-3 flex justify-center">
-                              <button
-                                type="button"
-                                onClick={() => toggleExpanded(index)}
-                                className="group inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
-                              >
-                                <span className="opacity-80 group-hover:opacity-100">Show less</span>
-                                <ChevronUp className="h-4 w-4 opacity-70 group-hover:opacity-100 transition-opacity" />
-                              </button>
-                            </div>
-                          )}
-                        </div>
-                      </CardContent>
-                    </Card>
+                        </CardContent>
+                      </Card>
+                    </div>
                   </div>
                 </div>
               );
