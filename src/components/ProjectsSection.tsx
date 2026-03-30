@@ -19,6 +19,15 @@ const ProjectsSection = () => {
       videoUrl: "https://drive.google.com/file/d/134nNxhyoesffMwnrE6gtcnD41NbJrs_N/preview",
     },
     {
+      title: "2 Axis Machine STM32 Control",
+      skills: ["Embedded C", "STM32", "Sensor Integration", "Control Systems", "Real-Time interrupt Programming"],
+      description: "Developed control algorithms for a 2-axis machine using STM32 microcontroller, integrating sensor feedback and implementing real-time interrupt handling for precise motion control. (Jan-April 2026)",
+      image: "2axis-GIF.gif",
+      githubUrl: "https://github.com/y24moham/Two_axis_machine_STM32_Control/",
+      demoUrl: "https://drive.google.com/file/d/1OqJbgLzihHthyge3sKhTlL_7apw86IUl/preview",
+      videoUrl: "https://drive.google.com/file/d/1I3mCT2xIy3bBejYWqJA6apu2jjCAlniW/preview",
+    },
+    {
       title: "Quadcopter Prototype",
       skills: ["Embedded C++", "Arduino", "PID Control", "Sensor Fusion (IMU)", "Real-Time Systems", "Prototyping"],
       description: "Built a ground-up quadcopter prototype by implementing closed-loop control algorithms in C++ on an Arduino with prototype circuit boards and external sensors, controlling propeller speed from gyrometer sensor output. (June-Aug 2020)",
