@@ -15,7 +15,7 @@ const EducationSection = () => {
     "Robotics (projects-based)",
     "Probability & Statistics",
     "MATLAB",
-    "System Modeling & Simulation (SimulationX)"
+    "System Modeling & Simulation (Simulink/SimulationX)"
   ];
 
 
@@ -35,7 +35,7 @@ const EducationSection = () => {
                 <div>
                   <CardTitle className="text-xl">University of Waterloo</CardTitle>
                   <CardDescription className="text-lg">
-                    Bachelor of Mechatronics Engineering
+                    Bachelor of Mechatronics Engineering · 3A completed
                   </CardDescription>
                 </div>
               </div>
@@ -46,7 +46,7 @@ const EducationSection = () => {
               <div className="flex items-center justify-between gap-4">
                 <p className="text-muted-foreground">Graduation: <span className="text-foreground font-medium">2028</span></p>
                 <p className="text-muted-foreground">
-                  GPA: <span className="text-foreground font-medium">3.9/4.0 (89.77%)</span>
+                  GPA: <span className="text-foreground font-medium">3.9/4.0 (88.63%)</span>
                 </p>
               </div>
 

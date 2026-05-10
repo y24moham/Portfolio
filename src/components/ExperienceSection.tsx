@@ -86,6 +86,16 @@ const ExperienceSection = () => {
   const experiences: Career[] = useMemo(
     () => [
       {
+        role: "System Integration Engineer",
+        company: "Ford Motor Company",
+        dates: "May 2026 - Aug 2026",
+        logoSrc: "Ford-logo.jpg",
+        skills: ["Currently in this role"],
+        bullets: [
+          "Currently in this role - details coming soon!",
+        ],
+      },
+      {
         role: "Embedded Software Engineering Intern",
         company: "Aversan Inc.",
         dates: "Sept 2025 - Dec 2025",

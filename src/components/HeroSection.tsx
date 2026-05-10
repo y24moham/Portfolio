@@ -36,7 +36,7 @@ const HeroSection = () => {
             />
           </p>
           <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
-            University of Waterloo | 3A Mechatronics Engineering • Interested in embedded firmware, robotics, controls, and real-time systems • Prev @ Aversan
+            University of Waterloo | 3A Mechatronics Engineering • Interested in embedded firmware, robotics, controls, and real-time systems • System Integration Eng @ Ford
           </p>
           <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center mb-6">
             <Button size="lg" onClick={() => scrollToSection("resume")}>

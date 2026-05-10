@@ -1,4 +1,4 @@
-import { Play, Github } from "lucide-react";
+import { Play, Github, CalendarDays } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -11,8 +11,9 @@ const ProjectsSection = () => {
   const projects = [
     {
       title: "EV3 Prosthetic Hand",
+      dates: "Oct 2023 - Dec 2023",
       skills: ["Embedded C", "Sensor Integration", "Mechanical Design", "Prototyping"],
-      description: "Designed and programmed a functional EV3-based prosthetic hand using C, implementing motor-driven open/close grip control and basic sensor-driven behavior to enable controlled object handling as a prototype assistive replacement for key hand functions. (Oct-Dec 2023)",
+      description: "Designed and programmed a functional EV3-based prosthetic hand using C, implementing motor-driven open/close grip control and basic sensor-driven behavior to enable controlled object handling as a prototype assistive replacement for key hand functions.",
       image: "Prosthetic-Hand-GIF.gif",
       githubUrl: "https://github.com/y24moham/Prosthetic-Hand-EV3/",
       demoUrl: "https://drive.google.com/file/d/1u6iXG5a_sigPQkx7iz7OC_ltrGPNhpzM/preview",
@@ -20,8 +21,9 @@ const ProjectsSection = () => {
     },
     {
       title: "2 Axis Machine STM32 Control",
+      dates: "Jan 2026 - Apr 2026",
       skills: ["Embedded C", "STM32", "Sensor Integration", "Control Systems", "Real-Time interrupt Programming"],
-      description: "Developed control algorithms for a 2-axis machine using STM32 microcontroller, integrating sensor feedback and implementing real-time interrupt handling for precise motion control. (Jan-April 2026)",
+      description: "Developed control algorithms for a 2-axis machine using STM32 microcontroller, integrating sensor feedback and implementing real-time interrupt handling for precise motion control.",
       image: "2axis-GIF.gif",
       githubUrl: "https://github.com/y24moham/Two_axis_machine_STM32_Control/",
       demoUrl: "https://drive.google.com/file/d/1OqJbgLzihHthyge3sKhTlL_7apw86IUl/preview",
@@ -29,8 +31,10 @@ const ProjectsSection = () => {
     },
     {
       title: "Quadcopter Prototype",
+      dates: "June 2020 - Aug 2020",
+
       skills: ["Embedded C++", "Arduino", "PID Control", "Sensor Fusion (IMU)", "Real-Time Systems", "Prototyping"],
-      description: "Built a ground-up quadcopter prototype by implementing closed-loop control algorithms in C++ on an Arduino with prototype circuit boards and external sensors, controlling propeller speed from gyrometer sensor output. (June-Aug 2020)",
+      description: "Built a ground-up quadcopter prototype by implementing closed-loop control algorithms in C++ on an Arduino with prototype circuit boards and external sensors, controlling propeller speed from gyrometer sensor output.",
       image: "Quadcopter-GIF.gif",
       githubUrl: "https://github.com/y24moham/Quadcopter-Prototype/",
       demoUrl: "https://drive.google.com/file/d/1FuZ4ya1sBBXkcI__rNSbRR-jGKATWSmJ/preview",
@@ -38,8 +42,9 @@ const ProjectsSection = () => {
     },
     {
       title: "Obstacle-Aware Arduino Robot",
+      dates: "Apr 2024",
       skills: ["Embedded C++", "Arduino", "Finite State Machines", "Sensor-Based Control", "Human-Machine Interface (LCD)"],
-      description: "Developed Arduino firmware for a two-motor robot featuring an LCD UI, ultrasonic distance measurement, and a single-button state machine that drives forward, displays live status and ultrasonic distance, and triggers automatic turn obstacle avoidance. (Apr 2024)",
+      description: "Developed Arduino firmware for a two-motor robot featuring an LCD UI, ultrasonic distance measurement, and a single-button state machine that drives forward, displays live status and ultrasonic distance, and triggers automatic turn obstacle avoidance.",
       image: "Arduino-Robot-GIF.gif",
       githubUrl: "https://github.com/y24moham/Obstacle-Aware-Arduino-Robot-with-LCD/",
       demoUrl: "https://drive.google.com/file/d/1gGviGKnixNbjjOhSUq4s3DY6O76Xo-3T/preview",
@@ -47,8 +52,9 @@ const ProjectsSection = () => {
     },
     {
       title: "Hospital Test Database (SQL)",
+      dates: "July 2022",
       skills: ["SQL", "Relational Database Design", "Schema Design", "Data Modeling"],
-      description: "I built a basic hospital relational database in SQL modeling patients, doctors, rooms, and prescriptions/medications, then validated the schema using fictional test data and queries to confirm correct relationships and system behavior. (July 2022)",
+      description: "I built a basic hospital relational database in SQL modeling patients, doctors, rooms, and prescriptions/medications, then validated the schema using fictional test data and queries to confirm correct relationships and system behavior.",
       image: "Hospital-SQL.png",
       githubUrl: "https://github.com/y24moham/Hospital-SQL-Database-Design",
       demoUrl: null,
@@ -75,7 +81,14 @@ const ProjectsSection = () => {
 
                   onClick={() => project.videoUrl && setActiveVideo(project.videoUrl)}
                 />
-                <CardTitle className="text-xl">{project.title}</CardTitle>
+                <div className="flex flex-col gap-1">
+                  <CardTitle className="text-xl">{project.title}</CardTitle>
+
+                  <div className="flex items-center text-sm text-muted-foreground">
+                    <CalendarDays className="h-4 w-4 mr-1" />
+                    {project.dates}
+                  </div>
+                </div>
                 {/* Skills bubbles */}
                 {project.skills && (
                   <div className="flex flex-wrap gap-2 my-2">

@@ -22,25 +22,27 @@ const SkillsSection = () => {
     {
       name: "STM32 (HAL/LL)",
       category: "Embedded & Bring-Up",
+      status: "currently_using",
       level: 72,
-      learnedAt: "Embedded bring-up and STM32 development workflow through internship work and embedded labs.",
+      learnedAt: "STM32 development through internship firmware work and embedded systems labs.",
       appliedAt: "Aversan (STM32H7 firmware debug/extension and peripheral bring-up) + coursework labs.",
       examples: [
         { text: "Debugged and extended STM32H7 embedded C firmware in a safety-critical workflow (Aversan)" },
-        { text: "Worked with HAL/low-level configuration patterns while validating peripherals and system behavior (Aversan)" },
-        { text: "Using an STM32 Nucleo board in MTE 325 to configure peripherals and interface with a two-axis machine setup", ongoing: true }
+        { text: "Configured and tested STM32 peripherals using HAL/low-level setup patterns (Aversan)" },
+        { text: "Using an STM32 Nucleo board in MTE 325 to configure peripherals and interface with a two-axis machine setup" }
       ]
     },
     {
       name: "Embedded C / C++",
       category: "Embedded & Bring-Up",
+      status: "currently_using",
       level: 80,
-      learnedAt: "Robotics projects (Arduino/C++) and embedded coursework, then reinforced through professional firmware work.",
+      learnedAt: "Robotics projects (Arduino/STM32) and embedded coursework, then reinforced through professional firmware work.",
       appliedAt: "Aversan (STM32 firmware) + UW research (Arduino acquisition/processing code).",
       examples: [
         { text: "Made targeted firmware changes and debugged behavior on STM32H7 in embedded C (Aversan)" },
         { text: "Wrote Arduino C++ code for sensor acquisition and reliable data collection (UW research)" },
-        { text: "Writing C for microcontroller I/O/peripherals for the MTE 325 two-axis machine project", ongoing: true }
+        { text: "Wrote STM32 C code for I/O and peripheral control in the MTE 325 two-axis machine project"}
       ]
     },
     {
@@ -48,7 +50,7 @@ const SkillsSection = () => {
       category: "Embedded & Bring-Up",
       level: 60,
       learnedAt:
-        "MTE 241 (Computer Structures and Real-Time Systems): interrupts/I/O, concurrency, synchronization, scheduling, memory/resource management, and real-time design patterns.",
+        "MTE 241 coursework covering interrupts, I/O, scheduling, synchronization, memory management, and real-time system design.",
       appliedAt:
         "MTE 241 labs on STM32F401RE (STM32CubeIDE), where I implemented RTOS building blocks in C across stacks, processes, multitasking, and timing.",
       examples: [
@@ -60,15 +62,16 @@ const SkillsSection = () => {
     {
       name: "Timers & Interrupts",
       category: "Embedded & Bring-Up",
+      status: "currently_using",
       level: 70,
-      learnedAt: "Event-driven embedded patterns from real hardware work, plus embedded/RTOS coursework (MTE 241: interrupts/I/O, timing, scheduling concepts) and digital logic labs.",
+      learnedAt: "Event-driven embedded design through firmware work, STM32 labs, and RTOS coursework.",
       appliedAt: "Aversan (timing + interrupt-driven comms/diagnostics) + robotics-style control loops + STM32 lab work.",
       examples: [
         { text: "Used timers and interrupt-driven UART receive patterns for status/diagnostics and faster iteration (Aversan)" },
         { text: "Worked with timing-driven behaviors and peripheral handling patterns in STM32 firmware contexts (Aversan)" },
         { text: "Applied timing-based thinking in robotics prototypes where loop timing affected behavior (Arduino projects)" },
-        { text: "Built real-time timing intuition in MTE 241 labs (STM32F401RE): using interrupts/I/O and timing to support multitasking-style behavior" },
-        { text: "Implementing and comparing polling vs interrupts for responsiveness/latency in MTE 325", ongoing: true }
+        { text: "Built timing and interrupt-handling experience in MTE 241 labs (STM32F401RE): using interrupts/I/O and timing to support multitasking-style behavior" },
+        { text: "Implemented and compared polling vs interrupts for responsiveness/latency in MTE 325 and used both for the 2-axis machine project development" }
       ]
     },
     {
@@ -78,16 +81,17 @@ const SkillsSection = () => {
       learnedAt: "Hands-on exposure during STM32 firmware work, learning when DMA helps and what it changes in debugging.",
       appliedAt: "Aversan (DMA-aware peripheral/diagnostics workflows on STM32H7).",
       examples: [
-        { text: "Worked around DMA-enabled peripheral flows in STM32H7 firmware context (Aversan)" },
-        { text: "Built confidence debugging systems where data movement and timing aren't purely CPU-driven (Aversan)" },
-        { text: "Exploring peripheral configuration tradeoffs in MTE 325 where throughput/latency and measurement matter", ongoing: true }
+        { text: "Debugged firmware behavior involving DMA-enabled peripheral data flow in STM32H7 firmware context (Aversan)" },
+        { text: "Debugged timing issues where data movement was handled outside the main CPU loop (Aversan)" },
+        { text: "Explored peripheral configuration tradeoffs in MTE 325 where throughput/latency and measurement matter" }
       ]
     },
     {
       name: "PWM",
       category: "Embedded & Bring-Up",
+      status: "currently_using",
       level: 68,
-      learnedAt: "Coursework labs using Oscilloscope (MTE 220 Sensors & Instrumentation) and hands-on Arduino experiments with ultrasonic sensing and servo control.",
+      learnedAt: "Coursework labs using an oscilloscope (MTE 220 Sensors & Instrumentation) and hands-on Arduino experiments with ultrasonic sensing and servo control.",
       appliedAt: "Robotics prototypes needing precise timing for sensors/actuators, plus real-hardware debugging and tuning.",
       examples: [
         { text: "Tested PWM-based servo control (position control and basic tuning)" },
@@ -98,12 +102,26 @@ const SkillsSection = () => {
     {
       name: "Arduino & ESP32",
       category: "Embedded & Bring-Up",
+      status: "currently_using",
       level: 80,
       learnedAt: "Robotics/sensor projects and embedded experimentation building real hardware loops and debugging with measurement tools.",
       appliedAt: "UW research sensor acquisition (Arduino + multi-sensor setup) and robotics prototypes; ESP32 used for basic connectivity experiments and embedded bring-up practice.",
       examples: [
-        { text: "Built sensor-driven prototypes with Arduino (data capture, timing, and stable real-hardware behavior) such as the quadcopter prototype and obstacle-avoidance robot" },
+        { text: "Built Arduino-based prototypes for sensor reading, timing, motor/control logic, and robotics experiments" },
         { text: "Used ESP32 for Wi-Fi/Bluetooth basics and experimentation around embedded connectivity" }
+      ]
+    },
+    {
+      name: "Raspberry Pi",
+      category: "Embedded & Bring-Up",
+      // status: "currently_using",
+      level: 68,
+      learnedAt: "Hands-on research work using Raspberry Pi as part of a sensor acquisition and data export pipeline.",
+      appliedAt: "UW Optometry research: Raspberry Pi-based CSV export pipeline for pressure-sensor trial data collected from an Arduino, MUX, and custom PCB setup.",
+      examples: [
+        { text: "Built a Raspberry Pi Python CSV export pipeline for structured pressure-sensor trial data" },
+        { text: "Integrated Raspberry Pi into an Arduino + 48-channel MUX + custom PCB acquisition setup for footstep/pressure experiments" },
+        { text: "Used Raspberry Pi to support repeatable data capture and export for downstream analysis" }
       ]
     },
 
@@ -111,9 +129,10 @@ const SkillsSection = () => {
     {
       name: "UART",
       category: "Interfaces & Debug",
-      level: 85,
+      status: "currently_using",
+      level: 83,
       learnedAt:
-        "Building real embedded test/debug workflows and data pipelines using serial links (UART/USB-serial adapters) across internship + research work.",
+        "Built embedded test tools and data pipelines using UART and USB-serial links across internship and research work.",
       appliedAt:
         "Aversan: multiple Python tools over UART for automation, logging, and verification (device + test equipment). UW research: Arduino-to-PC/Raspberry Pi serial pipelines for data capture and exporting trial datasets.",
       examples: [
@@ -125,26 +144,28 @@ const SkillsSection = () => {
     {
       name: "I2C",
       category: "Interfaces & Debug",
-      level: 80,
+      status: "currently_using",
+      level: 79,
       learnedAt:
-        "Embedded bring-up work and sensor/peripheral integration, reinforced through coursework exposure to serial buses (I2C/SPI/UART).",
+        "Embedded bring-up, sensor/peripheral integration, and coursework exposure to serial buses.",
       appliedAt:
         "Aversan: custom bit-banged I2C on STM32 for peripheral/module communication and validation; boundary-scan/TCL-based I2C register reads/writes for pre-firmware checks. UW research: sensor-style integration patterns in a multi-sensor acquisition setup.",
       examples: [
         { text: "Wrote custom bit-banged I2C in Embedded C on STM32 (not using the default STM32 I2C peripheral) to communicate with board modules/peripherals" },
         { text: "Used OpenOCD + TCL boundary-scan routines to perform I2C register reads/writes and validate peripherals without running MCU firmware" },
         { text: "Debugged I2C issues during bring-up by checking addressing, ACK/NACK behavior, and timing assumptions" },
-        { text: "Applied I2C-style integration patterns while building sensor acquisition systems (wiring, validation, and repeatable data capture)" }
+        { text: "Applied I2C-style wiring, addressing, and validation practices while building repeatable sensor acquisition systems" }
       ]
     },
     {
       name: "SPI",
       category: "Interfaces & Debug",
+      status: "currently_using",
       level: 65,
       learnedAt:
         "Embedded systems coursework and labs, plus hands-on setup in STM32CubeIDE/HAL when bringing up SPI peripherals.",
       appliedAt:
-        "Coursework + STM32 development work where I configured SPI peripherals (mode/clocking) and validated sensor/peripheral communication behavior.",
+        "STM32 coursework and development work involving SPI peripheral setup and communication testing.",
       examples: [
         { text: "Configured SPI on STM32 (CubeIDE/CubeMX): CPOL/CPHA, bit order, baud prescaler, NSS behavior" },
         { text: "Mapped datasheet timing/transactions to code (register reads/writes, dummy bytes, chip-select timing)" },
@@ -167,14 +188,14 @@ const SkillsSection = () => {
     {
       name: "OpenOCD",
       category: "Interfaces & Debug",
-      level: 82,
+      level: 77,
       learnedAt: "Embedded internship work using OpenOCD as an open-source JTAG interface for boundary-scan and low-level board validation.",
       appliedAt: "Aversan: OpenOCD-driven JTAG boundary-scan to bring up boards, validate connectivity, and perform peripheral checks without relying on MCU firmware.",
       examples: [
         { text: "Wrote TCL scripts using OpenOCD commands (e.g., irscan/drscan) to drive instruction/data registers and run boundary-scan checks" },
         { text: "Built TCL helper functions that used boundary-scan control to perform I2C transactions (read/write) to specified register addresses" },
         { text: "Built a Linux Python tool/GUI that invokes OpenOCD in the background to initialize JTAG and control pins at a low level" },
-        { text: "Validated shorts/opens and pin connectivity pre-firmware to catch manufacturing issues early" }
+        { text: "Checked shorts, opens, and pin connectivity before relying on MCU firmware" }
       ]
     },
     {
@@ -197,7 +218,7 @@ const SkillsSection = () => {
       appliedAt: "ESP32 experiments using Wi-Fi basics and Bluetooth basics; Arduino testing using the HC-05 Bluetooth module for simple wireless communication.",
       examples: [
         { text: "Set up basic Wi-Fi functionality on ESP32 for small experiments and connectivity checks" },
-        { text: "Used Bluetooth basics on ESP32 for simple testing and proof-of-concept communication" },
+        { text: "Tested basic Bluetooth communication on ESP32 for small proof-of-concept projects" },
         { text: "Integrated an HC-05 Bluetooth module with Arduino to send/receive basic serial data wirelessly" }
       ]
     },
@@ -206,11 +227,12 @@ const SkillsSection = () => {
     {
       name: "PID Control",
       category: "Controls & Automation",
+      status: "currently_using",
       level: 68,
       learnedAt: "Controls fundamentals + applied robotics prototypes.",
       appliedAt: "Quadcopter prototype stabilization + general control-loop work.",
       examples: [
-        { text: "Implemented PID stabilization for a quadcopter prototype"},
+        { text: "Implemented and tuned PID-style stabilization logic for a quadcopter prototype"},
         { text: "Iterated gains based on observed response and stability needs"},
         { text: "Connected sensor feedback (IMU) to control output behavior"}
       ]
@@ -232,7 +254,7 @@ const SkillsSection = () => {
       category: "Controls & Automation",
       level: 62,
       learnedAt: "Signals & Systems coursework (frequency response, Bode plots) and circuits work building simple analog filters (op-amp + Twin-T).",
-      appliedAt: "Motion-capture data cleanup and sensor-data preprocessing where reducing noise mattered.",
+      appliedAt: "Motion-capture and sensor-data preprocessing to reduce noise and improve signal quality.",
       examples: [
         { text: "Applied low-pass filtering during Vicon/Nexus processing to reduce noise and produce cleaner trajectories"},
         { text: "Built and tested basic analog filtering using op-amps, including a Twin-T selective amplifier coursework project"},
@@ -242,6 +264,7 @@ const SkillsSection = () => {
     {
       name: "Data Logging & Telemetry",
       category: "Controls & Automation",
+      status: "currently_using",
       level: 78,
       learnedAt: "Hands-on debugging and validation work where repeatable logs were needed to understand system behavior.",
       appliedAt: "Aversan (UART logging + test tooling); UW research (Raspberry Pi trial export + analysis-ready outputs).",
@@ -268,11 +291,12 @@ const SkillsSection = () => {
     {
       name: "C / C++",
       category: "Software & Data",
+      status: "currently_using",
       level: 75,
       learnedAt:
         "Coursework foundation in C++ software design and problem solving (MTE 121: fundamentals + OOP; MTE 140: data structures, recursion, complexity). Reinforced C fundamentals (pointers/structs, memory) in systems/RTOS coursework (MTE 241).",
       appliedAt:
-        "Built standalone C++ programs and algorithmic solutions (calculations/decisions, console/file I/O), implemented core data structures in labs, and used C/C++ occasionally for small utilities or quick prototypes.",
+        "Built standalone C++ programs and algorithmic solutions (calculations/decisions, console/file I/O), implemented core data structures in labs, and used C/C++ for coursework, data structures, systems concepts, and small engineering utilities.",
       examples: [
         { text: "Implemented data structures in C++ (linked lists, stacks, queues, trees/BSTs) with edge-case handling" },
         { text: "Used recursion for tree operations and recursive problem-solving patterns" },
@@ -285,11 +309,12 @@ const SkillsSection = () => {
     {
       name: "Python",
       category: "Software & Data",
+      status: "currently_using",
       level: 85,
       learnedAt: "Building real tools around embedded debugging/verification and research data workflows.",
       appliedAt: "Aversan (UART/JTAG tools + ATE testing); UW research (data preprocessing + visualization outputs).",
       examples: [
-        { text: "Built 5 Python GUI tools to parse/log UART test data and support firmware debugging/verification"},
+        { text: "Built multiple Python GUI tools to parse/log UART test data and support firmware debugging/verification"},
         { text: "Developed a Linux Python GUI around OpenOCD for JTAG boundary-scan and bit-banged I2C peripheral checks"},
         { text: "Created a Python GUI with a grouping algorithm to preprocess/visualize foot-pressure data and generate analysis-ready outputs"}
       ]
@@ -303,7 +328,7 @@ const SkillsSection = () => {
       examples: [
         { text: "Committed and pushed verified changes to Azure DevOps repos (firmware, Python tooling, and ATE/Robot Framework test assets) as part of a structured team workflow"},
         { text: "Used branches and clean commit history to develop, test, and merge changes safely"},
-        { text: "Maintained my GitHub projects with consistent updates, readable history, and clear organization"}
+        { text: "Used GitHub to organize personal projects, track revisions, and document progress"}
       ]
     },
     {
@@ -357,7 +382,7 @@ const SkillsSection = () => {
     {
       name: "Pytest",
       category: "Software & Data",
-      level: 65,
+      level: 57,
       learnedAt: "Picked up through building Python tooling and learning to validate behavior with simple, repeatable tests.",
       appliedAt: "Aversan: Python tools and ATE-related scripting where basic checks helped catch issues early and keep changes safe.",
       examples: [
@@ -369,6 +394,7 @@ const SkillsSection = () => {
     {
       name: "SQL",
       category: "Software & Data",
+      status: "currently_using",
       level: 35,
       learnedAt: "Used SQL while building a hospital database project to understand structured data storage and querying in practice.",
       appliedAt: "Ran simple queries to retrieve and validate records during development and debugging.",
@@ -415,12 +441,12 @@ const SkillsSection = () => {
       name: "Robot Framework",
       category: "Verification & Automation",
       level: 68,
-      learnedAt: "Learned by building automated test suites during my embedded software internship, working in a Linux environment (Robot Framework via RIDE).", // :contentReference[oaicite:0]{index=0}
-      appliedAt: "Used it to automate I/O verification (set/read checks) and produce test reports used for debugging and downstream certification/production workflows.", // :contentReference[oaicite:1]{index=1}
+      learnedAt: "Learned by building automated test suites during my embedded software internship, working in a Linux environment (Robot Framework via RIDE).",
+      appliedAt: "Used it to automate I/O verification (set/read checks) and produce test reports used for debugging and downstream certification/production workflows.",
       examples: [
         { text: "Authored Robot Framework test suites to validate I/O behavior on Linux-based Automated Test Equipment" },
         { text: "Generated structured reports that supported debugging and compliance-focused workflows (including FAA-related needs) as well as production/maintenance" },
-        { text: "Built tests that sometimes call Python helper functions/scripts to handle logic, parsing, or utilities alongside Robot keywords" }
+        { text: "Built Robot Framework tests that call Python helper scripts for parsing, logic, and utility functions" }
       ]
     },
 
@@ -428,12 +454,14 @@ const SkillsSection = () => {
     {
       name: "SolidWorks",
       category: "Hardware, CAD & Prototyping",
+      status: "currently_using",
       level: 85,
       learnedAt: "Coursework-based CAD training, then reinforced through projects where I recreated real parts and built full assemblies.",
       appliedAt: "EV3 prosthetic hand project, multiple course design projects (including an energy-absorbing damper mechanism), developing mechanisms as an engineering research assistant, and personal mechanical concept builds.",
       examples: [
-        { text: "Modeled real parts from measurements and rebuilt them as accurate CAD components for integration in assemblies, and built mechanisms that mount on existing parts and improve functionality" },
-        { text: "Designed mechanisms and assemblies for coursework + prototypes, iterating designs to validate concepts and fit" },
+        { text: "Modeled real parts from measurements and rebuilt them as CAD components for assembly integration" },
+        { text: "Designed mechanisms that mount onto existing parts and improve functionality" },
+        { text: "Built full assemblies for coursework and prototypes, checking fit and motion through iteration" },
         { text: "Created mechanical concept models for learning/communication (e.g., flapping-wing mechanism concept, W16 piston/engine visualization)" }
       ]
     },
@@ -452,7 +480,7 @@ const SkillsSection = () => {
     {
       name: "GD&T",
       category: "Hardware, CAD & Prototyping",
-      level: 80,
+      level: 76,
       learnedAt: "Coursework and practical use as a CNC programmer working from GD&T technical drawings.",
       appliedAt: "Created 3D CAD sheet-metal models from GD&T drawings in a production environment, and used tolerancing awareness while designing/iterating mechanisms as an engineering research assistant.",
       examples: [
@@ -486,15 +514,16 @@ const SkillsSection = () => {
       ]
     },
     {
-      name: "PCB Design (Altium)",
+      name: "PCB Design",
       category: "Hardware, CAD & Prototyping",
+      status: "currently_using",
       level: 64,
       learnedAt: "Learned PCB design during my engineering research assistant co-op by designing a custom sensor interface board in Altium CircuitMaker.",
       appliedAt: "Designed a custom PCB that mounts on an Arduino, interfaces to 48 sensors using voltage-divider circuits, and connects to a separate camera system for synchronization.",
       examples: [
         { text: "Designed the schematic and PCB layout for an Arduino-mounted sensor interface board (48 channels, voltage-divider conditioning)" },
         { text: "Planned connectors/routing for reliable sensor wiring and integration with an external camera sync setup" },
-        { text: "Verified the design before fabrication (ERC/DRC-style checks and sanity checks on connectivity and signals)" }
+        { text: "Ran ERC/DRC-style checks and reviewed connectivity before fabrication" }
       ]
     },
     {
@@ -525,28 +554,37 @@ const SkillsSection = () => {
     {
       name: "MATLAB",
       category: "Modeling/Simulation",
-      level: 68,
+      level: 74,
       learnedAt: "Engineering coursework where I used MATLAB for modeling, solver-based workflows, and visualization.",
-      appliedAt: "Various courses' assignments/labs: equation solving (direct + iterative), nonlinear system solving with custom function files, parametric 3D geometry/plots, and trajectory-style analysis with clear visual outputs.",
+      appliedAt: "Engineering coursework and labs: equation solving (direct + iterative), nonlinear system solving with custom function files, parametric 3D geometry/plots, and trajectory-style analysis with clear visual outputs.",
       examples: [
         { text: "Built reusable function files and ran solver workflows (e.g., fsolve with custom equation functions)" },
         { text: "Solved engineering systems with both direct methods (A\\b) and iterative methods (Gauss-Seidel with relaxation + convergence checks)" },
-        { text: "Created clear 2D/3D visualizations for interpreting results (plot/subplot, surf/contour/contour3, fplot, legends, labels, annotations, transparency/colormaps)" },
+        { text: "Created 2D and 3D visualizations using plots, surfaces, contours, labels, legends, and annotations" },
         { text: "Worked with grid/parameterized models using meshgrid and element-wise operations for efficient evaluation across many points" }
+      ]
+    },
+    {
+      name: "Simulink",
+      category: "Modeling/Simulation",
+      level: 60,
+      learnedAt: "MTE 351 (Systems Models 1) coursework covering system modeling and simulation tools.",
+      appliedAt: "Course material and the MTE 351 project.",
+      examples: [
+        { text: "Built and simulated first- and second-order system models in Simulink" },
+        { text: "Used block diagrams to model system dynamics and compare simulated responses" }
       ]
     },
     {
       name: "SimulationX",
       category: "Modeling/Simulation",
-      level: 10,
-      ongoing: true,
-      status: "currently_learning",
+      level: 60,
       learnedAt: "MTE 351 (Systems Models 1) coursework covering system modeling and simulation tools.",
-      appliedAt: "Course labs/assignments and the MTE 351 team project using SimulationX.",
+      appliedAt: "Course labs/assignments and the MTE 351 project.",
       examples: [
-        { text: "Learning to build and simulate 1st/2nd-order system responses in SimulationX", ongoing: true },
-        { text: "Modeling mechanical/electromechanical systems using time and frequency-domain concepts from the course", ongoing: true },
-        { text: "Using SimulationX for a course project workflow (model setup, parameter tuning, and interpreting outputs)", ongoing: true }
+        { text: "Learning to build and simulate 1st/2nd-order system responses in SimulationX"},
+        { text: "Modeling mechanical/electromechanical systems using time and frequency-domain concepts"},
+        { text: "Built a 3D model of a mechanical system using SimulationX for a self-balancing scooter project, then iterated parameters using Variant Wizard to achieve the maximum stable operating distance" }
       ]
     }
 
@@ -581,9 +619,9 @@ const SkillsSection = () => {
   };
 
   const ongoingLabel = (skill: Skill) => {
-    // If you still want to keep status for cases like SimulationX:
+    // Prefer manually set status when available.
     if (skill.status === "currently_learning") return "Currently learning";
-    if (skill.status === "currently_using") return "In active use";
+    if (skill.status === "currently_using") return "Currently using";
 
     // Otherwise derive from examples
     const state = ongoingState(skill.examples);
@@ -683,9 +721,15 @@ const SkillsSection = () => {
     <section id="skills" className="py-16 bg-background">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-2 text-foreground">Skills</h2>
-          <p className="text-center text-lg text-muted-foreground mb-5">
-            Click a skill to view details, examples, and my current level.
-          </p>
+          <div className="text-center mb-5">
+            <p className="text-lg text-muted-foreground">
+              <strong className="text-foreground">Click a skill</strong> to see where I learned it, how I applied it, and my proficiency level.
+            </p>
+
+            <p className="text-sm text-muted-foreground mt-1">
+              Skills highlighted in <span className="font-medium text-primary">blue</span> are ones I am currently using or actively improving.
+            </p>
+          </div>
         <div className="max-w-6xl mx-auto">
           {categories.map((category) => (
             <div key={category} className="mb-6">
@@ -697,8 +741,12 @@ const SkillsSection = () => {
                     <Dialog key={skill.name}>
                       <DialogTrigger asChild>
                         <Badge 
-                          variant="secondary" 
-                          className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors px-4 py-2 text-sm"
+                          variant={ongoingLabel(skill) ? "default" : "secondary"}
+                          className={`cursor-pointer transition-colors px-4 py-2 text-sm ${
+                            ongoingLabel(skill)
+                              ? "bg-primary text-primary-foreground hover:bg-primary/90"
+                              : "hover:bg-primary hover:text-primary-foreground"
+                          }`}
                         >
                           {skill.name}
                         </Badge>
