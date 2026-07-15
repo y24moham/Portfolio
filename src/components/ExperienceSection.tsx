@@ -90,9 +90,39 @@ const ExperienceSection = () => {
         company: "Ford Motor Company",
         dates: "May 2026 - Aug 2026",
         logoSrc: "Ford-logo.jpg",
-        skills: ["Currently in this role"],
+        skills: [
+          "System Integration Testing",
+          "Google BigQuery",
+          "SQL",
+          "Python",
+          "Pandas",
+          "NumPy",
+          "Tkinter",
+          "Plotly",
+          "Matplotlib",
+          "Looker Studio",
+          "Vehicle Telemetry",
+          "CAN/CAN FD Log Analysis",
+          "Automotive Ethernet Log Analysis",
+          "CANalyzer",
+          "Software Flashing",
+          "Cloud Provisioning",
+          "C++ Code Tracing",
+          "Jira",
+          "Confluence",
+        ],
         bullets: [
-          "Currently in this role - details coming soon!",
+          "Investigated large-scale vehicle software update issues using vehicle logs, Google BigQuery, SQL, and Python across datasets containing 1M-80M rows, validating edge cases and contributing evidence to JIRA tickets.",
+
+          "Built 4 reusable Python investigation tools using Tkinter, Pandas, NumPy, and Plotly, plus automation scripts, processing datasets containing 7M rows and reducing hands-on investigation time by up to 90%.",
+
+          "Developed and optimized BigQuery queries using joins, CTEs, window functions, partition filters, regex, and JSON parsing, reducing runtime by 93% and repeated data retrieval from 2 hours to 10-15 minutes.",
+
+          "Tested software-update failure scenarios on a cloud-connected vehicle integration bench with physical ECUs, configuring DIDs and cloud connectivity, flashing multiple software versions, and analyzing CAN, Ethernet, cloud, update-manager, and gateway logs.",
+
+          "Built 2 Looker Studio dashboards, including a 15-page investigation interface with approximately 15 filters, reducing exploratory analysis from hours to approximately 10 minutes and identifying requirement-to-message discrepancies.",
+
+          "Traced gateway ECU C++ source code and created shared Markdown guides for AI-assisted code navigation, reducing code investigations from 1-2 hours to approximately 3-15 minutes."
         ],
       },
       {
