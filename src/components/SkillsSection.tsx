@@ -37,12 +37,12 @@ const SkillsSection = () => {
       category: "Embedded & Bring-Up",
       status: "currently_using",
       level: 80,
-      learnedAt: "Robotics projects (Arduino/STM32) and embedded coursework, then reinforced through professional firmware work.",
-      appliedAt: "Aversan (STM32 firmware) + UW research (Arduino acquisition/processing code).",
+      learnedAt: "Robotics projects and embedded coursework, then reinforced through professional firmware and vehicle software work.",
+      appliedAt: "Ford (gateway ECU C++ code tracing), Aversan (STM32H7 firmware), and UW research and projects.",
       examples: [
-        { text: "Made targeted firmware changes and debugged behavior on STM32H7 in embedded C (Aversan)" },
-        { text: "Wrote Arduino C++ code for sensor acquisition and reliable data collection (UW research)" },
-        { text: "Wrote STM32 C code for I/O and peripheral control in the MTE 325 two-axis machine project"}
+        { text: "Traced gateway ECU C++ execution paths and correlated them with vehicle system logs (Ford)" },
+        { text: "Made targeted firmware changes and debugged STM32H7 behavior in embedded C (Aversan)" },
+        { text: "Wrote STM32 C firmware for two-axis motion and peripheral control" }
       ]
     },
     {
@@ -126,6 +126,32 @@ const SkillsSection = () => {
     },
 
     // ---------- Interfaces & Debug ----------
+    {
+      name: "CAN / CAN FD",
+      category: "Interfaces & Debug",
+      status: "currently_using",
+      level: 68,
+      learnedAt: "Automotive system-integration work analyzing vehicle network traffic and software-update behavior.",
+      appliedAt: "Ford: used CANalyzer and vehicle logs to investigate OTA update scenarios and validate ECU communication.",
+      examples: [
+        { text: "Analyzed CAN and CAN FD logs during software-update and failure testing" },
+        { text: "Used CANalyzer to inspect messages, timing, and expected-versus-observed behavior" },
+        { text: "Correlated network traffic with gateway, cloud, and update-manager logs" }
+      ]
+    },
+    {
+      name: "Automotive Ethernet",
+      category: "Interfaces & Debug",
+      status: "currently_using",
+      level: 62,
+      learnedAt: "Vehicle integration testing involving Ethernet-based ECU and system communication.",
+      appliedAt: "Ford: analyzed Automotive Ethernet logs while investigating OTA update behavior and cross-system failures.",
+      examples: [
+        { text: "Reviewed Ethernet traffic during vehicle software-update testing" },
+        { text: "Correlated Ethernet events with CAN, gateway, and cloud logs" },
+        { text: "Used multi-source logs to isolate potential system integration failure paths" }
+      ]
+    },
     {
       name: "UART",
       category: "Interfaces & Debug",
@@ -265,13 +291,13 @@ const SkillsSection = () => {
       name: "Data Logging & Telemetry",
       category: "Controls & Automation",
       status: "currently_using",
-      level: 78,
+      level: 80,
       learnedAt: "Hands-on debugging and validation work where repeatable logs were needed to understand system behavior.",
-      appliedAt: "Aversan (UART logging + test tooling); UW research (Raspberry Pi trial export + analysis-ready outputs).",
+      appliedAt: "Ford vehicle telemetry and system logs; Aversan UART test logging; UW research data acquisition and export.",
       examples: [
-        { text: "Logged and parsed UART output to support firmware verification and faster debugging"},
-        { text: "Built a Raspberry Pi CSV export pipeline to capture structured trial data reliably"},
-        { text: "Shaped logs/exports into consistent, analysis-ready formats for downstream review and research use"}
+        { text: "Correlated vehicle, gateway, cloud, CAN, and Ethernet logs during OTA investigations" },
+        { text: "Logged and parsed UART output to support firmware verification and debugging" },
+        { text: "Built structured sensor-data capture and export pipelines for research analysis" }
       ]
     },
     {
@@ -311,12 +337,12 @@ const SkillsSection = () => {
       category: "Software & Data",
       status: "currently_using",
       level: 85,
-      learnedAt: "Building real tools around embedded debugging/verification and research data workflows.",
-      appliedAt: "Aversan (UART/JTAG tools + ATE testing); UW research (data preprocessing + visualization outputs).",
+      learnedAt: "Building engineering tools for vehicle investigations, embedded debugging, test automation, and research data workflows.",
+      appliedAt: "Ford investigation tools; Aversan UART/JTAG and ATE tooling; UW research preprocessing and visualization.",
       examples: [
-        { text: "Built multiple Python GUI tools to parse/log UART test data and support firmware debugging/verification"},
-        { text: "Developed a Linux Python GUI around OpenOCD for JTAG boundary-scan and bit-banged I2C peripheral checks"},
-        { text: "Created a Python GUI with a grouping algorithm to preprocess/visualize foot-pressure data and generate analysis-ready outputs"}
+        { text: "Built Tkinter, Pandas, NumPy, and Plotly tools that reduced hands-on vehicle analysis time by up to 90% (Ford)" },
+        { text: "Developed UART and OpenOCD tools for firmware debugging and board validation (Aversan)" },
+        { text: "Created a GUI and grouping algorithm for foot-pressure data analysis (UW research)" }
       ]
     },
     {
@@ -346,25 +372,27 @@ const SkillsSection = () => {
     {
       name: "Pandas",
       category: "Software & Data",
-      level: 70,
-      learnedAt: "Hands-on use while building Python tooling around real CSV logs and sensor datasets (learning by cleaning, transforming, and exporting real data).",
-      appliedAt: "UW Optometry research (foot-pressure preprocessing + CSV export pipeline) and Aversan (Python tooling for parsing/logging test data).",
+      status: "currently_using",
+      level: 75,
+      learnedAt: "Hands-on use while building Python tools for vehicle telemetry, embedded test logs, and sensor datasets.",
+      appliedAt: "Ford investigation tools; Aversan test-data tooling; UW research preprocessing and export workflows.",
       examples: [
-        { text: "Loaded and cleaned CSV-based logs/datasets (column cleanup, type fixes, missing/invalid value handling)"},
-        { text: "Grouped and transformed trial-style data into analysis-ready tables (segmentation/grouping, summary metrics where needed)"},
-        { text: "Joined/sliced/filtered datasets and produced consistent exports for researchers and test workflows"}
+        { text: "Processed and filtered large vehicle datasets for repeatable software-update investigations (Ford)" },
+        { text: "Parsed and structured embedded test logs for debugging and verification (Aversan)" },
+        { text: "Grouped and transformed foot-pressure datasets into analysis-ready outputs (UW research)" }
       ]
     },
     {
       name: "NumPy",
       category: "Software & Data",
-      level: 65,
-      learnedAt: "Hands-on use while building Python tooling for real sensor data and test logs (learning by implementing and iterating on actual workflows).",
-      appliedAt: "UW Optometry research (pressure-sensor datasets) and Aversan (Python tools for logs/telemetry and automation).",
+      status: "currently_using",
+      level: 68,
+      learnedAt: "Hands-on use in Python tooling for vehicle data, embedded test logs, and research sensor datasets.",
+      appliedAt: "Ford investigation tools, Aversan automation, and UW research data processing.",
       examples: [
-        { text: "Built and manipulated arrays for trial-based data (indexing, slicing, reshaping, stacking)"},
-        { text: "Used vectorized operations for numeric transforms and cleanup (scaling/normalizing, offsets, basic smoothing-style steps when needed)"},
-        { text: "Moved between Pandas and NumPy for efficient computation/plotting, then exported analysis-ready outputs"}
+        { text: "Used arrays and vectorized operations to process large investigation datasets (Ford)" },
+        { text: "Supported numeric transformations and cleanup in embedded test tools (Aversan)" },
+        { text: "Processed pressure-sensor data for visualization and analysis (UW research)" }
       ]
     },
     {
@@ -395,13 +423,39 @@ const SkillsSection = () => {
       name: "SQL",
       category: "Software & Data",
       status: "currently_using",
-      level: 35,
-      learnedAt: "Used SQL while building a hospital database project to understand structured data storage and querying in practice.",
-      appliedAt: "Ran simple queries to retrieve and validate records during development and debugging.",
+      level: 72,
+      learnedAt: "Built a database foundation through projects, then developed it through large-scale vehicle data investigations at Ford.",
+      appliedAt: "Ford: wrote and optimized SQL in BigQuery across vehicle telemetry datasets containing millions of rows.",
       examples: [
-        { text: "Queried patient/appointment-style tables using SELECT + WHERE filters" },
-        { text: "Used basic joins to pull related info across tables when needed" },
-        { text: "Did simple aggregation (COUNT/GROUP BY) to summarize data and sanity-check results" }
+        { text: "Used joins, CTEs, window functions, and nested queries for investigation workflows" },
+        { text: "Applied partition filters, regex, and JSON parsing to large vehicle datasets" },
+        { text: "Reduced query runtime by 93% and recurring retrieval time from hours to minutes" }
+      ]
+    },
+    {
+      name: "Google BigQuery",
+      category: "Software & Data",
+      status: "currently_using",
+      level: 72,
+      learnedAt: "Professional vehicle software investigations requiring large-scale querying, validation, and performance optimization.",
+      appliedAt: "Ford: investigated software-update issues across datasets ranging from millions to tens of millions of rows.",
+      examples: [
+        { text: "Built reusable investigation queries and tables for vehicle software-update analysis" },
+        { text: "Optimized queries using partitioning, CTEs, window functions, and JSON parsing" },
+        { text: "Validated edge cases and produced technical evidence for engineering investigations" }
+      ]
+    },
+    {
+      name: "Looker Studio",
+      category: "Software & Data",
+      status: "currently_using",
+      level: 65,
+      learnedAt: "Built interactive dashboards for vehicle software and telemetry investigations.",
+      appliedAt: "Ford: created investigation dashboards that reduced exploratory analysis and highlighted unexpected vehicle messages.",
+      examples: [
+        { text: "Built filterable dashboards for repeated vehicle-data investigations" },
+        { text: "Combined multiple data views to compare expected and observed vehicle messages" },
+        { text: "Reduced exploratory analysis from hours to minutes" }
       ]
     },
     {
@@ -437,6 +491,19 @@ const SkillsSection = () => {
 
 
     // ---------- Verification / Test Automation ----------
+    {
+      name: "System Integration & OTA Testing",
+      category: "Verification & Automation",
+      status: "currently_using",
+      level: 72,
+      learnedAt: "Hands-on automotive integration testing across physical ECUs, cloud services, and vehicle networks.",
+      appliedAt: "Ford: tested OTA update and failure scenarios on a cloud-connected vehicle integration bench.",
+      examples: [
+        { text: "Configured ECU DIDs and cloud connectivity for software-update testing" },
+        { text: "Flashed multiple software versions and reproduced update failure scenarios" },
+        { text: "Correlated ECU, vehicle-network, gateway, and cloud logs to investigate failures" }
+      ]
+    },
     {
       name: "Robot Framework",
       category: "Verification & Automation",
