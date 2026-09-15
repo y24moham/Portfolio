@@ -106,13 +106,13 @@ const ExperienceSection = () => {
         bullets: [
           "Tested OTA software-update scenarios on a cloud-connected vehicle integration bench, configuring ECUs, flashing software versions, and analyzing CAN/Ethernet and cloud logs to reproduce field failures.",
           
-          "Traced gateway ECU C++ code and system logs to identify OTA failure paths, then created investigation guides that reduced recurring analysis from 1–2 hours to 5–15 minutes.",
+          "Traced gateway ECU C++ code and system logs to identify OTA failure paths, then created investigation guides that reduced recurring analysis from 1-2 hours to 5-15 minutes.",
           
-          "Investigated OTA issues across 1M–80M rows of connected-vehicle data and built 6 Python tools to automate log analysis, reducing hands-on investigation time by up to 90%.",
+          "Investigated OTA issues across 1M-80M rows of connected-vehicle data and built 6 Python tools to automate log analysis, reducing hands-on investigation time by up to 90%.",
           
           "Supported development and review of software requirements for connected-vehicle features, defining expected system behavior and edge cases for implementation and validation.",
           
-          "Optimized BigQuery/SQL queries and workflows for recurring vehicle-data investigations, reducing query runtime by 93% and data-retrieval time from 2 hours to 10–15 minutes.",
+          "Optimized BigQuery/SQL queries and workflows for recurring vehicle-data investigations, reducing query runtime by 93% and data-retrieval time from 2 hours to 10-15 minutes.",
           
           "Built interactive Looker Studio dashboards to explore vehicle telemetry and identify discrepancies between expected and observed vehicle messages.",
         ],
