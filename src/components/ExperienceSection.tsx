@@ -95,35 +95,54 @@ const ExperienceSection = () => {
           "ECU Testing",
           "CAN/CAN FD",
           "Automotive Ethernet",
-          "CANalyzer",
           "C++",
           "Python",
           "BigQuery",
           "SQL",
+          "Software Requirements",
           "Looker Studio",
           "Jira",
         ],
         bullets: [
-          "Tested OTA update and failure scenarios on a vehicle integration bench with physical ECUs, configuring DIDs and cloud connectivity, flashing software, and analyzing vehicle and cloud logs.",
-          "Traced gateway ECU C++ code and correlated execution paths with system logs, then created navigation guides that cut investigation time from hours to minutes.",
-          "Investigated vehicle software-update issues using BigQuery, SQL, Python, and telemetry across large datasets, validating edge cases and supporting Jira investigations.",
-          "Built Python investigation and automation tools using Tkinter, Pandas, NumPy, and Plotly, reducing hands-on analysis time by up to 90%.",
-          "Optimized BigQuery queries using CTEs, window functions, and partitioning, reducing runtime by 93% and retrieval time from hours to minutes.",
-          "Built interactive Looker Studio dashboards that reduced exploratory analysis time and identified discrepancies between expected and observed vehicle messages.",
+          "Tested OTA software-update scenarios on a cloud-connected vehicle integration bench, configuring ECUs, flashing software versions, and analyzing CAN/Ethernet and cloud logs to reproduce field failures.",
+          
+          "Traced gateway ECU C++ code and system logs to identify OTA failure paths, then created investigation guides that reduced recurring analysis from 1–2 hours to 5–15 minutes.",
+          
+          "Investigated OTA issues across 1M–80M rows of connected-vehicle data and built 6 Python tools to automate log analysis, reducing hands-on investigation time by up to 90%.",
+          
+          "Supported development and review of software requirements for connected-vehicle features, defining expected system behavior and edge cases for implementation and validation.",
+          
+          "Optimized BigQuery/SQL queries and workflows for recurring vehicle-data investigations, reducing query runtime by 93% and data-retrieval time from 2 hours to 10–15 minutes.",
+          
+          "Built interactive Looker Studio dashboards to explore vehicle telemetry and identify discrepancies between expected and observed vehicle messages.",
         ],
       },
       {
         role: "Embedded Software Engineering Intern",
         company: "Aversan Inc.",
-        dates: "Sept 2025 - Dec 2025",
+        dates: "Sep 2025 - Dec 2025",
         logoSrc: "Aversan-logo.png",
-        skills: ["STM32", "Embedded C", "OpenOCD", "JTAG/SWD", "UART", "I2C", "Linux", "Python", "Robot Framework"],
+        skills: [
+          "STM32H7",
+          "Embedded C",
+          "DO-178",
+          "JTAG/OpenOCD",
+          "UART/I2C",
+          "DMA",
+          "Python",
+          "Robot Framework",
+          "Linux",
+        ],
         bullets: [
-          "Debugged and extended STM32H7 embedded C firmware for safety-critical aerospace hardware under DO-178 processes.",
-          "Implemented GPIO bit-banged I2C on a custom STM32H7 board and used DMA, timers, and interrupt-driven UART for automated testing and status reporting.",
-          "Built a Linux Python GUI for OpenOCD/JTAG boundary-scan to detect opens, shorts, and soldering faults before firmware was available.",
-          "Built Python UART tools to automate data logging, firmware verification, and debugging, reducing test time by 70%.",
-          "Developed automated I/O tests using Robot Framework on Linux-based test equipment, generating repeatable results for debugging and certification support.",
+          "Debugged and extended STM32H7 embedded C firmware for a safety-critical aerospace system under DO-178 processes, validating changes through bench testing.",
+          
+          "Built 5 Python/UART tools to automate firmware debugging and verification, uncovering dozens of firmware/test defects and reducing test time by 70%.",
+          
+          "Built a Python/OpenOCD JTAG boundary-scan tool to detect soldering, short-circuit, and connectivity faults before firmware bring-up.",
+          
+          "Implemented STM32H7 peripheral test firmware using bit-banged I2C, DMA, timers, and interrupt-driven UART, reducing component test time by 90%.",
+          
+          "Automated I/O verification on Linux-based test equipment with Robot Framework, generating repeatable reports for debugging, certification, and production support.",
         ],
       },
       {
@@ -142,8 +161,8 @@ const ExperienceSection = () => {
           "3D Printing",
         ],
         bullets: [
-          "Built a pressure-sensing acquisition system using an Arduino, 48-channel multiplexer, custom PCB, and Raspberry Pi.",
-          "Developed a decay-compensated C++ and Python pipeline that reduced the sensor sampling interval from 3 seconds to 3 milliseconds.",
+          "Built a 48-channel pressure-based footstep-detection system using Arduino, a custom PCB, multiplexed sensors, and Raspberry Pi.",
+          "Developed a decay-compensated C++/Python acquisition pipeline that reduced the sensor sampling interval from 3 seconds to 3 milliseconds.",
           "Built a Python GUI to group, preprocess, and visualize foot-pressure data for research analysis.",
           "Designed and fabricated SolidWorks and FDM equipment upgrades that improved reliability and reduced setup time by 80%.",
           "Created technical documentation and an operating guide to support continued research use.",
@@ -152,7 +171,7 @@ const ExperienceSection = () => {
       {
         role: "Motion Capture Undergraduate Research Assistant",
         company: "University of Waterloo RoboHub",
-        dates: "Sept 2024 - Dec 2024",
+        dates: "Sep 2024 - Dec 2024",
         logoSrc: "Robohub-logo.png",
         skills: ["Vicon", "Calibration", "Data Cleaning", "Signal Filtering"],
         bullets: [
@@ -193,7 +212,7 @@ const ExperienceSection = () => {
   return (
     <section id="experience" className="py-16">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Career Journey</h2>
+        <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Work Experience</h2>
 
         <div className="max-w-4xl mx-auto" ref={timelineRef}>
           <div className="relative">
