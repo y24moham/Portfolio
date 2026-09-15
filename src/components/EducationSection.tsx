@@ -39,7 +39,7 @@ const EducationSection = () => {
                   </CardTitle>
 
                   <CardDescription className="text-lg">
-                    BASc, Mechatronics Engineering · Honours, Co-op · Artificial Intelligence Option · 3B
+                    BASc, Mechatronics Engineering · Honours, Co-op · Artificial Intelligence Option · 3rd year (3B)
                   </CardDescription>
                 </div>
               </div>
