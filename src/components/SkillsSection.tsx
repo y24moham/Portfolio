@@ -18,656 +18,849 @@ interface Skill {
 const SkillsSection = () => {
 
   const skills: Skill[] = [
-    // ---------- Embedded & Bring-Up ----------
-    {
-      name: "STM32 (HAL/LL)",
-      category: "Embedded & Bring-Up",
-      status: "currently_using",
-      level: 72,
-      learnedAt: "STM32 development through internship firmware work and embedded systems labs.",
-      appliedAt: "Aversan (STM32H7 firmware debug/extension and peripheral bring-up) + coursework labs.",
-      examples: [
-        { text: "Debugged and extended STM32H7 embedded C firmware in a safety-critical workflow (Aversan)" },
-        { text: "Configured and tested STM32 peripherals using HAL/low-level setup patterns (Aversan)" },
-        { text: "Using an STM32 Nucleo board in MTE 325 to configure peripherals and interface with a two-axis machine setup" }
-      ]
-    },
-    {
-      name: "Embedded C / C++",
-      category: "Embedded & Bring-Up",
-      status: "currently_using",
-      level: 80,
-      learnedAt: "Robotics projects and embedded coursework, then reinforced through professional firmware and vehicle software work.",
-      appliedAt: "Ford (gateway ECU C++ code tracing), Aversan (STM32H7 firmware), and UW research and projects.",
-      examples: [
-        { text: "Traced gateway ECU C++ execution paths and correlated them with vehicle system logs (Ford)" },
-        { text: "Made targeted firmware changes and debugged STM32H7 behavior in embedded C (Aversan)" },
-        { text: "Wrote STM32 C firmware for two-axis motion and peripheral control" }
-      ]
-    },
-    {
-      name: "RTOS",
-      category: "Embedded & Bring-Up",
-      level: 60,
-      learnedAt:
-        "MTE 241 coursework covering interrupts, I/O, scheduling, synchronization, memory management, and real-time system design.",
-      appliedAt:
-        "MTE 241 labs on STM32F401RE (STM32CubeIDE), where I implemented RTOS building blocks in C across stacks, processes, multitasking, and timing.",
-      examples: [
-        { text: "Implemented RTOS fundamentals: per-task stacks, basic task/process structures, and startup context setup" },
-        { text: "Built multitasking pieces including a simple scheduler and context switching between tasks" },
-        { text: "Added timing/interrupt-based behavior (tick/timers) and used synchronization concepts to reason about shared resources" }
-      ]
-    },
-    {
-      name: "Timers & Interrupts",
-      category: "Embedded & Bring-Up",
-      status: "currently_using",
-      level: 70,
-      learnedAt: "Event-driven embedded design through firmware work, STM32 labs, and RTOS coursework.",
-      appliedAt: "Aversan (timing + interrupt-driven comms/diagnostics) + robotics-style control loops + STM32 lab work.",
-      examples: [
-        { text: "Used timers and interrupt-driven UART receive patterns for status/diagnostics and faster iteration (Aversan)" },
-        { text: "Worked with timing-driven behaviors and peripheral handling patterns in STM32 firmware contexts (Aversan)" },
-        { text: "Applied timing-based thinking in robotics prototypes where loop timing affected behavior (Arduino projects)" },
-        { text: "Built timing and interrupt-handling experience in MTE 241 labs (STM32F401RE): using interrupts/I/O and timing to support multitasking-style behavior" },
-        { text: "Implemented and compared polling vs interrupts for responsiveness/latency in MTE 325 and used both for the 2-axis machine project development" }
-      ]
-    },
-    {
-      name: "DMA",
-      category: "Embedded & Bring-Up",
-      level: 65,
-      learnedAt: "Hands-on exposure during STM32 firmware work, learning when DMA helps and what it changes in debugging.",
-      appliedAt: "Aversan (DMA-aware peripheral/diagnostics workflows on STM32H7).",
-      examples: [
-        { text: "Debugged firmware behavior involving DMA-enabled peripheral data flow in STM32H7 firmware context (Aversan)" },
-        { text: "Debugged timing issues where data movement was handled outside the main CPU loop (Aversan)" },
-        { text: "Explored peripheral configuration tradeoffs in MTE 325 where throughput/latency and measurement matter" }
-      ]
-    },
-    {
-      name: "PWM",
-      category: "Embedded & Bring-Up",
-      status: "currently_using",
-      level: 68,
-      learnedAt: "Coursework labs using an oscilloscope (MTE 220 Sensors & Instrumentation) and hands-on Arduino experiments with ultrasonic sensing and servo control.",
-      appliedAt: "Robotics prototypes needing precise timing for sensors/actuators, plus real-hardware debugging and tuning.",
-      examples: [
-        { text: "Tested PWM-based servo control (position control and basic tuning)" },
-        { text: "Used pulse timing concepts heavily for ultrasonic sensor experiments (coursework + projects)" },
-        { text: "Applied PWM-style timing in real-time, sensor-driven behavior for an obstacle-avoidance robot" }
-      ]
-    },
-    {
-      name: "Arduino & ESP32",
-      category: "Embedded & Bring-Up",
-      status: "currently_using",
-      level: 80,
-      learnedAt: "Robotics/sensor projects and embedded experimentation building real hardware loops and debugging with measurement tools.",
-      appliedAt: "UW research sensor acquisition (Arduino + multi-sensor setup) and robotics prototypes; ESP32 used for basic connectivity experiments and embedded bring-up practice.",
-      examples: [
-        { text: "Built Arduino-based prototypes for sensor reading, timing, motor/control logic, and robotics experiments" },
-        { text: "Used ESP32 for Wi-Fi/Bluetooth basics and experimentation around embedded connectivity" }
-      ]
-    },
-    {
-      name: "Raspberry Pi",
-      category: "Embedded & Bring-Up",
-      // status: "currently_using",
-      level: 68,
-      learnedAt: "Hands-on research work using Raspberry Pi as part of a sensor acquisition and data export pipeline.",
-      appliedAt: "UW Optometry research: Raspberry Pi-based CSV export pipeline for pressure-sensor trial data collected from an Arduino, MUX, and custom PCB setup.",
-      examples: [
-        { text: "Built a Raspberry Pi Python CSV export pipeline for structured pressure-sensor trial data" },
-        { text: "Integrated Raspberry Pi into an Arduino + 48-channel MUX + custom PCB acquisition setup for footstep/pressure experiments" },
-        { text: "Used Raspberry Pi to support repeatable data capture and export for downstream analysis" }
-      ]
-    },
+  // ---------- Embedded Systems ----------
+  {
+    name: "STM32 (HAL/LL)",
+    category: "Embedded Systems",
+    status: "currently_using",
+    level: 72,
+    learnedAt:
+      "Developed through professional STM32H7 firmware work, embedded-systems coursework, and hands-on STM32 projects.",
+    appliedAt:
+      "Aversan STM32H7 firmware development and peripheral testing, plus STM32 coursework and my dual-axis motion-control project.",
+    examples: [
+      {
+        text: "Debugged and extended STM32H7 embedded C firmware for a safety-critical aerospace system under DO-178 processes at Aversan",
+      },
+      {
+        text: "Implemented STM32H7 peripheral test firmware using bit-banged I2C, DMA, timers, and interrupt-driven UART",
+      },
+      {
+        text: "Built STM32 firmware for independent dual-axis stepper control using SPI motor drivers, ADC speed inputs, and UART commands",
+      },
+      {
+        text: "Resolved an ADC/EXTI race condition using persistent per-axis direction and stop states",
+      },
+    ],
+  },
 
-    // ---------- Interfaces & Debug ----------
-    {
-      name: "CAN / CAN FD",
-      category: "Interfaces & Debug",
-      status: "currently_using",
-      level: 68,
-      learnedAt: "Automotive system-integration work analyzing vehicle network traffic and software-update behavior.",
-      appliedAt: "Ford: used CANalyzer and vehicle logs to investigate OTA update scenarios and validate ECU communication.",
-      examples: [
-        { text: "Analyzed CAN and CAN FD logs during software-update and failure testing" },
-        { text: "Used CANalyzer to inspect messages, timing, and expected-versus-observed behavior" },
-        { text: "Correlated network traffic with gateway, cloud, and update-manager logs" }
-      ]
-    },
-    {
-      name: "Automotive Ethernet",
-      category: "Interfaces & Debug",
-      status: "currently_using",
-      level: 62,
-      learnedAt: "Vehicle integration testing involving Ethernet-based ECU and system communication.",
-      appliedAt: "Ford: analyzed Automotive Ethernet logs while investigating OTA update behavior and cross-system failures.",
-      examples: [
-        { text: "Reviewed Ethernet traffic during vehicle software-update testing" },
-        { text: "Correlated Ethernet events with CAN, gateway, and cloud logs" },
-        { text: "Used multi-source logs to isolate potential system integration failure paths" }
-      ]
-    },
-    {
-      name: "UART",
-      category: "Interfaces & Debug",
-      status: "currently_using",
-      level: 83,
-      learnedAt:
-        "Built embedded test tools and data pipelines using UART and USB-serial links across internship and research work.",
-      appliedAt:
-        "Aversan: multiple Python tools over UART for automation, logging, and verification (device + test equipment). UW research: Arduino-to-PC/Raspberry Pi serial pipelines for data capture and exporting trial datasets.",
-      examples: [
-        { text: "Built Python tools that communicate over UART to send commands, parse responses, and generate structured logs" },
-        { text: "Used USB-to-TTL adapters and direct TX/RX serial wiring for bring-up, debugging, and data capture" },
-        { text: "Streamed sensor data over serial from Arduino to PC/Raspberry Pi, then cleaned/exported results for analysis" }
-      ]
-    },
-    {
-      name: "I2C",
-      category: "Interfaces & Debug",
-      status: "currently_using",
-      level: 79,
-      learnedAt:
-        "Embedded bring-up, sensor/peripheral integration, and coursework exposure to serial buses.",
-      appliedAt:
-        "Aversan: custom bit-banged I2C on STM32 for peripheral/module communication and validation; boundary-scan/TCL-based I2C register reads/writes for pre-firmware checks. UW research: sensor-style integration patterns in a multi-sensor acquisition setup.",
-      examples: [
-        { text: "Wrote custom bit-banged I2C in Embedded C on STM32 (not using the default STM32 I2C peripheral) to communicate with board modules/peripherals" },
-        { text: "Used OpenOCD + TCL boundary-scan routines to perform I2C register reads/writes and validate peripherals without running MCU firmware" },
-        { text: "Debugged I2C issues during bring-up by checking addressing, ACK/NACK behavior, and timing assumptions" },
-        { text: "Applied I2C-style wiring, addressing, and validation practices while building repeatable sensor acquisition systems" }
-      ]
-    },
-    {
-      name: "SPI",
-      category: "Interfaces & Debug",
-      status: "currently_using",
-      level: 65,
-      learnedAt:
-        "Embedded systems coursework and labs, plus hands-on setup in STM32CubeIDE/HAL when bringing up SPI peripherals.",
-      appliedAt:
-        "STM32 coursework and development work involving SPI peripheral setup and communication testing.",
-      examples: [
-        { text: "Configured SPI on STM32 (CubeIDE/CubeMX): CPOL/CPHA, bit order, baud prescaler, NSS behavior" },
-        { text: "Mapped datasheet timing/transactions to code (register reads/writes, dummy bytes, chip-select timing)" },
-        { text: "Debugged basic comms issues: wiring/pinout, incorrect mode, clock speed, and unexpected responses" }
-      ]
-    },
-    {
-      name: "JTAG/SWD",
-      category: "Interfaces & Debug",
-      level: 75,
-      learnedAt: "Hands-on embedded bring-up and debug work across board validation and STM32 development workflows.",
-      appliedAt: "Aversan: boundary-scan board checks over JTAG, plus SWD-based programming and debug during STM32H7 firmware bring-up and troubleshooting.",
-      examples: [
-        { text: "Used JTAG for boundary-scan workflows (via OpenOCD + TCL) to validate shorts/opens and connectivity without relying on MCU firmware" },
-        { text: "Programmed STM32 ELF images over SWD using ST-Link during firmware iteration and bring-up" },
-        { text: "Used STM32CubeProgrammer over SWD to read/debug register values, erase/reflash images, and recover boards when needed" },
-        { text: "Used SWD-based debug steps to investigate firmware issues and confirm expected hardware behavior during testing" }
-      ]
-    },
-    {
-      name: "OpenOCD",
-      category: "Interfaces & Debug",
-      level: 77,
-      learnedAt: "Embedded internship work using OpenOCD as an open-source JTAG interface for boundary-scan and low-level board validation.",
-      appliedAt: "Aversan: OpenOCD-driven JTAG boundary-scan to bring up boards, validate connectivity, and perform peripheral checks without relying on MCU firmware.",
-      examples: [
-        { text: "Wrote TCL scripts using OpenOCD commands (e.g., irscan/drscan) to drive instruction/data registers and run boundary-scan checks" },
-        { text: "Built TCL helper functions that used boundary-scan control to perform I2C transactions (read/write) to specified register addresses" },
-        { text: "Built a Linux Python tool/GUI that invokes OpenOCD in the background to initialize JTAG and control pins at a low level" },
-        { text: "Checked shorts, opens, and pin connectivity before relying on MCU firmware" }
-      ]
-    },
-    {
-      name: "Oscilloscope & DMM",
-      category: "Interfaces & Debug",
-      level: 75,
-      learnedAt: "Electronics labs and hands-on prototype bring-up, including measuring real signals (voltage, timing, waveform shape, phase) and validating test setups with recorded measurements.",
-      appliedAt: "Coursework circuit verification, UW research system bring-up (checking connections and isolating faults), and Aversan debugging (confirming signal/voltage behavior during firmware and boundary-scan validation).",
-      examples: [
-        { text: "Measured voltages, continuity, and timing to verify wiring, board connections, and expected I/O behavior" },
-        { text: "Used an oscilloscope + signal generator to observe waveforms and phase relationships and document test evidence" },
-        { text: "Confirmed correct signal activity while testing firmware changes and boundary-scan controlled lines during bring-up/debug" }
-      ]
-    },
-    {
-      name: "Wi-Fi / Bluetooth",
-      category: "Interfaces & Debug",
-      level: 60,
-      learnedAt: "Hands-on prototyping with ESP32 and Arduino wireless modules while validating simple connectivity and data transfer.",
-      appliedAt: "ESP32 experiments using Wi-Fi basics and Bluetooth basics; Arduino testing using the HC-05 Bluetooth module for simple wireless communication.",
-      examples: [
-        { text: "Set up basic Wi-Fi functionality on ESP32 for small experiments and connectivity checks" },
-        { text: "Tested basic Bluetooth communication on ESP32 for small proof-of-concept projects" },
-        { text: "Integrated an HC-05 Bluetooth module with Arduino to send/receive basic serial data wirelessly" }
-      ]
-    },
+  {
+    name: "RTOS",
+    category: "Embedded Systems",
+    level: 60,
+    learnedAt:
+      "MTE 241 coursework covering scheduling, synchronization, interrupts, I/O, memory management, and real-time system design.",
+    appliedAt:
+      "STM32F401RE labs where I implemented RTOS building blocks and multitasking behavior in C.",
+    examples: [
+      {
+        text: "Implemented per-task stacks and basic task/process structures with startup context setup",
+      },
+      {
+        text: "Built a simple scheduler and context-switching functionality between tasks",
+      },
+      {
+        text: "Used timer and interrupt-driven behavior to support multitasking and timing",
+      },
+      {
+        text: "Applied synchronization concepts when reasoning about shared resources and concurrent execution",
+      },
+    ],
+  },
 
-    // ---------- Controls & Automation ----------
-    {
-      name: "PID Control",
-      category: "Controls & Automation",
-      status: "currently_using",
-      level: 68,
-      learnedAt: "Controls fundamentals + applied robotics prototypes.",
-      appliedAt: "Quadcopter prototype stabilization + general control-loop work.",
-      examples: [
-        { text: "Implemented and tuned PID-style stabilization logic for a quadcopter prototype"},
-        { text: "Iterated gains based on observed response and stability needs"},
-        { text: "Connected sensor feedback (IMU) to control output behavior"}
-      ]
-    },
-    {
-      name: "Finite-State Machines (FSM)",
-      category: "Controls & Automation",
-      level: 76,
-      learnedAt: "Robotics/embedded behavior design and digital logic coursework (state diagrams, state encoding, and valid transition rules).",
-      appliedAt: "Obstacle-aware Arduino robot behaviors, plus implementing FSM specs in VHDL and PLC ladder logic labs.",
-      examples: [
-        { text: "Built an obstacle-aware Arduino robot using a two-state FSM (idle/run) with debounced inputs and sensor-driven behavior"},
-        { text: "Designed FSMs from problem spec → state diagram → encoded states/transitions (only allowed moves) in digital logic coursework"},
-        { text: "Implemented FSM-style control in VHDL and PLC ladder logic for motor/LED control and sensor-driven sequencing (e.g., color sensing)"}
-      ]
-    },
-    {
-      name: "Signal Filtering",
-      category: "Controls & Automation",
-      level: 62,
-      learnedAt: "Signals & Systems coursework (frequency response, Bode plots) and circuits work building simple analog filters (op-amp + Twin-T).",
-      appliedAt: "Motion-capture and sensor-data preprocessing to reduce noise and improve signal quality.",
-      examples: [
-        { text: "Applied low-pass filtering during Vicon/Nexus processing to reduce noise and produce cleaner trajectories"},
-        { text: "Built and tested basic analog filtering using op-amps, including a Twin-T selective amplifier coursework project"},
-        { text: "Used frequency-response intuition (Bode plots) to reason about filtering behavior and signal quality"}
-      ]
-    },
-    {
-      name: "Data Logging & Telemetry",
-      category: "Controls & Automation",
-      status: "currently_using",
-      level: 80,
-      learnedAt: "Hands-on debugging and validation work where repeatable logs were needed to understand system behavior.",
-      appliedAt: "Ford vehicle telemetry and system logs; Aversan UART test logging; UW research data acquisition and export.",
-      examples: [
-        { text: "Correlated vehicle, gateway, cloud, CAN, and Ethernet logs during OTA investigations" },
-        { text: "Logged and parsed UART output to support firmware verification and debugging" },
-        { text: "Built structured sensor-data capture and export pipelines for research analysis" }
-      ]
-    },
-    {
-      name: "PLC (Ladder Logic)",
-      category: "Controls & Automation",
-      level: 60,
-      learnedAt: "Coursework labs focused on translating control requirements into ladder logic with safe sequencing and interlocks.",
-      appliedAt: "PLC lab builds where I implemented sensor-driven logic and discrete control for actuators and indicators.",
-      examples: [
-        { text: "Built ladder logic to control motors and LEDs with clear start/stop behavior and interlocks"},
-        { text: "Integrated sensor inputs (including color sensing) to trigger state-based actions and sequencing"},
-        { text: "Translated a problem spec into a controlled sequence (states/allowed transitions) and validated behavior during lab testing"}
-      ]
-    },
+  {
+    name: "Timers & Interrupts",
+    category: "Embedded Systems",
+    status: "currently_using",
+    level: 70,
+    learnedAt:
+      "Developed through professional embedded firmware work, STM32 labs, robotics projects, and RTOS coursework.",
+    appliedAt:
+      "Aversan firmware/test development, my STM32 motion controller, and embedded-systems coursework.",
+    examples: [
+      {
+        text: "Used interrupt-driven UART RX for embedded diagnostics, testing, and status reporting at Aversan",
+      },
+      {
+        text: "Implemented EXTI-based limit-switch protection with direction-aware motion blocking on an STM32 motion controller",
+      },
+      {
+        text: "Resolved an ADC/EXTI race condition using persistent per-axis direction and stop states",
+      },
+      {
+        text: "Compared polling and interrupt-driven approaches during STM32 development to understand responsiveness and timing behavior",
+      },
+    ],
+  },
 
-    // ---------- Software / Data ----------
-    {
-      name: "C / C++",
-      category: "Software & Data",
-      status: "currently_using",
-      level: 75,
-      learnedAt:
-        "Coursework foundation in C++ software design and problem solving (MTE 121: fundamentals + OOP; MTE 140: data structures, recursion, complexity). Reinforced C fundamentals (pointers/structs, memory) in systems/RTOS coursework (MTE 241).",
-      appliedAt:
-        "Built standalone C++ programs and algorithmic solutions (calculations/decisions, console/file I/O), implemented core data structures in labs, and used C/C++ for coursework, data structures, systems concepts, and small engineering utilities.",
-      examples: [
-        { text: "Implemented data structures in C++ (linked lists, stacks, queues, trees/BSTs) with edge-case handling" },
-        { text: "Used recursion for tree operations and recursive problem-solving patterns" },
-        { text: "Worked with pointers + heap allocation (new/delete, malloc/free) for node-based structures" },
-        { text: "Applied OOP (classes/objects/encapsulation) to organize programs" },
-        { text: "Built solutions using sorting/searching with basic efficiency reasoning" },
-        { text: "Learned hash tables and can implement a basic hash map in C++" }
-      ]
-    },
-    {
-      name: "Python",
-      category: "Software & Data",
-      status: "currently_using",
-      level: 85,
-      learnedAt: "Building engineering tools for vehicle investigations, embedded debugging, test automation, and research data workflows.",
-      appliedAt: "Ford investigation tools; Aversan UART/JTAG and ATE tooling; UW research preprocessing and visualization.",
-      examples: [
-        { text: "Built Tkinter, Pandas, NumPy, and Plotly tools that reduced hands-on vehicle analysis time by up to 90% (Ford)" },
-        { text: "Developed UART and OpenOCD tools for firmware debugging and board validation (Aversan)" },
-        { text: "Created a GUI and grouping algorithm for foot-pressure data analysis (UW research)" }
-      ]
-    },
-    {
-      name: "Git",
-      category: "Software & Data",
-      level: 80,
-      learnedAt: "Used Git across projects and team workflows, and strengthened it during my last co-op term using Git for day-to-day version control in Azure DevOps.",
-      appliedAt: "Aversan: Azure DevOps repos for firmware/tooling changes and ATE test automation assets under a team review workflow. Personal: GitHub for maintaining and iterating on projects.",
-      examples: [
-        { text: "Committed and pushed verified changes to Azure DevOps repos (firmware, Python tooling, and ATE/Robot Framework test assets) as part of a structured team workflow"},
-        { text: "Used branches and clean commit history to develop, test, and merge changes safely"},
-        { text: "Used GitHub to organize personal projects, track revisions, and document progress"}
-      ]
-    },
-    {
-      name: "Linux (CLI)",
-      category: "Software & Data",
-      level: 65,
-      learnedAt: "Built comfort with Linux through embedded internship workflows, using the terminal daily for development, testing, and automation.",
-      appliedAt: "Embedded software internship: developed a boundary-scan tool inside a Linux VM, did parts of STM32H7 development/debug in that environment, and worked with Linux-based Automated Test Equipment (ATE).",
-      examples: [
-        { text: "Developed and ran a Python-based boundary-scan workflow in a Linux virtual machine (terminal-first workflow)"},
-        { text: "Used Linux tooling to support STM32H7 firmware development/debug tasks and run supporting scripts"},
-        { text: "Worked in a Linux ATE environment to execute automated verification and interpret logs/results"}
-      ]
-    },
-    {
-      name: "Pandas",
-      category: "Software & Data",
-      status: "currently_using",
-      level: 75,
-      learnedAt: "Hands-on use while building Python tools for vehicle telemetry, embedded test logs, and sensor datasets.",
-      appliedAt: "Ford investigation tools; Aversan test-data tooling; UW research preprocessing and export workflows.",
-      examples: [
-        { text: "Processed and filtered large vehicle datasets for repeatable software-update investigations (Ford)" },
-        { text: "Parsed and structured embedded test logs for debugging and verification (Aversan)" },
-        { text: "Grouped and transformed foot-pressure datasets into analysis-ready outputs (UW research)" }
-      ]
-    },
-    {
-      name: "NumPy",
-      category: "Software & Data",
-      status: "currently_using",
-      level: 68,
-      learnedAt: "Hands-on use in Python tooling for vehicle data, embedded test logs, and research sensor datasets.",
-      appliedAt: "Ford investigation tools, Aversan automation, and UW research data processing.",
-      examples: [
-        { text: "Used arrays and vectorized operations to process large investigation datasets (Ford)" },
-        { text: "Supported numeric transformations and cleanup in embedded test tools (Aversan)" },
-        { text: "Processed pressure-sensor data for visualization and analysis (UW research)" }
-      ]
-    },
-    {
-      name: "Matplotlib",
-      category: "Software & Data",
-      level: 75,
-      learnedAt: "Used during research work to visualize sensor layouts and validate data-collection logic.",
-      appliedAt: "Engineering research assistant co-op: Python GUI that visualized stair geometry and pressure-sensor points on a grid to support foot-detection/segmentation checks.",
-      examples: [
-        { text: "Rendered a grid-based stair/sensor layout and plotted pressure points for quick visual validation inside a GUI" },
-        { text: "Used plotted point clusters on the grid to help determine whether readings belong to a single foot contact region" },
-        { text: "Used visualization as a debugging tool to verify mapping, alignment, and collection logic during iteration" }
-      ]
-    },
-    {
-      name: "Pytest",
-      category: "Software & Data",
-      level: 57,
-      learnedAt: "Picked up through building Python tooling and learning to validate behavior with simple, repeatable tests.",
-      appliedAt: "Aversan: Python tools and ATE-related scripting where basic checks helped catch issues early and keep changes safe.",
-      examples: [
-        { text: "Wrote small tests to validate expected outputs and surface errors/edge cases (e.g., invalid inputs, missing responses, timeout-style conditions)" },
-        { text: "Used quick regression checks when refactoring or adding features to Python utilities" },
-        { text: "Applied a testing mindset alongside ATE workflows to keep automation changes reliable" }
-      ]
-    },
-    {
-      name: "SQL",
-      category: "Software & Data",
-      status: "currently_using",
-      level: 72,
-      learnedAt: "Built a database foundation through projects, then developed it through large-scale vehicle data investigations at Ford.",
-      appliedAt: "Ford: wrote and optimized SQL in BigQuery across vehicle telemetry datasets containing millions of rows.",
-      examples: [
-        { text: "Used joins, CTEs, window functions, and nested queries for investigation workflows" },
-        { text: "Applied partition filters, regex, and JSON parsing to large vehicle datasets" },
-        { text: "Reduced query runtime by 93% and recurring retrieval time from hours to minutes" }
-      ]
-    },
-    {
-      name: "Google BigQuery",
-      category: "Software & Data",
-      status: "currently_using",
-      level: 72,
-      learnedAt: "Professional vehicle software investigations requiring large-scale querying, validation, and performance optimization.",
-      appliedAt: "Ford: investigated software-update issues across datasets ranging from millions to tens of millions of rows.",
-      examples: [
-        { text: "Built reusable investigation queries and tables for vehicle software-update analysis" },
-        { text: "Optimized queries using partitioning, CTEs, window functions, and JSON parsing" },
-        { text: "Validated edge cases and produced technical evidence for engineering investigations" }
-      ]
-    },
-    {
-      name: "Looker Studio",
-      category: "Software & Data",
-      status: "currently_using",
-      level: 65,
-      learnedAt: "Built interactive dashboards for vehicle software and telemetry investigations.",
-      appliedAt: "Ford: created investigation dashboards that reduced exploratory analysis and highlighted unexpected vehicle messages.",
-      examples: [
-        { text: "Built filterable dashboards for repeated vehicle-data investigations" },
-        { text: "Combined multiple data views to compare expected and observed vehicle messages" },
-        { text: "Reduced exploratory analysis from hours to minutes" }
-      ]
-    },
-    {
-      name: "Data Structures & Algorithms",
-      category: "Software & Data",
-      level: 75,
-      learnedAt:
-        "Coursework + labs implementing core data structures from scratch in C/C++.",
-      appliedAt:
-        "Used as a foundation for writing reliable code and reasoning about correctness/performance in projects and tooling work.",
-      examples: [
-        { text: "Implemented linked lists (node-based) with insert/delete/traverse operations" },
-        { text: "Implemented ADTs (stacks/queues) using both arrays and linked lists" },
-        { text: "Implemented trees including binary search trees (search/insert/traversals)" }
-      ]
-    },
-    {
-      name: "Excel",
-      category: "Software & Data",
-      level: 79,
-      learnedAt:
-        "Learned through repeated engineering coursework and project reporting, then reinforced by building reusable templates for analysis, charts, and parameter-driven part generation.",
-      appliedAt:
-        "Coursework: analyzed datasets, built tables/charts, and documented results in a repeatable format. CNC programmer: used Excel-driven parameters to generate many Autodesk Inventor part variants and track manufacturing inputs/outputs. Tooling: worked with CSV/Excel data in Python (pandas) for cleaning, transformation, and export.",
-      examples: [
-        { text: "Built structured analysis sheets with formulas (lookup functions, conditional logic, aggregation) and clear summary tables for coursework results" },
-        { text: "Created charts/dashboards to communicate trends, comparisons, and results clearly (labels, units, consistent formatting)" },
-        { text: "Used Excel as a parameter source for Autodesk Inventor to generate multiple part variants efficiently (spreadsheet-driven dimensions/inputs)" },
-        { text: "Used Excel to organize production or measurement data and reduce manual entry errors with validation, templates, and consistent formats" },
-        { text: "Processed and validated Excel/CSV files in Python (pandas): cleaning columns/types, filtering, grouping, and exporting analysis-ready outputs" }
-      ]
-    },
+  {
+    name: "DMA",
+    category: "Embedded Systems",
+    level: 65,
+    learnedAt:
+      "Developed through STM32H7 firmware and peripheral-testing work at Aversan.",
+    appliedAt:
+      "Aversan STM32H7 peripheral testing and automated component-validation workflows.",
+    examples: [
+      {
+        text: "Worked with DMA-enabled peripheral data flow in STM32H7 firmware",
+      },
+      {
+        text: "Debugged timing and data-flow behavior where transfers occurred outside the main CPU loop",
+      },
+      {
+        text: "Used DMA alongside timers and interrupt-driven UART in STM32H7 peripheral test firmware",
+      },
+    ],
+  },
 
+  {
+    name: "PWM",
+    category: "Embedded Systems",
+    status: "currently_using",
+    level: 68,
+    learnedAt:
+      "Developed through embedded coursework, electronics labs, and robotics projects involving actuator control and timing.",
+    appliedAt:
+      "Servo-control experiments, ultrasonic-sensing work, and robotics prototypes.",
+    examples: [
+      {
+        text: "Used PWM for servo and actuator-control experiments",
+      },
+      {
+        text: "Applied pulse-timing concepts in ultrasonic sensing and robotics projects",
+      },
+      {
+        text: "Used oscilloscope measurements to observe and validate timing and waveform behavior",
+      },
+    ],
+  },
 
-    // ---------- Verification / Test Automation ----------
-    {
-      name: "System Integration & OTA Testing",
-      category: "Verification & Automation",
-      status: "currently_using",
-      level: 72,
-      learnedAt: "Hands-on automotive integration testing across physical ECUs, cloud services, and vehicle networks.",
-      appliedAt: "Ford: tested OTA update and failure scenarios on a cloud-connected vehicle integration bench.",
-      examples: [
-        { text: "Configured ECU DIDs and cloud connectivity for software-update testing" },
-        { text: "Flashed multiple software versions and reproduced update failure scenarios" },
-        { text: "Correlated ECU, vehicle-network, gateway, and cloud logs to investigate failures" }
-      ]
-    },
-    {
-      name: "Robot Framework",
-      category: "Verification & Automation",
-      level: 68,
-      learnedAt: "Learned by building automated test suites during my embedded software internship, working in a Linux environment (Robot Framework via RIDE).",
-      appliedAt: "Used it to automate I/O verification (set/read checks) and produce test reports used for debugging and downstream certification/production workflows.",
-      examples: [
-        { text: "Authored Robot Framework test suites to validate I/O behavior on Linux-based Automated Test Equipment" },
-        { text: "Generated structured reports that supported debugging and compliance-focused workflows (including FAA-related needs) as well as production/maintenance" },
-        { text: "Built Robot Framework tests that call Python helper scripts for parsing, logic, and utility functions" }
-      ]
-    },
+  {
+    name: "Arduino",
+    category: "Embedded Systems",
+    status: "currently_using",
+    level: 80,
+    learnedAt:
+      "Developed through robotics, sensor projects, engineering research, and hands-on embedded prototyping.",
+    appliedAt:
+      "UW pressure-sensing research, obstacle-aware robotics, prosthetic-hand work, and control-system prototypes.",
+    examples: [
+      {
+        text: "Built the embedded controller for a 48-channel pressure-based footstep-detection research system",
+      },
+      {
+        text: "Developed an obstacle-aware two-motor robot with ultrasonic sensing, an LCD interface, and finite-state control",
+      },
+      {
+        text: "Used Arduino for sensor integration, motor control, timing, and real-time prototyping",
+      },
+      {
+        text: "Used Arduino in PID and IMU-based attitude-control experimentation",
+      },
+    ],
+  },
 
-    // ---------- Mechanical / CAD / Prototyping ----------
-    {
-      name: "SolidWorks",
-      category: "Hardware, CAD & Prototyping",
-      status: "currently_using",
-      level: 85,
-      learnedAt: "Coursework-based CAD training, then reinforced through projects where I recreated real parts and built full assemblies.",
-      appliedAt: "EV3 prosthetic hand project, multiple course design projects (including an energy-absorbing damper mechanism), developing mechanisms as an engineering research assistant, and personal mechanical concept builds.",
-      examples: [
-        { text: "Modeled real parts from measurements and rebuilt them as CAD components for assembly integration" },
-        { text: "Designed mechanisms that mount onto existing parts and improve functionality" },
-        { text: "Built full assemblies for coursework and prototypes, checking fit and motion through iteration" },
-        { text: "Created mechanical concept models for learning/communication (e.g., flapping-wing mechanism concept, W16 piston/engine visualization)" }
-      ]
-    },
-    {
-      name: "AutoCAD",
-      category: "Hardware, CAD & Prototyping",
-      level: 70,
-      learnedAt: "Coursework and practical drafting work during manufacturing-focused tasks.",
-      appliedAt: "CNC programming work (editing/repairing DXF files and technical drawings) and project workflows where I created/modified drawings for laser cutting and fabrication.",
-      examples: [
-        { text: "Edited and corrected DXF geometry for manufacturing readiness (cleanup, alignment, dimension fixes)" },
-        { text: "Worked with technical drawings to support production workflows as a CNC programmer" },
-        { text: "Created or modified 2D CAD parts for laser cutting during hands-on project work" }
-      ]
-    },
-    {
-      name: "GD&T",
-      category: "Hardware, CAD & Prototyping",
-      level: 76,
-      learnedAt: "Coursework and practical use as a CNC programmer working from GD&T technical drawings.",
-      appliedAt: "Created 3D CAD sheet-metal models from GD&T drawings in a production environment, and used tolerancing awareness while designing/iterating mechanisms as an engineering research assistant.",
-      examples: [
-        { text: "Interpreted GD&T callouts (datums, feature control frames) to build CAD parts that match drawing intent" },
-        { text: "Applied tolerance awareness when converting drawings to manufacturable models and drawings for production" },
-        { text: "Considered fits/clearances and stack-up effects when designing mechanisms so assemblies function reliably" }
-      ]
-    },
-    {
-      name: "3D Printing (FDM)",
-      category: "Hardware, CAD & Prototyping",
-      level: 78,
-      learnedAt: "Hands-on prototyping across coursework and personal projects, plus maintaining and repairing FDM printers.",
-      appliedAt: "EV3 project parts, personal mechanical builds, and fabrication of mechanism improvements during my engineering research assistant co-op.",
-      examples: [
-        { text: "Designed and printed functional parts for multiple projects, then iterated based on fit, strength, and real-world testing" },
-        { text: "Used 3D printing to support rapid prototyping of mechanical mechanisms and improvement fixtures during research work" },
-        { text: "Repaired and restored Cubicon FDM printers (replaced outsourced components like heaters/thermocouples) and put them back into reliable use" }
-      ]
-    },
-    {
-      name: "Soldering",
-      category: "Hardware, CAD & Prototyping",
-      level: 80,
-      learnedAt: "Learned early through hands-on electronics, then reinforced through years of personal builds and coursework labs.",
-      appliedAt: "Personal projects (wiring and connections as needed), coursework PCB work, and PCB soldering during my engineering research assistant co-op.",
-      examples: [
-        { text: "Soldered connectors, wires, and components to build and repair circuits for prototypes and personal projects" },
-        { text: "Performed PCB soldering/rework for coursework and research setups when reliable connections were critical" },
-        { text: "Used soldering as part of hardware debugging (fixing intermittent joints, reworking connections, improving robustness)" }
-      ]
-    },
-    {
-      name: "PCB Design",
-      category: "Hardware, CAD & Prototyping",
-      status: "currently_using",
-      level: 64,
-      learnedAt: "Learned PCB design during my engineering research assistant co-op by designing a custom sensor interface board in Altium CircuitMaker.",
-      appliedAt: "Designed a custom PCB that mounts on an Arduino, interfaces to 48 sensors using voltage-divider circuits, and connects to a separate camera system for synchronization.",
-      examples: [
-        { text: "Designed the schematic and PCB layout for an Arduino-mounted sensor interface board (48 channels, voltage-divider conditioning)" },
-        { text: "Planned connectors/routing for reliable sensor wiring and integration with an external camera sync setup" },
-        { text: "Ran ERC/DRC-style checks and reviewed connectivity before fabrication" }
-      ]
-    },
-    {
-      name: "Autodesk Inventor",
-      category: "Hardware, CAD & Prototyping",
-      level: 70,
-      learnedAt: "CNC programming co-op using Inventor for sheet-metal design tied directly to production outputs.",
-      appliedAt: "State Windows: built parametric sheet-metal parts (iLogic/spreadsheet), produced manufacturing drawings, and generated G-code for CNC fabrication and bending workflows.",
-      examples: [
-        { text: "Built parametric sheet-metal CAD using iLogic/spreadsheet inputs to generate many part variants efficiently" },
-      ]
-    },
+  {
+    name: "Raspberry Pi",
+    category: "Embedded Systems",
+    level: 68,
+    learnedAt:
+      "Developed through engineering research involving sensor acquisition, processing, and data export.",
+    appliedAt:
+      "UW Optometry pressure-sensing research system.",
+    examples: [
+      {
+        text: "Built a Raspberry Pi Python pipeline for structured pressure-sensor trial-data export",
+      },
+      {
+        text: "Integrated Raspberry Pi with Arduino, a 48-channel multiplexer, and a custom PCB",
+      },
+      {
+        text: "Used Raspberry Pi to support repeatable data capture and downstream research analysis",
+      },
+    ],
+  },
 
-    // ---------- FPGA / Digital ----------
-    {
-      name: "VHDL (FPGA)",
-      category: "FPGA/Digital",
-      level: 57,
-      learnedAt: "Digital logic/FPGA coursework covering VHDL fundamentals.",
-      appliedAt: "Course labs where I implemented simple FPGA logic to read inputs and drive display outputs.",
-      examples: [
-        { text: "Wrote VHDL modules to process button inputs into stable binary signals" },
-        { text: "Implemented combinational logic to map binary values to 7-segment display outputs" },
-      ]
-    },
+  // ---------- Interfaces & Debug ----------
+  {
+    name: "CAN / CAN FD",
+    category: "Interfaces & Debug",
+    status: "currently_using",
+    level: 68,
+    learnedAt:
+      "Developed through automotive system-integration work involving vehicle network traffic and OTA software-update behavior.",
+    appliedAt:
+      "Ford vehicle integration and software-update investigations.",
+    examples: [
+      {
+        text: "Analyzed CAN and CAN FD logs during OTA software-update and failure-scenario testing",
+      },
+      {
+        text: "Used CANalyzer to inspect vehicle messages, timing, and expected-versus-observed behavior",
+      },
+      {
+        text: "Correlated CAN traffic with gateway ECU, system, Ethernet, and cloud logs during investigations",
+      },
+    ],
+  },
 
-    // ---------- Modeling / Simulation ----------
-    {
-      name: "MATLAB",
-      category: "Modeling/Simulation",
-      level: 74,
-      learnedAt: "Engineering coursework where I used MATLAB for modeling, solver-based workflows, and visualization.",
-      appliedAt: "Engineering coursework and labs: equation solving (direct + iterative), nonlinear system solving with custom function files, parametric 3D geometry/plots, and trajectory-style analysis with clear visual outputs.",
-      examples: [
-        { text: "Built reusable function files and ran solver workflows (e.g., fsolve with custom equation functions)" },
-        { text: "Solved engineering systems with both direct methods (A\\b) and iterative methods (Gauss-Seidel with relaxation + convergence checks)" },
-        { text: "Created 2D and 3D visualizations using plots, surfaces, contours, labels, legends, and annotations" },
-        { text: "Worked with grid/parameterized models using meshgrid and element-wise operations for efficient evaluation across many points" }
-      ]
-    },
-    {
-      name: "Simulink",
-      category: "Modeling/Simulation",
-      level: 60,
-      learnedAt: "MTE 351 (Systems Models 1) coursework covering system modeling and simulation tools.",
-      appliedAt: "Course material and the MTE 351 project.",
-      examples: [
-        { text: "Built and simulated first- and second-order system models in Simulink" },
-        { text: "Used block diagrams to model system dynamics and compare simulated responses" }
-      ]
-    },
-    {
-      name: "SimulationX",
-      category: "Modeling/Simulation",
-      level: 60,
-      learnedAt: "MTE 351 (Systems Models 1) coursework covering system modeling and simulation tools.",
-      appliedAt: "Course labs/assignments and the MTE 351 project.",
-      examples: [
-        { text: "Learning to build and simulate 1st/2nd-order system responses in SimulationX"},
-        { text: "Modeling mechanical/electromechanical systems using time and frequency-domain concepts"},
-        { text: "Built a 3D model of a mechanical system using SimulationX for a self-balancing scooter project, then iterated parameters using Variant Wizard to achieve the maximum stable operating distance" }
-      ]
-    }
+  {
+    name: "Automotive Ethernet",
+    category: "Interfaces & Debug",
+    status: "currently_using",
+    level: 62,
+    learnedAt:
+      "Developed through vehicle integration testing involving Ethernet-based ECU and system communication.",
+    appliedAt:
+      "Ford OTA and connected-vehicle software investigations.",
+    examples: [
+      {
+        text: "Analyzed Automotive Ethernet logs during vehicle software-update testing",
+      },
+      {
+        text: "Correlated Ethernet events with CAN, gateway ECU, system, and cloud logs",
+      },
+      {
+        text: "Used multi-source logs to isolate potential system-integration and OTA failure paths",
+      },
+    ],
+  },
 
-  ];
+  {
+    name: "UART",
+    category: "Interfaces & Debug",
+    status: "currently_using",
+    level: 83,
+    learnedAt:
+      "Developed through embedded firmware, test automation, engineering research, and STM32 projects.",
+    appliedAt:
+      "Aversan Python tooling and STM32 testing, UW research acquisition, and STM32 motion control.",
+    examples: [
+      {
+        text: "Built multiple Python tools that sent commands, parsed responses, and logged embedded-device data over UART",
+      },
+      {
+        text: "Used interrupt-driven UART RX for STM32H7 testing, diagnostics, and status reporting",
+      },
+      {
+        text: "Streamed sensor data from Arduino into PC and Raspberry Pi workflows for structured data capture",
+      },
+      {
+        text: "Used UART to send keyboard-driven motion commands from a Python GUI to an STM32 controller",
+      },
+    ],
+  },
 
+  {
+    name: "I2C",
+    category: "Interfaces & Debug",
+    status: "currently_using",
+    level: 79,
+    learnedAt:
+      "Developed through embedded board bring-up, peripheral integration, and hardware-validation work.",
+    appliedAt:
+      "Aversan STM32H7 firmware and OpenOCD/JTAG validation workflows.",
+    examples: [
+      {
+        text: "Implemented GPIO bit-banged I2C in embedded C on STM32H7 rather than relying on the MCU I2C peripheral",
+      },
+      {
+        text: "Performed I2C register reads and writes through OpenOCD boundary-scan routines without running MCU firmware",
+      },
+      {
+        text: "Debugged addressing, ACK/NACK behavior, timing assumptions, and peripheral communication issues",
+      },
+      {
+        text: "Used I2C-style peripheral validation as part of pre-firmware custom-board testing",
+      },
+    ],
+  },
+
+  {
+    name: "SPI",
+    category: "Interfaces & Debug",
+    status: "currently_using",
+    level: 65,
+    learnedAt:
+      "Developed through STM32 coursework and embedded motion-control development.",
+    appliedAt:
+      "STM32 dual-axis motion controller and embedded-systems coursework.",
+    examples: [
+      {
+        text: "Used SPI motor drivers for independent dual-axis stepper control",
+      },
+      {
+        text: "Configured STM32 SPI parameters including CPOL/CPHA, bit order, baud prescaler, and chip-select behavior",
+      },
+      {
+        text: "Mapped peripheral datasheet transactions to register reads/writes and communication sequences",
+      },
+      {
+        text: "Debugged communication issues involving wiring, SPI mode, clock speed, and unexpected responses",
+      },
+    ],
+  },
+
+  {
+    name: "JTAG / SWD",
+    category: "Interfaces & Debug",
+    level: 75,
+    learnedAt:
+      "Developed through embedded board bring-up, boundary-scan testing, programming, and low-level firmware debugging.",
+    appliedAt:
+      "Aversan STM32H7 development and custom-board hardware validation.",
+    examples: [
+      {
+        text: "Used JTAG boundary scan to detect shorts, opens, soldering faults, and connectivity issues before firmware bring-up",
+      },
+      {
+        text: "Programmed STM32 ELF images over SWD using ST-Link during firmware development",
+      },
+      {
+        text: "Used STM32CubeProgrammer over SWD for flashing, register inspection, erase/reflash operations, and board recovery",
+      },
+      {
+        text: "Used SWD-based debugging to investigate firmware behavior and confirm expected hardware operation",
+      },
+    ],
+  },
+
+  {
+    name: "OpenOCD",
+    category: "Interfaces & Debug",
+    level: 77,
+    learnedAt:
+      "Developed during embedded internship work using OpenOCD for JTAG boundary scan and low-level custom-board validation.",
+    appliedAt:
+      "Aversan board bring-up, connectivity testing, and peripheral validation.",
+    examples: [
+      {
+        text: "Wrote TCL scripts using OpenOCD commands such as irscan and drscan for JTAG boundary-scan operations",
+      },
+      {
+        text: "Built TCL helper functions that used boundary-scan control to perform I2C register reads and writes",
+      },
+      {
+        text: "Built a Linux Python tool/GUI that invoked OpenOCD to initialize JTAG and automate low-level board testing",
+      },
+      {
+        text: "Used OpenOCD to detect shorts, opens, and connectivity faults before relying on MCU firmware",
+      },
+    ],
+  },
+
+  {
+    name: "Oscilloscope & DMM",
+    category: "Interfaces & Debug",
+    level: 75,
+    learnedAt:
+      "Developed through electronics labs, firmware debugging, engineering research, and prototype bring-up.",
+    appliedAt:
+      "Aversan hardware validation, UW research, coursework circuit verification, and personal projects.",
+    examples: [
+      {
+        text: "Measured voltages, continuity, timing, and waveform behavior during hardware and firmware debugging",
+      },
+      {
+        text: "Used an oscilloscope and signal generator to inspect waveforms and phase relationships",
+      },
+      {
+        text: "Verified signal activity while testing firmware changes and boundary-scan controlled lines",
+      },
+      {
+        text: "Used electrical measurements to isolate wiring, connection, and hardware faults",
+      },
+    ],
+  },
+
+  // ---------- Programming & Data ----------
+  {
+    name: "C / C++",
+    category: "Programming & Data",
+    status: "currently_using",
+    level: 80,
+    learnedAt:
+      "Developed through embedded systems, data structures, robotics projects, and professional firmware/software work.",
+    appliedAt:
+      "Ford gateway ECU investigation, Aversan STM32H7 firmware, STM32 projects, robotics, and university coursework.",
+    examples: [
+      {
+        text: "Debugged and extended STM32H7 embedded C firmware for safety-critical aerospace hardware at Aversan",
+      },
+      {
+        text: "Traced gateway ECU C++ execution paths and correlated them with system logs during Ford OTA investigations",
+      },
+      {
+        text: "Built STM32 C firmware for dual-axis motion control, safety logic, ADC inputs, and UART communication",
+      },
+      {
+        text: "Implemented linked lists, stacks, queues, trees, recursion, and other data-structure concepts in C++ coursework",
+      },
+    ],
+  },
+
+  {
+    name: "Python",
+    category: "Programming & Data",
+    status: "currently_using",
+    level: 85,
+    learnedAt:
+      "Developed through engineering automation, embedded debugging, vehicle-data investigation, and research-data workflows.",
+    appliedAt:
+      "Ford investigation tools, Aversan UART/JTAG tooling, automated testing, and UW research data processing.",
+    examples: [
+      {
+        text: "Built 6 Ford investigation and automation tools for connected-vehicle software analysis",
+      },
+      {
+        text: "Used Python tooling to reduce hands-on Ford investigation time by up to 90%",
+      },
+      {
+        text: "Built UART and OpenOCD tools for embedded firmware debugging and custom-board validation at Aversan",
+      },
+      {
+        text: "Developed research GUIs and data-processing pipelines using Pandas, NumPy, Matplotlib, and structured data export",
+      },
+    ],
+  },
+
+  {
+    name: "SQL / BigQuery",
+    category: "Programming & Data",
+    status: "currently_using",
+    level: 72,
+    learnedAt:
+      "Developed through large-scale connected-vehicle software investigations at Ford, building on earlier relational-database work.",
+    appliedAt:
+      "Ford OTA and vehicle-data investigations across datasets ranging from 1M to 80M rows.",
+    examples: [
+      {
+        text: "Used joins, CTEs, window functions, nested queries, partition filters, regex, and JSON parsing",
+      },
+      {
+        text: "Built reusable investigation queries, workflows, and tables for recurring vehicle software analysis",
+      },
+      {
+        text: "Reduced BigQuery runtime by 93% through query and data-access optimization",
+      },
+      {
+        text: "Reduced recurring data-retrieval time from about 2 hours to 10–15 minutes",
+      },
+      {
+        text: "Built Looker Studio dashboards to compare expected and observed vehicle messages during investigations",
+      },
+    ],
+  },
+
+  {
+    name: "Git",
+    category: "Programming & Data",
+    level: 80,
+    learnedAt:
+      "Developed through professional team workflows, university work, and personal engineering projects.",
+    appliedAt:
+      "Aversan Azure DevOps repositories and personal GitHub projects.",
+    examples: [
+      {
+        text: "Committed and pushed verified firmware, Python tooling, and automated-test changes through Azure DevOps repositories",
+      },
+      {
+        text: "Used branches and structured commits while developing, testing, and integrating changes",
+      },
+      {
+        text: "Use GitHub to maintain personal engineering projects, revisions, and documentation",
+      },
+    ],
+  },
+
+  {
+    name: "Linux (CLI)",
+    category: "Programming & Data",
+    level: 65,
+    learnedAt:
+      "Developed through embedded development, automation, and test workflows.",
+    appliedAt:
+      "Aversan development environment and Linux-based Automated Test Equipment.",
+    examples: [
+      {
+        text: "Developed and ran a Python/OpenOCD boundary-scan workflow inside a Linux environment",
+      },
+      {
+        text: "Used command-line tooling while supporting STM32H7 firmware development and debugging",
+      },
+      {
+        text: "Worked with Linux-based Automated Test Equipment for embedded verification and result analysis",
+      },
+    ],
+  },
+
+  // ---------- Controls & Automation ----------
+  {
+    name: "PID Control",
+    category: "Controls & Automation",
+    status: "currently_using",
+    level: 68,
+    learnedAt:
+      "Developed through controls fundamentals and hands-on robotics/control-system prototypes.",
+    appliedAt:
+      "Quadcopter attitude-control prototype tested using a constrained stabilization rig.",
+    examples: [
+      {
+        text: "Implemented a real-time PID attitude controller in C++",
+      },
+      {
+        text: "Used IMU gyroscope feedback to drive closed-loop stabilization behavior",
+      },
+      {
+        text: "Tuned controller gains based on observed response and stability",
+      },
+      {
+        text: "Connected sensor feedback to motor-control output behavior during stabilization testing",
+      },
+    ],
+  },
+
+  {
+    name: "Finite-State Machines (FSM)",
+    category: "Controls & Automation",
+    level: 76,
+    learnedAt:
+      "Developed through robotics, embedded behavior design, digital-logic coursework, and PLC labs.",
+    appliedAt:
+      "Obstacle-aware Arduino robot, digital-logic exercises, VHDL work, and PLC control labs.",
+    examples: [
+      {
+        text: "Built an obstacle-aware Arduino robot using a finite-state control loop with debounced user inputs",
+      },
+      {
+        text: "Translated control requirements into state diagrams, encoded states, and valid transition rules",
+      },
+      {
+        text: "Implemented FSM-style control in VHDL and PLC ladder logic",
+      },
+      {
+        text: "Used sensor-driven state transitions for motor, LED, and sequencing behavior",
+      },
+    ],
+  },
+
+  {
+    name: "Signal Filtering",
+    category: "Controls & Automation",
+    level: 62,
+    learnedAt:
+      "Developed through Signals & Systems coursework, analog-filter labs, and motion-capture data processing.",
+    appliedAt:
+      "Vicon motion-capture processing, sensor-data analysis, and engineering coursework.",
+    examples: [
+      {
+        text: "Applied low-pass filtering to reduce noise in motion-capture trajectories",
+      },
+      {
+        text: "Built and tested analog filtering using op-amp circuits including a Twin-T selective amplifier",
+      },
+      {
+        text: "Used frequency-response and Bode-plot concepts to reason about filtering and signal quality",
+      },
+    ],
+  },
+
+  {
+    name: "PLC (Ladder Logic)",
+    category: "Controls & Automation",
+    level: 60,
+    learnedAt:
+      "Developed through control-system labs involving sequencing, sensor inputs, safe control logic, and interlocks.",
+    appliedAt:
+      "PLC coursework involving motors, LEDs, sensor inputs, and state-based actuator control.",
+    examples: [
+      {
+        text: "Built ladder logic for motors and indicators with start/stop behavior and interlocks",
+      },
+      {
+        text: "Integrated sensor inputs, including color sensing, into state-based control sequences",
+      },
+      {
+        text: "Translated problem specifications into controlled sequences and validated behavior during lab testing",
+      },
+    ],
+  },
+
+  {
+    name: "MATLAB / Simulink",
+    category: "Controls & Automation",
+    status: "currently_using",
+    level: 74,
+    learnedAt:
+      "Developed through engineering modeling, numerical methods, system dynamics, controls, and simulation coursework.",
+    appliedAt:
+      "Engineering coursework involving equation solving, system modeling, simulation, and visualization.",
+    examples: [
+      {
+        text: "Built and simulated first- and second-order system models in Simulink",
+      },
+      {
+        text: "Solved engineering systems using direct and iterative numerical methods in MATLAB",
+      },
+      {
+        text: "Used fsolve with custom function files for nonlinear engineering systems",
+      },
+      {
+        text: "Created 2D and 3D engineering visualizations using plots, surfaces, contours, and parameterized grids",
+      },
+      {
+        text: "Used system-modeling tools to study mechanical and electromechanical response behavior",
+      },
+    ],
+  },
+
+  // ---------- Verification & Automation ----------
+  {
+    name: "System Integration & OTA Testing",
+    category: "Verification & Automation",
+    status: "currently_using",
+    level: 72,
+    learnedAt:
+      "Developed through connected-vehicle software integration work across physical ECUs, cloud services, and vehicle networks.",
+    appliedAt:
+      "Ford cloud-connected vehicle integration bench and OTA software-update investigations.",
+    examples: [
+      {
+        text: "Configured ECU DIDs and cloud connectivity for software-update testing",
+      },
+      {
+        text: "Flashed multiple software versions and reproduced OTA update and failure scenarios",
+      },
+      {
+        text: "Analyzed CAN, Ethernet, gateway ECU, system, vehicle, and cloud logs to investigate failures",
+      },
+      {
+        text: "Traced gateway ECU C++ execution paths to identify potential OTA failure paths",
+      },
+      {
+        text: "Supported development and review of software requirements for connected-vehicle features, including expected behavior and edge cases",
+      },
+    ],
+  },
+
+  {
+    name: "Robot Framework",
+    category: "Verification & Automation",
+    level: 68,
+    learnedAt:
+      "Developed while building automated embedded verification during my Aversan internship.",
+    appliedAt:
+      "Linux-based Automated Test Equipment used for embedded I/O verification.",
+    examples: [
+      {
+        text: "Built Robot Framework test suites to verify set/read I/O behavior on Automated Test Equipment",
+      },
+      {
+        text: "Generated repeatable reports supporting debugging, certification-focused workflows, production, and maintenance",
+      },
+      {
+        text: "Integrated Python helper scripts into Robot Framework workflows for parsing and test logic",
+      },
+    ],
+  },
+
+  {
+    name: "Test Automation & Telemetry",
+    category: "Verification & Automation",
+    status: "currently_using",
+    level: 80,
+    learnedAt:
+      "Developed through Ford vehicle-data investigations, Aversan embedded testing, and UW research data acquisition.",
+    appliedAt:
+      "Ford, Aversan, and University of Waterloo engineering research.",
+    examples: [
+      {
+        text: "Correlated vehicle, gateway, cloud, CAN, and Ethernet logs during OTA investigations",
+      },
+      {
+        text: "Built Python/UART tools for automated embedded verification, logging, and debugging",
+      },
+      {
+        text: "Built 6 Ford investigation tools that reduced hands-on analysis time by up to 90%",
+      },
+      {
+        text: "Created structured sensor-data capture, preprocessing, visualization, and export pipelines for research",
+      },
+    ],
+  },
+
+  // ---------- Hardware, CAD & Prototyping ----------
+  {
+    name: "SolidWorks",
+    category: "Hardware, CAD & Prototyping",
+    status: "currently_using",
+    level: 85,
+    learnedAt:
+      "Developed through coursework, engineering research, mechanical projects, and hands-on prototyping.",
+    appliedAt:
+      "UW research equipment, prosthetic-hand work, course design projects, mechanisms, and personal designs.",
+    examples: [
+      {
+        text: "Designed functional mechanisms and equipment upgrades for engineering research",
+      },
+      {
+        text: "Built complete assemblies and checked fit and motion through design iteration",
+      },
+      {
+        text: "Modeled physical components from measurements for assembly integration",
+      },
+      {
+        text: "Used SolidWorks to create mechanical concepts and prototype-ready parts",
+      },
+    ],
+  },
+
+  {
+    name: "PCB Design",
+    category: "Hardware, CAD & Prototyping",
+    status: "currently_using",
+    level: 64,
+    learnedAt:
+      "Developed while designing a custom sensor-interface PCB during my engineering research assistant co-op.",
+    appliedAt:
+      "UW Optometry 48-channel pressure-sensing system.",
+    examples: [
+      {
+        text: "Designed the schematic and PCB layout for an Arduino-mounted 48-channel sensor interface",
+      },
+      {
+        text: "Designed voltage-divider conditioning for pressure-sensing channels",
+      },
+      {
+        text: "Planned connectors and routing for reliable sensor wiring and external-system integration",
+      },
+      {
+        text: "Performed ERC/DRC-style checks and reviewed connectivity before fabrication",
+      },
+    ],
+  },
+
+  {
+    name: "3D Printing (FDM)",
+    category: "Hardware, CAD & Prototyping",
+    level: 78,
+    learnedAt:
+      "Developed through functional prototyping, engineering research, coursework, and maintaining FDM printers.",
+    appliedAt:
+      "UW research equipment, engineering projects, personal mechanical builds, and printer repair.",
+    examples: [
+      {
+        text: "Designed and printed functional parts, then iterated based on fit, strength, and real-world testing",
+      },
+      {
+        text: "Used FDM printing for rapid development of research fixtures and mechanical improvements",
+      },
+      {
+        text: "Printed components for engineering prototypes and mechanisms",
+      },
+      {
+        text: "Repaired and restored FDM printers by replacing failed hardware and returning them to reliable operation",
+      },
+    ],
+  },
+
+  {
+    name: "Soldering",
+    category: "Hardware, CAD & Prototyping",
+    level: 80,
+    learnedAt:
+      "Developed through electronics projects, coursework, engineering research, and hardware troubleshooting.",
+    appliedAt:
+      "PCB assembly, wiring, repair, research hardware, and personal electronics projects.",
+    examples: [
+      {
+        text: "Soldered components, connectors, and wiring for electronics prototypes",
+      },
+      {
+        text: "Performed PCB soldering and rework for coursework and research systems",
+      },
+      {
+        text: "Used soldering during hardware debugging to repair unreliable or intermittent connections",
+      },
+    ],
+  },
+
+  {
+    name: "Autodesk Inventor",
+    category: "Hardware, CAD & Prototyping",
+    level: 70,
+    learnedAt:
+      "Developed during CNC programming work involving production sheet-metal design.",
+    appliedAt:
+      "State Windows manufacturing and production workflows.",
+    examples: [
+      {
+        text: "Built parametric sheet-metal CAD models from production requirements and drawings",
+      },
+      {
+        text: "Used spreadsheet/iLogic-style parameters to efficiently generate multiple part variants",
+      },
+      {
+        text: "Produced production-ready drawings tied directly to CNC fabrication workflows",
+      },
+      {
+        text: "Worked from technical and GD&T drawings to create manufacturable models",
+      },
+    ],
+  },
+
+  {
+    name: "AutoCAD",
+    category: "Hardware, CAD & Prototyping",
+    level: 70,
+    learnedAt:
+      "Developed through manufacturing-focused CAD, technical drawing work, and fabrication projects.",
+    appliedAt:
+      "CNC programming and project fabrication workflows.",
+    examples: [
+      {
+        text: "Edited and corrected DXF geometry for manufacturing readiness",
+      },
+      {
+        text: "Worked with technical drawings to support CNC production",
+      },
+      {
+        text: "Created and modified 2D CAD geometry for laser cutting and fabrication",
+      },
+    ],
+  },
+
+  {
+    name: "GD&T",
+    category: "Hardware, CAD & Prototyping",
+    level: 76,
+    learnedAt:
+      "Developed through engineering coursework and practical manufacturing experience as a CNC programmer.",
+    appliedAt:
+      "State Windows production CAD and mechanical-design work.",
+    examples: [
+      {
+        text: "Interpreted GD&T callouts, datums, and feature-control information when creating production CAD models",
+      },
+      {
+        text: "Applied tolerance awareness when converting drawings into manufacturable parts",
+      },
+      {
+        text: "Considered fits, clearances, and tolerance stack-up when designing mechanisms and assemblies",
+      },
+    ],
+  },
+];
 
   const categoryOrder = [
-    "Embedded & Bring-Up",
-    "Interfaces & Debug",
-    "Controls & Automation",
-    "Software & Data",
-    "Verification & Automation",
-    "Hardware, CAD & Prototyping",
-    "FPGA/Digital",
-    "Modeling/Simulation",
-  ];
+  "Embedded Systems",
+  "Interfaces & Debug",
+  "Programming & Data",
+  "Controls & Automation",
+  "Verification & Automation",
+  "Hardware, CAD & Prototyping",
+];
 
   const categories = categoryOrder.filter((cat) =>
     skills.some((s) => s.category === cat)

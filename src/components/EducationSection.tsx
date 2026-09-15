@@ -4,25 +4,26 @@ import { GraduationCap } from "lucide-react";
 
 const EducationSection = () => {
   const coursework = [
-    "Embedded Systems / Microprocessors",
-    "OS & RTOS",
-    "Data Structures & Algorithms (C/C++)",
-    "Digital Logic (FSMs) + FPGA (VHDL)",
-    "Signals & Systems",
-    "Circuits + Analog Filtering (Op-Amps, Twin-T)",
+    "Automatic Control Systems",
+    "Microprocessor Systems & Interfacing",
+    "Real-Time Systems",
+    "Algorithms & Data Structures",
+    "Digital Logic",
+    "Linear Systems & Signals",
     "Sensors & Instrumentation",
     "Actuators & Power Electronics",
-    "Robotics (projects-based)",
-    "Probability & Statistics",
-    "MATLAB",
-    "System Modeling & Simulation (Simulink/SimulationX)"
+    "Systems Modeling",
+    "Design & Dynamics of Machines",
+    "Electromechanical Machine Design",
+    "Mechatronics Engineering Design"
   ];
-
 
   return (
     <section id="education" className="py-16 bg-muted/50">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Education</h2>
+        <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
+          Education
+        </h2>
 
         <div className="max-w-4xl mx-auto">
           <Card>
@@ -33,26 +34,37 @@ const EducationSection = () => {
                 </div>
 
                 <div>
-                  <CardTitle className="text-xl">University of Waterloo</CardTitle>
+                  <CardTitle className="text-xl">
+                    University of Waterloo
+                  </CardTitle>
+
                   <CardDescription className="text-lg">
-                    Bachelor of Mechatronics Engineering · 3A completed
+                    BASc, Mechatronics Engineering · Honours, Co-op · Artificial Intelligence Option · 3B
                   </CardDescription>
                 </div>
               </div>
             </CardHeader>
 
             <CardContent className="space-y-5">
-              {/* Graduation + GPA row */}
+              {/* Graduation + average row */}
               <div className="flex items-center justify-between gap-4">
-                <p className="text-muted-foreground">Graduation: <span className="text-foreground font-medium">2028</span></p>
                 <p className="text-muted-foreground">
-                  GPA: <span className="text-foreground font-medium">3.9/4.0 (88.63%)</span>
+                  Expected Graduation:{" "}
+                  <span className="text-foreground font-medium">2028</span>
+                </p>
+
+                <p className="text-muted-foreground">
+                  Cumulative Average:{" "}
+                  <span className="text-foreground font-medium">88.63%</span>
                 </p>
               </div>
 
               {/* Coursework block */}
               <div>
-                <p className="text-sm text-muted-foreground mb-2">Relevant Coursework</p>
+                <p className="text-sm text-muted-foreground mb-2">
+                  Relevant Coursework
+                </p>
+
                 <div className="flex flex-wrap gap-2">
                   {coursework.map((c) => (
                     <Badge

@@ -9,58 +9,108 @@ const ProjectsSection = () => {
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
   const projects = [
-    {
-      title: "Two-Axis STM32 Machine Controller",
-      dates: "Jan 2026 - Apr 2026",
-      skills: ["Embedded C", "STM32", "SPI", "ADC", "UART", "Interrupts"],
-      description: "Developed STM32 firmware for independent dual-axis stepper control via SPI motor drivers, with dual-ADC speed adjustment, UART GUI commands, and interrupt-driven limit-switch safety.",
-      image: "2axis-GIF.gif",
-      githubUrl: "https://github.com/y24moham/Two_axis_machine_STM32_Control/",
-      demoUrl: "https://drive.google.com/file/d/1OqJbgLzihHthyge3sKhTlL_7apw86IUl/preview",
-      videoUrl: "https://drive.google.com/file/d/1I3mCT2xIy3bBejYWqJA6apu2jjCAlniW/preview",
-    },
-    {
-      title: "EV3 Prosthetic Hand",
-      dates: "Oct 2023 - Dec 2023",
-      skills: ["C", "EV3", "Sensor Integration", "Mechanical Design", "Prototyping"],
-      description: "Designed and programmed an EV3 prosthetic-hand prototype with motor-driven grip control and sensor feedback for controlled object handling.",
-      image: "Prosthetic-Hand-GIF.gif",
-      githubUrl: "https://github.com/y24moham/Prosthetic-Hand-EV3/",
-      demoUrl: "https://drive.google.com/file/d/1u6iXG5a_sigPQkx7iz7OC_ltrGPNhpzM/preview",
-      videoUrl: "https://drive.google.com/file/d/134nNxhyoesffMwnrE6gtcnD41NbJrs_N/preview",
-    },
-    {
-      title: "Quadcopter Prototype",
-      dates: "Jun 2020 - Aug 2020",
+  {
+    title: "STM32 2-Axis Motion Controller",
+    dates: "Jan 2026 - Apr 2026",
+    skills: [
+      "Embedded C",
+      "STM32",
+      "SPI",
+      "ADC",
+      "UART",
+      "Interrupts",
+    ],
+    description:
+      "Built an STM32-based dual-axis motion-control system for independent stepper-motor control, using SPI motor drivers, ADC speed inputs, and keyboard commands from a Python GUI over UART. Implemented interrupt-driven limit-switch protection and resolved an ADC/EXTI race condition.",
+    image: "2axis-GIF.gif",
+    githubUrl:
+      "https://github.com/y24moham/Two_axis_machine_STM32_Control/",
+    demoUrl:
+      "https://drive.google.com/file/d/1OqJbgLzihHthyge3sKhTlL_7apw86IUl/preview",
+    videoUrl:
+      "https://drive.google.com/file/d/1I3mCT2xIy3bBejYWqJA6apu2jjCAlniW/preview",
+  },
 
-      skills: ["Embedded C++", "Arduino", "PID Control", "IMU Feedback", "Sensor Integration"],
-      description: "Built and tuned a real-time PID attitude controller in C++ on Arduino using IMU gyroscope feedback and custom PCB hardware to regulate propeller speed.",
-      image: "Quadcopter-GIF.gif",
-      githubUrl: "https://github.com/y24moham/Quadcopter-Prototype/",
-      demoUrl: "https://drive.google.com/file/d/1FuZ4ya1sBBXkcI__rNSbRR-jGKATWSmJ/preview",
-      videoUrl: "https://drive.google.com/file/d/1FuZ4ya1sBBXkcI__rNSbRR-jGKATWSmJ/preview",
-    },
-    {
-      title: "Obstacle-Aware Arduino Robot",
-      dates: "Apr 2024",
-      skills: ["Embedded C++", "Arduino", "Finite State Machines", "Ultrasonic Sensing", "LCD UI",],
-      description: "Developed Arduino firmware for a two-motor robot with an LCD interface, ultrasonic ranging, debounced button input, and a finite-state control loop for automatic obstacle avoidance.",
-      image: "Arduino-Robot-GIF.gif",
-      githubUrl: "https://github.com/y24moham/Obstacle-Aware-Arduino-Robot-with-LCD/",
-      demoUrl: "https://drive.google.com/file/d/1gGviGKnixNbjjOhSUq4s3DY6O76Xo-3T/preview",
-      videoUrl: "https://drive.google.com/file/d/1gGviGKnixNbjjOhSUq4s3DY6O76Xo-3T/preview",
-    },
-    {
-      title: "Hospital Test Database (SQL)",
-      dates: "July 2022",
-      skills: ["SQL", "Relational Database Design", "Schema Design", "Data Modeling"],
-      description: "Designed a relational hospital database modeling patients, doctors, rooms, prescriptions, and medications, then validated its relationships and queries using fictional test data.",
-      image: "Hospital-SQL.png",
-      githubUrl: "https://github.com/y24moham/Hospital-SQL-Database-Design",
-      demoUrl: null,
-      videoUrl: null,
-    },
-  ];
+  {
+    title: "Obstacle-Aware Arduino Robot",
+    dates: "Apr 2024",
+    skills: [
+      "Embedded C++",
+      "Arduino",
+      "Finite State Machines",
+      "Ultrasonic Sensing",
+      "LCD",
+    ],
+    description:
+      "Built a two-motor autonomous robot with ultrasonic obstacle detection, an LCD interface, debounced user input, and a finite-state control loop for navigation and obstacle avoidance.",
+    image: "Arduino-Robot-GIF.gif",
+    githubUrl:
+      "https://github.com/y24moham/Obstacle-Aware-Arduino-Robot-with-LCD/",
+    demoUrl:
+      "https://drive.google.com/file/d/1gGviGKnixNbjjOhSUq4s3DY6O76Xo-3T/preview",
+    videoUrl:
+      "https://drive.google.com/file/d/1gGviGKnixNbjjOhSUq4s3DY6O76Xo-3T/preview",
+  },
+
+  {
+    title: "EV3 Prosthetic Hand",
+    dates: "Oct 2023 - Dec 2023",
+    skills: [
+      "C",
+      "EV3",
+      "Sensor Integration",
+      "Motor Control",
+      "Mechanical Design",
+    ],
+    description:
+      "Designed and programmed a prosthetic-hand prototype with sensor-assisted motor control for repeatable gripping and object handling, combining embedded control with mechanical design.",
+    image: "Prosthetic-Hand-GIF.gif",
+    githubUrl: "https://github.com/y24moham/Prosthetic-Hand-EV3/",
+    demoUrl:
+      "https://drive.google.com/file/d/1u6iXG5a_sigPQkx7iz7OC_ltrGPNhpzM/preview",
+    videoUrl:
+      "https://drive.google.com/file/d/134nNxhyoesffMwnrE6gtcnD41NbJrs_N/preview",
+  },
+
+  {
+    title: "Quadcopter Attitude-Control Prototype",
+    dates: "Jun 2020 - Aug 2020",
+    skills: [
+      "Embedded C++",
+      "Arduino",
+      "PID Control",
+      "IMU Feedback",
+      "Custom PCB",
+    ],
+    description:
+      "Prototyped a real-time PID attitude-control system in C++, using IMU gyroscope feedback and custom PCB hardware to implement and tune closed-loop stabilization on a test rig.",
+    image: "Quadcopter-GIF.gif",
+    githubUrl:
+      "https://github.com/y24moham/Quadcopter-Prototype/",
+    demoUrl:
+      "https://drive.google.com/file/d/1FuZ4ya1sBBXkcI__rNSbRR-jGKATWSmJ/preview",
+    videoUrl:
+      "https://drive.google.com/file/d/1FuZ4ya1sBBXkcI__rNSbRR-jGKATWSmJ/preview",
+  },
+
+  {
+    title: "Hospital Test Database",
+    dates: "Jul 2022",
+    skills: [
+      "SQL",
+      "Relational Databases",
+      "Schema Design",
+      "Data Modeling",
+    ],
+    description:
+      "Designed a relational hospital database modeling patients, doctors, rooms, prescriptions, and medications, then validated table relationships and SQL queries using fictional test data.",
+    image: "Hospital-SQL.png",
+    githubUrl:
+      "https://github.com/y24moham/Hospital-SQL-Database-Design",
+    demoUrl: null,
+    videoUrl: null,
+  },
+];
 
   return (
     <section id="projects" className="py-16 bg-muted/50">
