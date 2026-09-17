@@ -1,4 +1,4 @@
-import { Mail, Github, Linkedin } from "lucide-react";
+import { Mail, Phone, Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -16,12 +16,19 @@ const ContactSection = () => {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
-              {/* Email */}
-              <div className="text-center">
-                <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">
+              {/* Email + Phone */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button asChild variant="outline" size="lg">
                   <a href="mailto:y24moham@uwaterloo.ca">
                     <Mail className="h-5 w-5 mr-2" />
                     y24moham@uwaterloo.ca
+                  </a>
+                </Button>
+
+                <Button asChild variant="outline" size="lg">
+                  <a href="tel:+16478333952">
+                    <Phone className="h-5 w-5 mr-2" />
+                    +1 (647) 833-3952
                   </a>
                 </Button>
               </div>

@@ -22,7 +22,7 @@ const SkillsSection = () => {
   {
     name: "STM32 (HAL/LL)",
     category: "Embedded Systems",
-    status: "currently_using",
+    // status: "currently_using",
     level: 72,
     learnedAt:
       "Developed through professional STM32H7 firmware work, embedded-systems coursework, and hands-on STM32 projects.",
@@ -64,6 +64,30 @@ const SkillsSection = () => {
       },
       {
         text: "Applied synchronization concepts when reasoning about shared resources and concurrent execution",
+      },
+    ],
+  },
+
+  {
+    name: "FPGA (VHDL)",
+    category: "Embedded Systems",
+    level: 57,
+    learnedAt:
+      "Developed through digital-logic and FPGA coursework covering combinational logic, sequential logic, finite-state machines, and VHDL implementation.",
+    appliedAt:
+      "University digital-logic labs where I implemented and tested digital circuits and finite-state behavior on FPGA hardware using VHDL.",
+    examples: [
+      {
+        text: "Wrote VHDL modules for combinational and sequential digital-logic designs",
+      },
+      {
+        text: "Implemented finite-state machines from state diagrams and transition requirements",
+      },
+      {
+        text: "Processed hardware inputs and mapped binary values to 7-segment display outputs",
+      },
+      {
+        text: "Synthesized and tested VHDL designs on FPGA hardware during digital-logic labs",
       },
     ],
   },
@@ -164,6 +188,7 @@ const SkillsSection = () => {
   {
     name: "Raspberry Pi",
     category: "Embedded Systems",
+    status: "currently_using",
     level: 68,
     learnedAt:
       "Developed through engineering research involving sensor acquisition, processing, and data export.",
@@ -186,7 +211,7 @@ const SkillsSection = () => {
   {
     name: "CAN / CAN FD",
     category: "Interfaces & Debug",
-    status: "currently_using",
+    // status: "currently_using",
     level: 68,
     learnedAt:
       "Developed through automotive system-integration work involving vehicle network traffic and OTA software-update behavior.",
@@ -208,7 +233,7 @@ const SkillsSection = () => {
   {
     name: "Automotive Ethernet",
     category: "Interfaces & Debug",
-    status: "currently_using",
+    // status: "currently_using",
     level: 62,
     learnedAt:
       "Developed through vehicle integration testing involving Ethernet-based ECU and system communication.",
@@ -280,7 +305,7 @@ const SkillsSection = () => {
   {
     name: "SPI",
     category: "Interfaces & Debug",
-    status: "currently_using",
+    // status: "currently_using",
     level: 65,
     learnedAt:
       "Developed through STM32 coursework and embedded motion-control development.",
@@ -353,6 +378,7 @@ const SkillsSection = () => {
   {
     name: "Oscilloscope & DMM",
     category: "Interfaces & Debug",
+    status: "currently_using",
     level: 75,
     learnedAt:
       "Developed through electronics labs, firmware debugging, engineering research, and prototype bring-up.",
@@ -428,7 +454,7 @@ const SkillsSection = () => {
   {
     name: "SQL / BigQuery",
     category: "Programming & Data",
-    status: "currently_using",
+    // status: "currently_using",
     level: 72,
     learnedAt:
       "Developed through large-scale connected-vehicle software investigations at Ford, building on earlier relational-database work.",
@@ -456,6 +482,7 @@ const SkillsSection = () => {
   {
     name: "Git",
     category: "Programming & Data",
+    status: "currently_using",
     level: 80,
     learnedAt:
       "Developed through professional team workflows, university work, and personal engineering projects.",
@@ -477,6 +504,7 @@ const SkillsSection = () => {
   {
     name: "Linux (CLI)",
     category: "Programming & Data",
+    status: "currently_using",
     level: 65,
     learnedAt:
       "Developed through embedded development, automation, and test workflows.",
@@ -524,6 +552,7 @@ const SkillsSection = () => {
   {
     name: "Finite-State Machines (FSM)",
     category: "Controls & Automation",
+    status: "currently_using",
     level: 76,
     learnedAt:
       "Developed through robotics, embedded behavior design, digital-logic coursework, and PLC labs.",
@@ -548,6 +577,7 @@ const SkillsSection = () => {
   {
     name: "Signal Filtering",
     category: "Controls & Automation",
+    status: "currently_using",
     level: 62,
     learnedAt:
       "Developed through Signals & Systems coursework, analog-filter labs, and motion-capture data processing.",
@@ -619,7 +649,7 @@ const SkillsSection = () => {
   {
     name: "System Integration & OTA Testing",
     category: "Verification & Automation",
-    status: "currently_using",
+    // status: "currently_using",
     level: 72,
     learnedAt:
       "Developed through connected-vehicle software integration work across physical ECUs, cloud services, and vehicle networks.",
@@ -668,7 +698,7 @@ const SkillsSection = () => {
   {
     name: "Test Automation & Telemetry",
     category: "Verification & Automation",
-    status: "currently_using",
+    // status: "currently_using",
     level: 80,
     learnedAt:
       "Developed through Ford vehicle-data investigations, Aversan embedded testing, and UW research data acquisition.",
@@ -744,6 +774,7 @@ const SkillsSection = () => {
   {
     name: "3D Printing (FDM)",
     category: "Hardware, CAD & Prototyping",
+    status: "currently_using",
     level: 78,
     learnedAt:
       "Developed through functional prototyping, engineering research, coursework, and maintaining FDM printers.",
@@ -768,6 +799,7 @@ const SkillsSection = () => {
   {
     name: "Soldering",
     category: "Hardware, CAD & Prototyping",
+    status: "currently_using",
     level: 80,
     learnedAt:
       "Developed through electronics projects, coursework, engineering research, and hardware troubleshooting.",
